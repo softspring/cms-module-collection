@@ -1,0 +1,11 @@
+{
+    "name": "softspring/cms-module-collection",
+    "description": "A module collection for softspring/cms-bundle",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "softspring/cms-bundle": "^5.0"
+    }
+}
