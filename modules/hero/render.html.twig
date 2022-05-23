@@ -1,0 +1,31 @@
+<div class="hero px-4 py-5 text-center {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+    {% if background|default(false) %}
+        <div class="hero__bg-picture">
+            {{ background|sfs_image_render_picture }}
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="hero__content">
+
+            {% if other|default(false) %}
+            <div class="hero__picture">
+                {{ other|sfs_image_render_image('sm') }}
+            </div>
+            {% endif %}
+
+            <h1 class="display-5 fw-bold">{{ title|default('') }}</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">{{ description|default('')|raw }}</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    {% if primary_button_text|default(false) %}
+                        <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text }}</a>
+                    {% endif %}
+
+                    {% if secondary_button_text|default(false) %}
+                        <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+module:
+    revision: 1
+    render_template: '@module/html/render.html.twig'
+    module_options:
+        label_format: 'modules.html.%%name%%.label'
+        translation_domain: 'custom_domain'
+        form_fields:
+            id:
+                type: 'id'
+                type_options:
+                    required: false
+            code:
+                type: 'html'
+            css:
+                type: 'css'
+                type_options:
+                    required: false
