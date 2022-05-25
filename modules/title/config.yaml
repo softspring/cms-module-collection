@@ -28,4 +28,4 @@ module:
                         "title.form.type.values.h6": h6
 
             title:
-                type: 'translationText'
+                type: 'translatableText'

@@ -6,12 +6,12 @@ module:
     module_options:
         form_fields:
             background:
-                type: 'image'
+                type: 'translatableImage'
                 type_options:
                     image_types: ['background']
 
             other:
-                type: 'image'
+                type: 'translatableImage'
                 type_options:
                     image_types: ['content']
 
@@ -40,19 +40,19 @@ module:
                         data-content-edit-class: 'titleClass'
 
             title:
-                type: 'translationText'
+                type: 'translatableText'
                 type_options:
                     attr:
                         data-content-edit-preview: 'title'
 
             description:
-                type: 'translationText'
+                type: 'translatableText'
                 type_options:
                     attr:
                         data-content-edit-preview: 'description'
 
             primary_button_text:
-                type: 'translationText'
+                type: 'translatableText'
                 type_options:
                     attr:
                         data-content-edit-preview: 'primaryButtonText'
@@ -62,7 +62,7 @@ module:
                 type_options:
 
             secondary_button_text:
-                type: 'translationText'
+                type: 'translatableText'
                 type_options:
                     attr:
                         data-content-edit-preview: 'secondaryButtonText'
