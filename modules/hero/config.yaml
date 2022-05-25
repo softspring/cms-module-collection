@@ -8,69 +8,61 @@ module:
             background:
                 type: 'image'
                 type_options:
-                    required: false
                     image_types: ['background']
 
             other:
                 type: 'image'
                 type_options:
-                    required: false
                     image_types: ['content']
 
             id:
                 type: 'id'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-id: 'moduleBlock'
 
             class:
                 type: 'class'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-class: 'moduleBlock'
 
             bg_color:
                 type: 'color'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-color: 'moduleBlock'
 
             title_class:
                 type: 'class'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-class: 'titleClass'
 
             title:
+                type: 'translationText'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-preview: 'title'
 
             description:
-                type: 'textarea'
+                type: 'translationText'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-preview: 'description'
 
             primary_button_text:
+                type: 'translationText'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-preview: 'primaryButtonText'
 
             primary_button_link:
                 type: 'route'
                 type_options:
-                    required: false
 
             secondary_button_text:
+                type: 'translationText'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-preview: 'secondaryButtonText'

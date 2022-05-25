@@ -7,11 +7,9 @@ module:
         form_fields:
             id:
                 type: 'id'
-                type_options:
-                    required: false
+
             code:
                 type: 'html'
+
             css:
                 type: 'css'
-                type_options:
-                    required: false

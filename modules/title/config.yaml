@@ -7,14 +7,12 @@ module:
             id:
                 type: 'id'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-id: 'moduleBlock'
 
             class:
                 type: 'class'
                 type_options:
-                    required: false
                     attr:
                         data-content-edit-class: 'moduleBlock'
 
@@ -31,6 +29,3 @@ module:
 
             title:
                 type: 'translationText'
-                type_options:
-                    languages: '%kernel.enabled_locales%'
-                    default_language: '%kernel.default_locale%'

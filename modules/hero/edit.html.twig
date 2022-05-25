@@ -6,7 +6,7 @@
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
 
-    <h1 class="display-5 fw-bold" data-content-edit-field="title" contenteditable="true">{{ form.title.vars.data|default('Título') }}</h1>
+    <h1 class="display-5 fw-bold" data-content-edit-field="title" contenteditable="true">{{ form.title.vars.data.es|default('Título') }}</h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4" data-content-edit-field="description" contenteditable="true">{{ form.description.vars.data|default('Texto descriptivo') }}</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
