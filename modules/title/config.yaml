@@ -20,12 +20,12 @@ module:
                 type: 'choice'
                 type_options:
                     choices:
-                        h1: h1
-                        h2: h2
-                        h3: h3
-                        h4: h4
-                        h5: h5
-                        h6: h6
+                        "title.form.type.values.h1": h1
+                        "title.form.type.values.h2": h2
+                        "title.form.type.values.h3": h3
+                        "title.form.type.values.h4": h4
+                        "title.form.type.values.h5": h5
+                        "title.form.type.values.h6": h6
 
             title:
                 type: 'translationText'

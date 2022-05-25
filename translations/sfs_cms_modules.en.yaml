@@ -1,0 +1,49 @@
+title:
+    label: "Title"
+    prototype_button: "Title"
+    form:
+        id.label: "HTML id"
+        class.label: "HTML class"
+        type.label: "Title type"
+        type.values:
+            h1: "Heading 1"
+            h2: "Heading 2"
+            h3: "Heading 3"
+            h4: "Heading 4"
+            h5: "Heading 5"
+            h6: "Heading 6"
+        title.label: "Title"
+
+grid:
+    label: "Grid"
+    prototype_button: "Grid"
+
+container:
+    label: "Container"
+    prototype_button: "Container"
+    form:
+        modules.label: "Modules"
+
+html:
+    label: "HTML code"
+    prototype_button: "HTML code"
+    form:
+        id.label: "Id"
+        code.label: "Code"
+        css.label: "CSS styles"
+
+hero:
+    label: "Hero"
+    prototype_button: "Hero"
+    form:
+        background.label: "Background image"
+        other.label: "Upper image"
+        id.label: "Id"
+        class.label: "Classes"
+        title_class.label: "Title classes"
+        title.label: "Title"
+        description.label: "Description"
+        primary_button_text.label: "Primary button text"
+        primary_button_link.label: "Primary button link"
+        secondary_button_text.label: "Secondary button text"
+        bg_color.label: "Background color"

@@ -13,16 +13,16 @@
             </div>
             {% endif %}
 
-            <h1 class="display-5 fw-bold">{{ title[app.request.locale]|default('') }}</h1>
+            <h1 class="display-5 fw-bold">{{ title[app.request.locale]|default('')|raw }}</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">{{ description|default('')|raw }}</p>
+                <p class="lead mb-4">{{ description[app.request.locale]|default('')|raw }}</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     {% if primary_button_text|default(false) %}
-                        <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text }}</a>
+                        <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text[app.request.locale]|default('')|raw }}</a>
                     {% endif %}
 
                     {% if secondary_button_text|default(false) %}
-                        <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text }}</a>
+                        <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text[app.request.locale]|default('')|raw }}</a>
                     {% endif %}
                 </div>
             </div>

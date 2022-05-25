@@ -5,9 +5,14 @@ title:
         id.label: "HTML id"
         class.label: "HTML class"
         type.label: "Tipo de título"
+        type.values:
+            h1: "Encabezado 1"
+            h2: "Encabezado 2"
+            h3: "Encabezado 3"
+            h4: "Encabezado 4"
+            h5: "Encabezado 5"
+            h6: "Encabezado 6"
         title.label: "Título"
-        title.es.label: "ES"
-        title.en.label: "EN"
 
 grid:
     label: "Grid"
@@ -22,6 +27,10 @@ container:
 html:
     label: "Código HTML"
     prototype_button: "Código HTML"
+    form:
+        id.label: "Id"
+        code.label: "Código"
+        css.label: "Estilos CSS"
 
 hero:
     label: "Hero"
@@ -37,3 +46,4 @@ hero:
         primary_button_text.label: "Texto del botón primario"
         primary_button_link.label: "Enlace del botón primario"
         secondary_button_text.label: "Texto del botón secundario"
+        bg_color.label: "Color de fondo"
