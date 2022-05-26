@@ -1,15 +1,15 @@
 <div class="hero px-4 py-5 text-center {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
-    {% if background|default(false) %}
+    {% if background[app.request.locale]|default(false) %}
         <div class="hero__bg-picture">
-            {{ background|sfs_image_render_picture }}
+            {{ background[app.request.locale]|sfs_image_render_picture }}
         </div>
     {% endif %}
     <div class="container">
         <div class="hero__content">
 
-            {% if other|default(false) %}
+            {% if other[app.request.locale]|default(false) %}
             <div class="hero__picture">
-                {{ other|sfs_image_render_image('sm') }}
+                {{ other[app.request.locale]|sfs_image_render_image('sm') }}
             </div>
             {% endif %}
 
