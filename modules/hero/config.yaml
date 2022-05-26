@@ -19,43 +19,43 @@ module:
                 type: 'id'
                 type_options:
                     attr:
-                        data-content-edit-id: 'moduleBlock'
+                        data-edit-id-input: 'heroIdDiv'
 
             class:
                 type: 'class'
                 type_options:
                     attr:
-                        data-content-edit-class: 'moduleBlock'
+                        data-edit-class-input: 'heroClassDiv'
 
             bg_color:
                 type: 'color'
                 type_options:
                     attr:
-                        data-content-edit-color: 'moduleBlock'
+                        data-edit-bgcolor-input: 'heroColorDiv'
 
             title_class:
                 type: 'class'
                 type_options:
                     attr:
-                        data-content-edit-class: 'titleClass'
+                        data-edit-class-input: 'titleClass'
 
             title:
                 type: 'translatableText'
                 type_options:
-                    attr:
-                        data-content-edit-preview: 'title'
+                    children_attr:
+                        data-edit-content-input: 'title'
 
             description:
                 type: 'translatableText'
                 type_options:
-                    attr:
-                        data-content-edit-preview: 'description'
+                    children_attr:
+                        data-edit-content-input: 'description'
 
             primary_button_text:
                 type: 'translatableText'
                 type_options:
-                    attr:
-                        data-content-edit-preview: 'primaryButtonText'
+                    children_attr:
+                        data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'route'
@@ -64,5 +64,5 @@ module:
             secondary_button_text:
                 type: 'translatableText'
                 type_options:
-                    attr:
-                        data-content-edit-preview: 'secondaryButtonText'
+                    children_attr:
+                        data-edit-content-input: 'secondaryButtonText'

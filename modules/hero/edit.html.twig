@@ -1,17 +1,31 @@
-<div class="px-4 py-5 my-5 text-center {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
-    data-content-edit-id-target="moduleBlock"
-    data-content-edit-class-target="moduleBlock"
-    data-content-edit-color-target="moduleBlock"
-    data-content-edit-class-default="px-4 py-5 my-5 text-center"
+{% set defaultDivClass = 'px-4 py-5 my-5 text-center' %}
+<div class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+    data-edit-id-target="heroIdDiv"
+
+    data-edit-class-target="heroClassDiv"
+    data-edit-class-default="{{ defaultDivClass }}"
+
+    data-edit-bgcolor-target="heroColorDiv"
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
 
-    <h1 class="display-5 fw-bold" data-content-edit-field="title" contenteditable="true">{{ form.title.vars.data.es|default('Título') }}</h1>
+    {% for locale,localeField in form.title %}
+        <h1 class="display-5 fw-bold" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título') }}</h1>
+    {% endfor %}
+
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4" data-content-edit-field="description" contenteditable="true">{{ form.description.vars.data.es|default('Texto descriptivo') }}</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="#" class="btn btn-primary btn-lg px-4 gap-3" data-content-edit-field="primaryButtonText" contenteditable="true">{{ form.primary_button_text.vars.data.es|default('Botón principal') }}</a>
-            <a href="#" class="btn btn-outline-secondary btn-lg px-4" data-content-edit-field="secondaryButtonText" contenteditable="true">{{ form.secondary_button_text.vars.data.es|default('Botón secundario (opcional)') }}</a>
+        {% for locale,localeField in form.description %}
+            <p class="lead mb-4" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Texto descriptivo') }}</p>
+        {% endfor %}
+
+        <div class="d-grid gap-2 d-sm-flex justify-sm-center">
+            {% for locale,localeField in form.primary_button_text %}
+                <a href="#" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón principal') }}</a>
+            {% endfor %}
+
+            {% for locale,localeField in form.primary_button_text %}
+                <a href="#" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón secundario (opcional)') }}</a>
+            {% endfor %}
         </div>
     </div>
 </div>
