@@ -12,7 +12,7 @@
     {% for locale,localeField in form.background %}
         <div data-image-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
-                {{ localeField.vars.data|sfs_image_render_picture }}
+                {{ localeField.vars.data|sfs_image_render_picture('_default', localeField.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
