@@ -1,15 +1,16 @@
 {% set type = form.type.vars.data|default('h1') %}
-<{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+{% for locale,localeField in form.title %}
+    <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+        data-lang="{{ locale }}"
 
-    data-cms-module-title-type=""
+        data-cms-module-title-type=""
 
-    data-content-edit-id-target="moduleBlock"
+        data-edit-id-target="title"
 
-    data-content-edit-class-target="moduleBlock"
-    data-content-edit-class-default=""
+        data-edit-class-target="title"
+        data-edit-class-default=""
 
-    data-content-edit-field="title"
-    contenteditable="true"
->
-    {{ form.title.vars.data.es|default('Título de ejemplo') }}
-</{{ type }}>
+        data-edit-content-target="title.{{ locale }}"
+        contenteditable="true"
+    >{{ localeField.vars.data|default('Título') }}</{{ type }}>
+{% endfor %}

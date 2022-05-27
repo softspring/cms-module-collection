@@ -1,5 +1,6 @@
 module:
     revision: 1
+    edit_template: '@module/html/edit.html.twig'
     render_template: '@module/html/render.html.twig'
     module_options:
         label_format: 'modules.html.%%name%%.label'
@@ -7,9 +8,18 @@ module:
         form_fields:
             id:
                 type: 'id'
+                type_options:
+                    attr:
+                        data-edit-id-input: 'codeContainerId'
 
             code:
                 type: 'html'
+                type_options:
+                    attr:
+                        data-edit-content-input: 'code'
 
             css:
                 type: 'css'
+                type_options:
+                    attr:
+                        data-edit-content-input: 'css'

@@ -1,0 +1,9 @@
+<div id="{{ form.id.vars.data|default('') }}"
+     data-edit-id-target="codeContainerId"
+
+     data-edit-content-target="code"
+>{{ form.code.vars.data|default('')|raw }}</div>
+
+<style type="text/css" data-edit-content-target="css">
+    {{ form.css.vars.data|default('')|raw }}
+</style>

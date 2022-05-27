@@ -3,9 +3,13 @@ document.addEventListener('change', function (event) {
     event.preventDefault();
 
     let preview = event.target.closest('.cms-module-edit').querySelector('.module-preview');
-    let htmlElement = preview.querySelector("[data-cms-module-title-type]");
+    let htmlElements = preview.querySelectorAll("[data-cms-module-title-type]");
 
-    htmlElement.outerHTML = htmlElement.outerHTML.trim()
-        .replace('<'+htmlElement.nodeName.toLowerCase()+' ','<'+event.target.value+' ')
-        .replace('</'+htmlElement.nodeName.toLowerCase()+'>','</'+event.target.value+'>');
+    if (htmlElements.length) {
+        htmlElements.forEach(function(htmlElement) {
+            htmlElement.outerHTML = htmlElement.outerHTML.trim()
+                .replace('<'+htmlElement.nodeName.toLowerCase()+' ','<'+event.target.value+' ')
+                .replace('</'+htmlElement.nodeName.toLowerCase()+'>','</'+event.target.value+'>');
+        });
+    }
 });

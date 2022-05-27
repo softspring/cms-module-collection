@@ -8,13 +8,13 @@ module:
                 type: 'id'
                 type_options:
                     attr:
-                        data-content-edit-id: 'moduleBlock'
+                        data-edit-id-input: 'title'
 
             class:
                 type: 'class'
                 type_options:
                     attr:
-                        data-content-edit-class: 'moduleBlock'
+                        data-edit-class-input: 'title'
 
             type:
                 type: 'choice'
@@ -29,3 +29,6 @@ module:
 
             title:
                 type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'title'
