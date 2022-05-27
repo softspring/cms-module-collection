@@ -8,12 +8,18 @@ module:
             background:
                 type: 'translatableImage'
                 type_options:
-                    image_types: ['background']
+                    children_attr:
+                        data-image-preview-input: 'backgroundImage'
+                    image_types:
+                        background:
+                            picture: '_default'
 
             other:
                 type: 'translatableImage'
                 type_options:
-                    image_types: ['content']
+                    image_types:
+                        content:
+                            image: 'sm'
 
             id:
                 type: 'id'

@@ -9,6 +9,14 @@
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
 
+    {% for locale,localeField in form.background %}
+        <div data-image-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+            {% if localeField.vars.data %}
+                {{ localeField.vars.data|sfs_image_render_picture }}
+            {% endif %}
+        </div>
+    {% endfor %}
+
     {% for locale,localeField in form.title %}
         <h1 class="display-5 fw-bold" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título') }}</h1>
     {% endfor %}
