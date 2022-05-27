@@ -28,11 +28,11 @@
 
         <div class="d-grid gap-2 d-sm-flex justify-sm-center">
             {% for locale,localeField in form.primary_button_text %}
-                <a href="#" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón principal') }}</a>
+                <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
             {% endfor %}
 
             {% for locale,localeField in form.primary_button_text %}
-                <a href="#" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón secundario (opcional)') }}</a>
+                <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
             {% endfor %}
         </div>
     </div>
