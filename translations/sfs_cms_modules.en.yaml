@@ -30,7 +30,18 @@ html:
     form:
         id.label: "Id"
         code.label: "Code"
+
+css:
+    label: "CSS code"
+    prototype_button: "CSS code"
+    form:
         css.label: "CSS styles"
+
+html_headers:
+    label: "HTML headers"
+    prototype_button: "HTML headers"
+    form:
+        code.label: "Code"
 
 hero:
     label: "Hero"

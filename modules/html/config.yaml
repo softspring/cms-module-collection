@@ -17,9 +17,3 @@ module:
                 type_options:
                     attr:
                         data-edit-content-input: 'code'
-
-            css:
-                type: 'css'
-                type_options:
-                    attr:
-                        data-edit-content-input: 'css'
