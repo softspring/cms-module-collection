@@ -58,3 +58,10 @@ hero:
         primary_button_link.label: "Primary button link"
         secondary_button_text.label: "Secondary button text"
         bg_color.label: "Background color"
+
+wysiwyg:
+    label: "WYSIWYG"
+    prototype_button: "WYSIWYG"
+    form:
+        id.label: "Id"
+        content.label: "Content"

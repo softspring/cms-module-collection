@@ -1,0 +1,45 @@
+<style>
+    .tox.tox-tinymce.tox-fullscreen {
+        top: 80px !important;
+        height: calc(100vh - 80px) !important;
+    }
+</style>
+<script src="https://cdn.tiny.cloud/1/0zxo7hhr52tjj8ir7zp8ujyxq2xrwy561vrc8oqr6oozfjbi/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+</script>
+<div id="{{ form.id.vars.data|default('') }}"
+     class="text-break content-escape"
+     data-edit-id-target="contentContainerId"
+
+     data-edit-content-target="content"
+     data-edit-content-escape="true"
+>
+    {{ form_row(form.content, {'attr': {'data-wysiwyg': ''}}) }}
+</div>
+
+<script>
+    tinymce.init({
+        selector: '[data-wysiwyg]',
+        height: 300,
+        menubar: false,
+        plugins:
+            'code ' +
+            'image link media template codesample ' +
+            'table charmap pagebreak nonbreaking anchor ' +
+            'insertdatetime advlist lists wordcount help ' +
+            'charmap quickbars emoticons',
+        toolbar: 'undo redo | bold italic underline strikethrough |' +
+            ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
+            ' outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak |' +
+            ' charmap emoticons | preview save print |' +
+            ' insertfile image media template link anchor codesample | ltr rtl',
+        toolbar_sticky: false,
+
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+    });
+</script>
+
