@@ -22,22 +22,29 @@
 </div>
 
 <script>
-    tinymce.init({
-        selector: '[data-wysiwyg]',
-        height: 300,
-        menubar: false,
-        plugins:
-            'code ' +
-            'image link media template codesample ' +
-            'table charmap pagebreak nonbreaking anchor ' +
-            'insertdatetime advlist lists wordcount help ' +
-            'charmap quickbars emoticons',
-        toolbar: 'undo redo | bold italic underline strikethrough |' +
-            ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
-            ' outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak |' +
-            ' charmap emoticons | preview save print |' +
-            ' insertfile image media template link anchor codesample | ltr rtl',
-        toolbar_sticky: false
-    });
+    window.addEventListener('load', function () {
+        tinymce.init({
+            selector: '[data-wysiwyg]',
+            height: 300,
+            menubar: false,
+            plugins:
+                'code ' +
+                'image link media template codesample ' +
+                'table charmap pagebreak nonbreaking anchor ' +
+                'insertdatetime advlist lists wordcount help ' +
+                'charmap quickbars emoticons',
+            toolbar: 'undo redo | bold italic underline strikethrough |' +
+                ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
+                ' outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak |' +
+                ' charmap emoticons | preview save print |' +
+                ' insertfile image media template link anchor codesample | ltr rtl',
+            toolbar_sticky: false,
+            setup: function (editor) {
+                editor.on('init', function (e) {
+                    editor.setContent('{{ form.content.vars.value|raw }}');
+                });
+            }
+        });
+    }, false);
 </script>
 
