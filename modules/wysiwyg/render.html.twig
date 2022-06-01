@@ -1,3 +1,3 @@
-{% if id %}<div id="{{ id|default('') }}">{% endif %}
+<div {% if id %}id="{{ id|default('') }}"{% endif %} class="container">
 {{ content|default('')|raw }}
-{% if id %}</div>{% endif %}
+</div>
