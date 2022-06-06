@@ -14,35 +14,6 @@ title:
             h6: "Heading 6"
         title.label: "Title"
 
-grid:
-    label: "Grid"
-    prototype_button: "Grid"
-
-container:
-    label: "Container"
-    prototype_button: "Container"
-    form:
-        modules.label: "Modules"
-
-html:
-    label: "HTML code"
-    prototype_button: "HTML code"
-    form:
-        id.label: "Id"
-        code.label: "Code"
-
-css:
-    label: "CSS code"
-    prototype_button: "CSS code"
-    form:
-        css.label: "CSS styles"
-
-html_headers:
-    label: "HTML headers"
-    prototype_button: "HTML headers"
-    form:
-        code.label: "Code"
-
 hero:
     label: "Hero"
     prototype_button: "Hero"
