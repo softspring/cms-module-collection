@@ -17,11 +17,11 @@
             <div class="col-lg-6 mx-auto">
                 {% if description|default(false) %}<p class="lead mb-4">{{ description|sfs_cms_trans|raw }}</p>{% endif %}
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    {% if primary_button_text|default(false) %}
+                    {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
                         <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
 
-                    {% if secondary_button_text|default(false) %}
+                    {% if secondary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty  %}
                         <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
                 </div>
