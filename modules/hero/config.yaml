@@ -78,3 +78,7 @@ module:
                 type_options:
                     children_attr:
                         data-edit-content-input: 'secondaryButtonText'
+
+            secondary_button_link:
+                type: 'route'
+                type_options:
