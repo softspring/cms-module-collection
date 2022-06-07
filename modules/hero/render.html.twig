@@ -21,7 +21,7 @@
                         <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
 
-                    {% if secondary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty  %}
+                    {% if secondary_button_text|default(false) and secondary_button_text|sfs_cms_trans is not empty  %}
                         <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" {{ sfs_cms_route_attr(secondary_button_link)}} class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
                 </div>
