@@ -1,0 +1,85 @@
+module:
+    revision: 1
+    edit_template: '@module/two_columns/edit.html.twig'
+    form_template: '@module/two_columns/form.html.twig'
+
+    module_options:
+        form_fields:
+#            background:
+#                type: 'translatableImage'
+#                type_options:
+#                    children_attr:
+#                        data-image-preview-input: 'backgroundImage'
+#                    image_types:
+#                        background:
+#                            picture: '_default'
+
+            module_image:
+                type: 'translatableImage'
+                type_options:
+                    children_attr:
+                        data-image-preview-input: 'moduleImage'
+                    image_attr:
+                        class: 'img-fluid'
+                    image_types:
+                        content:
+                            image: 'sm'
+                        content_png:
+                            image: 'sm'
+                        content_webp:
+                            image: 'sm'
+
+            id:
+                type: 'id'
+                type_options:
+                    attr:
+                        data-edit-id-input: 'twoColumnsIdDiv'
+
+            class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'twoColumnsClassDiv'
+
+            bg_color:
+                type: 'color'
+                type_options:
+                    attr:
+                        data-edit-bgcolor-input: 'twoColumnsBgColorDiv'
+
+            title_class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'titleClass'
+
+            title:
+                type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'title'
+
+            description:
+                type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'description'
+
+            primary_button_text:
+                type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'primaryButtonText'
+
+            primary_button_link:
+                type: 'route'
+                type_options:
+
+            image_position_text:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "two_columns.form.image_position_text.values.left": flex-row
+                        "two_columns.form.image_position_text.values.right": flex-row-reverse
+                    attr:
+                        data-edit-class-input: 'imagePositionClass'

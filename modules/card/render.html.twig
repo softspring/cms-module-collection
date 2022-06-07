@@ -1,0 +1,30 @@
+<div class="cardmod px-4 py-5 text-center {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+    <div class="container">
+        {% if background[app.request.locale]|default(false) %}
+            <div class="cardmod__bg-picture">
+                {{ background[app.request.locale]|sfs_image_render_picture }}
+            </div>
+        {% endif %}
+
+        <div class="cardmod__content {{ form.content_position.vars.value|default('') }}">
+
+            {% if other[app.request.locale]|default(false) %}
+            <div class="cardmod__picture">
+                {{ other[app.request.locale]|sfs_image_render_image('sm') }}
+            </div>
+            {% endif %}
+
+            <h2 class="cardmod__title">{{ title|sfs_cms_trans|raw }}</h2>
+            {% if description|default(false) %}<div class="cardmod__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
+            <div class="cardmod__cta">
+                {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
+                    <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                {% endif %}
+
+                {% if secondary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty  %}
+                    <a href="{{ secondary_button_link|default(false) ? sfs_cms_path(secondary_button_link) : '#' }}" class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

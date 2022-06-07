@@ -1,0 +1,42 @@
+{% set defaultDivClass = 'two-columns' %}
+<article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+         data-edit-id-target="twoColumnsIdDiv"
+
+         data-edit-class-target="twoColumnsClassDiv"
+         data-edit-class-default="{{ defaultDivClass }}"
+
+         data-edit-bgcolor-target="twoColumnsBgColorDiv"
+         style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}">
+    <div class="container">
+        <div class="row {{ form.image_position_text.vars.value|default('flex-row') }}" data-edit-class-target="imagePositionClass" data-edit-class-default="row">
+            <div class="col-12 col-md-6">
+                {% for locale,localeField in form.module_image %}
+                    <div data-image-preview-target="moduleImage.{{ locale }}" data-lang="{{ locale }}">
+                        {% if localeField.vars.data %}
+                            {{ localeField.vars.data|sfs_image_render_image('sm') }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-12 col-md-6">
+                {% set titleClassDefault = 'two-columns__title' %}
+                {% for locale,localeField in form.title %}
+                <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                    data-edit-class-target="titleClass"
+                    data-edit-class-default="{{ titleClassDefault }}"
+                    data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
+                {% endfor %}
+                {% for locale,localeField in form.description %}
+                <div class="two-columns__desc" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">
+                    {{ localeField.vars.data|default('Texto descriptivo')|raw }}
+                </div>
+                {% endfor %}
+                {% for locale,localeField in form.primary_button_text %}
+                <div class="two-columns__cta">
+                    <a href="#" class="btn btn-primary" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón principal') }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</article>

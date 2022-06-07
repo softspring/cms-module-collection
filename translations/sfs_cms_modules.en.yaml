@@ -36,3 +36,43 @@ wysiwyg:
     form:
         id.label: "Id"
         content.label: "Content"
+
+two_columns:
+    label: "Two columns"
+    prototype_button: "Two columns"
+    form:
+        background.label: "Background image"
+        image.label: "Image"
+        id.label: "Id"
+        class.label: "Classes"
+        title_class.label: "Title classes"
+        title.label: "Title"
+        description.label: "Description"
+        primary_button_text.label: "Primary button text"
+        primary_button_link.label: "Primary button link"
+        secondary_button_text.label: "Secondary button text"
+        bg_color.label: "Background color"
+        image_position_text.values:
+            left: "Left"
+            right: "Right"
+        image_position_text.label: "Imagen position"
+        module_image.label: "Imagen"
+card:
+    label: "Card"
+    prototype_button: "Card"
+    form:
+        background.label: "Background image"
+        other.label: "Image"
+        id.label: "Id"
+        class.label: "Classes"
+        title_class.label: "Title classes"
+        title.label: "Title"
+        description.label: "Description"
+        primary_button_text.label: "Primary button text"
+        primary_button_link.label: "Primary button link"
+        secondary_button_text.label: "Secondary button text"
+        bg_color.label: "Background color"
+        content_position.values:
+            left: "Left"
+            right: "Right"
+            center: "center"
