@@ -1,5 +1,5 @@
 {% set defaultDivClass = 'px-4 py-5 my-5 text-center' %}
-<div class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+<div class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }} {{ form.fullpage.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
     data-edit-id-target="heroIdDiv"
 
     data-edit-class-target="heroClassDiv"
@@ -10,30 +10,39 @@
 >
 
     {% for locale,localeField in form.background %}
-        <div data-image-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+        <div class="hero__bg-media" data-image-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
                 {{ localeField.vars.data|sfs_image_render_picture('_default', localeField.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
+    <div class="container">
+        <div class="hero__content">
+            {% if other[app.request.locale]|default(false) %}
+                <div class="hero__image">
+                    {{ other[app.request.locale]|sfs_image_render_image('sm') }}
+                </div>
+            {% endif %}
 
-    {% for locale,localeField in form.title %}
-        <h1 class="display-5 fw-bold" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título') }}</h1>
-    {% endfor %}
-
-    <div class="col-lg-6 mx-auto">
-        {% for locale,localeField in form.description %}
-            <p class="lead mb-4" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Texto descriptivo') }}</p>
-        {% endfor %}
-
-        <div class="d-grid gap-2 d-sm-flex justify-sm-center">
-            {% for locale,localeField in form.primary_button_text %}
-                <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+            {% for locale,localeField in form.title %}
+                <h1 class="hero__title" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h1>
             {% endfor %}
 
-            {% for locale,localeField in form.secondary_button_text %}
-                <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
-            {% endfor %}
+            <div class="col-lg-6 mx-auto">
+                {% for locale,localeField in form.description %}
+                    <div class="lead mb-4" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Texto descriptivo')|raw }}</div>
+                {% endfor %}
+
+                <div class="d-grid gap-2 d-sm-flex justify-sm-center">
+                    {% for locale,localeField in form.primary_button_text %}
+                        <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                    {% endfor %}
+
+                    {% for locale,localeField in form.secondary_button_text %}
+                        <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>

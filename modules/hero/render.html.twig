@@ -1,6 +1,6 @@
-<div class="hero px-4 py-5 text-center {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+<div class="hero px-4 py-5 text-center {{ class|default('') }} {{ fullpage|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
-        <div class="hero__bg-picture">
+        <div class="hero__bg-media">
             {{ background[app.request.locale]|sfs_image_render_picture }}
         </div>
     {% endif %}
@@ -8,12 +8,12 @@
         <div class="hero__content">
 
             {% if other[app.request.locale]|default(false) %}
-            <div class="hero__picture">
+            <div class="hero__image">
                 {{ other[app.request.locale]|sfs_image_render_image('sm') }}
             </div>
             {% endif %}
 
-            <h1 class="display-5 fw-bold">{{ title|sfs_cms_trans|raw }}</h1>
+            <h1 class="hero__title">{{ title|sfs_cms_trans|raw }}</h1>
             <div class="col-lg-6 mx-auto">
                 {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

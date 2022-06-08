@@ -26,6 +26,8 @@ module:
                             image: 'sm'
                         content_jpeg:
                             image: 'sm'
+                        icon_png:
+                            image: 'original'
 
             id:
                 type: 'id'
@@ -38,6 +40,13 @@ module:
                 type_options:
                     attr:
                         data-edit-class-input: 'heroClassDiv'
+
+            fullpage:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "hero.form.fullpage.values.yes": 'hero--fullpage'
+                        "hero.form.fullpage.values.no": ''
 
             bg_color:
                 type: 'color'

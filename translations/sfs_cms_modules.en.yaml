@@ -28,7 +28,12 @@ hero:
         primary_button_text.label: "Primary button text"
         primary_button_link.label: "Primary button link"
         secondary_button_text.label: "Secondary button text"
+        secondary_button_link.label: "Secondary button link"
         bg_color.label: "Background color"
+        fullpage.label: "Fullpage"
+        fullpage.values:
+            yes: "Yes"
+            no: "No"
 
 wysiwyg:
     label: "WYSIWYG"
@@ -73,6 +78,7 @@ card:
         secondary_button_text.label: "Secondary button text"
         bg_color.label: "Background color"
         primary_button_class.label: "Primary button classes"
+        content_position.label: "Content position"
         content_position.values:
             left: "Left"
             right: "Right"
