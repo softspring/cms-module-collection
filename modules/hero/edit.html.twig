@@ -18,11 +18,13 @@
     {% endfor %}
     <div class="container">
         <div class="hero__content">
-            {% if other[app.request.locale]|default(false) %}
-                <div class="hero__image">
-                    {{ other[app.request.locale]|sfs_image_render_image('sm') }}
+            {% for locale,localeField in form.other %}
+                <div class="hero__image-media" data-image-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
+                    {% if localeField.vars.data %}
+                        {{ localeField.vars.data|sfs_image_render_image('_original', localeField.vars.image_attr) }}
+                    {% endif %}
                 </div>
-            {% endif %}
+            {% endfor %}
 
             {% for locale,localeField in form.title %}
                 <h1 class="hero__title" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h1>

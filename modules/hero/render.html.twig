@@ -9,7 +9,7 @@
 
             {% if other[app.request.locale]|default(false) %}
             <div class="hero__image">
-                {{ other[app.request.locale]|sfs_image_render_image('sm') }}
+                {{ other[app.request.locale]|sfs_image_render_image('_original') }}
             </div>
             {% endif %}
 
