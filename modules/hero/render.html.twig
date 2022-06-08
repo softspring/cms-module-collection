@@ -15,7 +15,7 @@
 
             <h1 class="display-5 fw-bold">{{ title|sfs_cms_trans|raw }}</h1>
             <div class="col-lg-6 mx-auto">
-                {% if description|default(false) %}<p class="lead mb-4">{{ description|sfs_cms_trans|raw }}</p>{% endif %}
+                {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
                         <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>

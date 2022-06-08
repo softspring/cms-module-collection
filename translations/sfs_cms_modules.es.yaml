@@ -75,6 +75,7 @@ card:
         secondary_button_text.label: "Texto del botón secundario"
         secondary_button_link.label: "Enlace del botón secundario"
         bg_color.label: "Color de fondo"
+        primary_button_class.label: "Classes del botón primario"
         content_position.values:
             left: "Izquierda"
             right: "Derecha"

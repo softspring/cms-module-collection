@@ -1,4 +1,4 @@
-<article class="two-columns {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+<article class="two-columns py-5 {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
         <div class="hero__bg-picture">
             {{ background[app.request.locale]|sfs_image_render_picture }}

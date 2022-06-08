@@ -73,15 +73,11 @@ module:
                 type: 'route'
                 type_options:
 
-            secondary_button_text:
-                type: 'translatableText'
+            primary_button_class:
+                type: 'class'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'secondaryButtonText'
-
-            secondary_button_link:
-                type: 'route'
-                type_options:
+                    attr:
+                        data-edit-class-input: 'primaryButtonClass'
 
             content_position:
                 type: 'choice'

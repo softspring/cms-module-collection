@@ -21,7 +21,11 @@
              data-edit-class-default="cardmod__content">
 
             {% for locale,localeField in form.title %}
-                <h2 class="cardmod__title" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título') }}</h2>
+                {% set titleClassDefault = 'cardmod__title' %}
+                <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                    data-edit-class-target="titleClass"
+                    data-edit-class-default="{{ titleClassDefault }}"
+                    data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
             {% endfor %}
 
             {% for locale,localeField in form.description %}
@@ -29,11 +33,13 @@
             {% endfor %}
             <div class="cardmod__cta">
                  {% for locale,localeField in form.primary_button_text %}
-                    <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
-                {% endfor %}
+                     {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
 
-                {% for locale,localeField in form.primary_button_text %}
-                    <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                     <a href="#" data-edit-content-hide-if-empty="true"
+                       class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
+                       data-edit-class-target="primaryButtonClass"
+                       data-edit-class-default="{{ defaultPrimaryButtonClass }}"
+                       data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
             </div>
         </div>
