@@ -83,8 +83,8 @@ module:
                 type: 'choice'
                 type_options:
                     choices:
-                        "two_columns.form.content_position.values.left": text-start
-                        "two_columns.form.content_position.values.right": text-end
-                        "two_columns.form.content_position.values.center": text-center
+                        "card.form.content_position.values.left": text-start
+                        "card.form.content_position.values.right": text-end
+                        "card.form.content_position.values.center": text-center
                     attr:
                         data-edit-class-input: 'contentPositionClass'
