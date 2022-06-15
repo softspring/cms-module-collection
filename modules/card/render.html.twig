@@ -11,7 +11,7 @@
 
                 {% if other[app.request.locale]|default(false) %}
                 <div class="cardmod__picture">
-                    {{ other[app.request.locale]|sfs_image_render_image('_original') }}
+                    {{ other[app.request.locale]|sfs_image_render_image(['_original'], {'class':'img-fluid'}) }}
                 </div>
                 {% endif %}
 
