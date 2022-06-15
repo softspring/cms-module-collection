@@ -25,12 +25,19 @@
                     {% endif %}
                 </div>
             {% endfor %}
-
+            {% set defaultTitleClass = 'hero__title' %}
             {% for locale,localeField in form.title %}
-                <h1 class="hero__title" data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h1>
+                <h1 class="hero__title"
+                    data-edit-content-target="title.{{ locale }}"
+                    data-lang="{{ locale }}"
+
+                    data-edit-class-target="titleClass"
+                    data-edit-class-default="{{ defaultDivClass }}"
+
+                    contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h1>
             {% endfor %}
 
-            <div class="col-lg-6 mx-auto">
+            <div class="col-md-10 col-lg-8 mx-auto">
                 {% for locale,localeField in form.description %}
                     <div class="lead mb-4" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Texto descriptivo')|raw }}</div>
                 {% endfor %}

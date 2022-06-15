@@ -12,5 +12,5 @@
 
         data-edit-content-target="title.{{ locale }}"
         contenteditable="true"
-    >{{ localeField.vars.data|default('Título') }}</{{ type }}>
+    >{{ localeField.vars.data|default('Título')|raw }}</{{ type }}>
 {% endfor %}

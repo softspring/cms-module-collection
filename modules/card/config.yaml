@@ -26,6 +26,8 @@ module:
                             image: 'sm'
                         content_jpeg:
                             image: 'sm'
+                        icon_png:
+                            image: '_default'
 
             id:
                 type: 'id'

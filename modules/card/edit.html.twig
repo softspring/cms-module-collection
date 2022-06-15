@@ -20,6 +20,14 @@
              data-edit-class-target="contentPositionClass"
              data-edit-class-default="cardmod__content">
 
+            {% for locale,localeField in form.other %}
+                <div class="cardmod__image-media" data-image-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
+                    {% if localeField.vars.data %}
+                        {{ localeField.vars.data|sfs_image_render_image('_original', localeField.vars.image_attr) }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
             {% for locale,localeField in form.title %}
                 {% set titleClassDefault = 'cardmod__title' %}
                 <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
