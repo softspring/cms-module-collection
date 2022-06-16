@@ -3,7 +3,7 @@
         <div class="container">
             {% if background[app.request.locale]|default(false) %}
                 <div class="cardmod__bg-picture">
-                    {{ background[app.request.locale]|sfs_image_render_picture }}
+                    {{ background[app.request.locale]|sfs_media_render_picture }}
                 </div>
             {% endif %}
 
@@ -11,7 +11,7 @@
 
                 {% if other[app.request.locale]|default(false) %}
                 <div class="cardmod__picture">
-                    {{ other[app.request.locale]|sfs_image_render_image(['_original'], {'class':'img-fluid'}) }}
+                    {{ other[app.request.locale]|sfs_media_render_image(['_original'], {'class':'img-fluid'}) }}
                 </div>
                 {% endif %}
                 <div class="cardmod__texts">
