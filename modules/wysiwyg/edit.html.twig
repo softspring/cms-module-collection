@@ -6,11 +6,6 @@
 </style>
 <script src="https://cdn.tiny.cloud/1/0zxo7hhr52tjj8ir7zp8ujyxq2xrwy561vrc8oqr6oozfjbi/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-<script>
-    tinymce.init({
-        selector: '#mytextarea'
-    });
-</script>
 <div id="{{ form.id.vars.data|default('') }}"
      class="text-break content-escape"
      data-edit-id-target="contentContainerId"
@@ -22,29 +17,39 @@
 </div>
 
 <script>
-    window.addEventListener('load', function () {
-        tinymce.init({
-            selector: '[data-wysiwyg]',
-            height: 300,
-            menubar: false,
-            plugins:
-                'code ' +
-                'image link media template codesample ' +
-                'table charmap pagebreak nonbreaking anchor ' +
-                'insertdatetime advlist lists wordcount help ' +
-                'charmap quickbars emoticons',
-            toolbar: 'undo redo | bold italic underline strikethrough |' +
-                ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
-                ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
-                ' charmap emoticons | preview save print |' +
-                ' insertfile image media template link anchor codesample | ltr rtl',
-            toolbar_sticky: false,
-            setup: function (editor) {
-                editor.on('init', function (e) {
-                    editor.setContent('{{ form.content.vars.value|raw }}');
-                });
-            }
-        });
-    }, false);
+    if (typeof initTiny === 'undefined') {
+        let initTiny = function () {
+            tinymce.init({
+                selector: '[data-wysiwyg]',
+                height: 300,
+                menubar: false,
+                plugins:
+                    'code ' +
+                    'image link media template codesample ' +
+                    'table charmap pagebreak nonbreaking anchor ' +
+                    'insertdatetime advlist lists wordcount help ' +
+                    'charmap quickbars emoticons',
+                toolbar: 'undo redo | bold italic underline strikethrough |' +
+                    ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
+                    ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
+                    ' charmap emoticons | preview save print |' +
+                    ' insertfile image media template link anchor codesample | ltr rtl',
+                toolbar_sticky: false,
+                setup: function (editor) {
+                    editor.on('init', function (e) {
+                        editor.setContent('{{ form.content.vars.value|raw }}');
+                    });
+                }
+            });
+        }
+        window.addEventListener('load', function () {
+            // document.addEventListener("DOMContentLoaded", function() {
+            initTiny();
+        }, false);
+
+
+        initTiny();
+    }
+
 </script>
 
