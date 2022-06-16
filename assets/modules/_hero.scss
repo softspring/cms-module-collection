@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  clip-path: inset(0);
 
   &--fullpage {
     min-height: 100vh;
