@@ -42,7 +42,7 @@
                     <div class="lead mb-4" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Texto descriptivo')|raw }}</div>
                 {% endfor %}
 
-                <div class="d-grid gap-2 d-sm-flex justify-sm-center">
+                <div class="d-grid gap-2 d-sm-flex justify-content-center">
                     {% for locale,localeField in form.primary_button_text %}
                         <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
                     {% endfor %}
