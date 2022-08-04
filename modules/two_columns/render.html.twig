@@ -18,7 +18,7 @@
                 </div>
                 {% if primary_button_text|sfs_cms_trans|default(false) %}
                     <div class="two-columns__cta">
-                        <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                        <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     </div>
                 {% endif %}
             </div>

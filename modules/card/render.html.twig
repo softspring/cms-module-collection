@@ -19,7 +19,7 @@
                     {% if description|default(false) %}<div class="cardmod__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
                     <div class="cardmod__cta">
                         {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
-                            <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                            <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                         {% endif %}
                     </div>
                 </div>
