@@ -8,20 +8,20 @@ module:
             background:
                 type: 'translatableImage'
                 type_options:
-                    image_attr:
+                    media_attr:
                         class: 'img-fluid'
                     children_attr:
                         data-image-preview-input: 'backgroundImage'
-                    image_types:
+                    media_types:
                         background:
                             picture: '_default'
 
             other:
                 type: 'translatableImage'
                 type_options:
-                    image_attr:
+                    media_attr:
                         class: 'img-fluid'
-                    image_types:
+                    media_types:
                         content_png:
                             image: 'sm'
                         content_jpeg:

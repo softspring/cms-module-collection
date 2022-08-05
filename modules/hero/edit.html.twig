@@ -12,7 +12,7 @@
     {% for locale,localeField in form.background %}
         <div class="hero__bg-media" data-image-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
-                {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.image_attr) }}
+                {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.media_attr) }}
             {% endif %}
         </div>
     {% endfor %}
@@ -21,7 +21,7 @@
             {% for locale,localeField in form.other %}
                 <div class="hero__image-media" data-image-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
                     {% if localeField.vars.data %}
-                        {{ localeField.vars.data|sfs_media_render_image('_original', localeField.vars.image_attr) }}
+                        {{ localeField.vars.data|sfs_media_render_image('_original', localeField.vars.media_attr) }}
                     {% endif %}
                 </div>
             {% endfor %}
