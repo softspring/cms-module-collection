@@ -14,7 +14,9 @@
             <div class="col-12 col-md-6">
                 <h2 class="two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
                 <div class="two-columns__desc">
-                    {% if description|default(false) %}{{ description|sfs_cms_trans|raw }}{% endif %}
+                    {% if description[app.request.locale]|default(false) %}
+                        {{ description[app.request.locale]|default('')|raw }}
+                    {% endif %}
                 </div>
                 {% if primary_button_text|sfs_cms_trans|default(false) %}
                     <div class="two-columns__cta">

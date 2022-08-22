@@ -41,6 +41,13 @@ wysiwyg:
     form:
         id.label: "Id"
         content.label: "Contenido"
+        
+wysiwyg_translatable:
+    label: "WYSIWYG traducible"
+    prototype_button: "WYSIWYG traducible"
+    form:
+        id.label: "Id"
+        content.label: "Contenido"
 
 two_columns:
     label: "Dos columnas"

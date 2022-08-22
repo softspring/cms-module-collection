@@ -13,6 +13,7 @@
 <script>
     if (typeof initTiny === 'undefined') {
         let initTiny = function () {
+            {% for locale,localeField in form.content %}
             tinymce.init({
                 selector: '{{ '#' ~ id ~ ' [data-wysiwyg]' }}',
                 height: 300,
@@ -24,17 +25,18 @@
                     'insertdatetime advlist lists wordcount help ' +
                     'charmap quickbars emoticons',
                 toolbar: 'undo redo | bold italic underline strikethrough |' +
-                    ' fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify |' +
+                    ' alignleft aligncenter alignright alignjustify |' +
                     ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
-                    ' charmap emoticons | preview save print |' +
-                    ' insertfile image media template link anchor codesample | ltr rtl',
+                    ' charmap emoticons | print |' +
+                    ' link anchor codesample | ltr rtl | fontsize blocks',
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
-                        editor.setContent('{{ form.content.vars.value|raw }}');
+                        editor.setContent('{{ form.content.children[locale].vars.value|raw }}');
                     });
                 }
             });
+            {% endfor %}
         }
         window.addEventListener('load', function () {
             // document.addEventListener("DOMContentLoaded", function() {
@@ -44,6 +46,4 @@
 
         initTiny();
     }
-
 </script>
-

@@ -26,11 +26,14 @@
                     data-edit-class-default="{{ titleClassDefault }}"
                     data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
                 {% endfor %}
-                {% for locale,localeField in form.description %}
-                <div class="two-columns__desc" data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">
-                    {{ localeField.vars.data|default('Texto descriptivo')|raw }}
+                <div class="two-columns__desc">
+                    {% for locale,localeField in form.description %}
+                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                            {{ form_row(localeField) }}
+                        </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+
                 {% for locale,localeField in form.primary_button_text %}
                 <div class="two-columns__cta">
                     <a href="#" class="btn btn-primary" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón principal') }}</a>
@@ -40,3 +43,43 @@
         </div>
     </div>
 </article>
+
+
+<script>
+    if (typeof initTiny === 'undefined') {
+        let initTiny = function () {
+            {% for locale,localeField in form.description %}
+            tinymce.init({
+                selector: '{{ '#' ~ id ~ ' [data-wysiwyg]' }}',
+                height: 300,
+                menubar: false,
+                plugins:
+                    'code ' +
+                    'image link media template codesample ' +
+                    'table charmap pagebreak nonbreaking anchor ' +
+                    'insertdatetime advlist lists wordcount help ' +
+                    'charmap quickbars emoticons',
+                toolbar: 'undo redo | bold italic underline strikethrough |' +
+                    ' alignleft aligncenter alignright alignjustify |' +
+                    ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
+                    ' charmap emoticons | print |' +
+                    ' link anchor codesample | ltr rtl | fontsize blocks',
+                toolbar_sticky: false,
+                setup: function (editor) {
+                    editor.on('init', function (e) {
+                        editor.setContent('{{ form.description.children[locale].vars.value|raw }}');
+                    });
+                }
+            });
+            {% endfor %}
+        }
+        window.addEventListener('load', function () {
+            // document.addEventListener("DOMContentLoaded", function() {
+            initTiny();
+        }, false);
+
+
+        initTiny();
+    }
+
+</script>

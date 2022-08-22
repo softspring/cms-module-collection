@@ -1,0 +1,5 @@
+<div {% if id %}id="{{ id|default('') }}"{% endif %} class="{{ class|default('') }}">
+    {% if content[app.request.locale]|default(false) %}
+        {{ content[app.request.locale]|default('')|raw }}
+    {% endif %}
+</div>
