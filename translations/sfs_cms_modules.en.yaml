@@ -47,6 +47,7 @@ wysiwyg_translatable:
     prototype_button: "WYSIWYG translatable"
     form:
         id.label: "Id"
+        class.label: "Classes"
         content.label: "Content"
         
 two_columns:
