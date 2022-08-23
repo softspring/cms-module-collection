@@ -7,7 +7,11 @@
      data-edit-content-target="content"
      data-edit-content-escape="true"
 >
-    {{ form_row(form.content) }}
+    {% for locale,localeField in form.content %}
+        <div data-edit-content-target="content.{{ locale }}" data-lang="{{ locale }}">
+            {{ form_row(localeField) }}
+        </div>
+    {% endfor %}
 </div>
 
 <script>
