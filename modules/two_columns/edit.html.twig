@@ -13,7 +13,7 @@
                 {% for locale,localeField in form.module_image %}
                     <div data-image-preview-target="moduleImage.{{ locale }}" data-lang="{{ locale }}">
                         {% if localeField.vars.data %}
-                            {{ localeField.vars.data|sfs_media_render_image('sm') }}
+                            {{ localeField.vars.data|sfs_media_render_image('sm', {'class':'img-fluid'}) }}
                         {% endif %}
                     </div>
                 {% endfor %}
