@@ -31,7 +31,7 @@
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
-                        editor.setContent('{{ form.content.vars.value|raw }}');
+                        editor.setContent('{{ form.content.vars.value|replace({'\n': '','\r':''})|raw }}');
                     });
                 }
             });
@@ -41,8 +41,9 @@
             initTiny();
         }, false);
 
-
-        initTiny();
+        if (typeof tinymce !== 'undefined') {
+            initTiny();
+        }
     }
 
 </script>

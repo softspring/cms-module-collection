@@ -1,7 +1,7 @@
 {% set defaultDivClass = 'two-columns py-5' %}
 <article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
          data-edit-id-target="twoColumnsIdDiv"
-
+å
          data-edit-class-target="twoColumnsClassDiv"
          data-edit-class-default="{{ defaultDivClass }}"
 
@@ -28,7 +28,7 @@
                 {% endfor %}
                 <div class="two-columns__desc">
                     {% for locale,localeField in form.description %}
-                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                        <div data-lang="{{ locale }}">
                             {{ form_row(localeField) }}
                         </div>
                     {% endfor %}
@@ -43,8 +43,6 @@
         </div>
     </div>
 </article>
-
-
 <script>
     if (typeof initTiny === 'undefined') {
         let initTiny = function () {
@@ -67,7 +65,7 @@
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
-                        editor.setContent('{{ form.description.children[locale].vars.value|raw }}');
+                        editor.setContent('{{ form.description.children[locale].vars.value|replace({'\n': '','\r':''})|raw }}');
                     });
                 }
             });
@@ -78,8 +76,9 @@
             initTiny();
         }, false);
 
-
-        initTiny();
+        if (typeof tinymce !== 'undefined') {
+            initTiny();
+        }
     }
 
 </script>
