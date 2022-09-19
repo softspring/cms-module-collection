@@ -60,10 +60,13 @@ module:
                         data-edit-content-input: 'title'
 
             description:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'description'
+                    type: 'html'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'description'
+                            data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatableText'

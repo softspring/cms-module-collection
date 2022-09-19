@@ -1,15 +1,34 @@
 {#<script src="https://cdn.tiny.cloud/1/0zxo7hhr52tjj8ir7zp8ujyxq2xrwy561vrc8oqr6oozfjbi/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>#}
 
-<div id="{{ form.id.vars.data|default('') }}"
+<article id="{{ form.id.vars.data|default('') }}"
      class="text-break content-escape"
      data-edit-id-target="contentContainerId"
 
-     data-edit-content-target="content"
-     data-edit-content-escape="true"
->
-    {{ form_row(form.content) }}
-</div>
+     data-bs-toggle="modal"
+     data-bs-target="#{{ id }}Modal">
 
+    <div data-edit-content-target="content" data-edit-content-escape="true">
+        {{ form.content.vars.data|default('Enter your text')|replace({'href': ''})|raw }}
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">WYSIWYG description</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{ form_row(form.content) }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 <script>
     if (typeof initTiny === 'undefined') {
         let initTiny = function () {
@@ -26,8 +45,8 @@
                 toolbar: 'undo redo | bold italic underline strikethrough |' +
                     ' alignleft aligncenter alignright alignjustify | link anchor | ' +
                     ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
-                    ' charmap emoticons | preview save print |' +
-                    ' fontfamily fontsize blocks | insertfile image media template code | ltr rtl',
+                    ' charmap emoticons | print |' +
+                    ' code | ltr rtl | fontsize blocks',
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
@@ -37,7 +56,14 @@
             });
         }
         window.addEventListener('load', function () {
-            // document.addEventListener("DOMContentLoaded", function() {
+            initTiny();
+        }, false);
+
+        window.addEventListener('cms.module.move.down', function () {
+            initTiny();
+        }, false);
+
+        window.addEventListener('cms.module.move.up', function () {
             initTiny();
         }, false);
 

@@ -1,7 +1,6 @@
 {% set defaultDivClass = 'two-columns py-5' %}
 <article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
          data-edit-id-target="twoColumnsIdDiv"
-å
          data-edit-class-target="twoColumnsClassDiv"
          data-edit-class-default="{{ defaultDivClass }}"
 
@@ -28,8 +27,12 @@
                 {% endfor %}
                 <div class="two-columns__desc">
                     {% for locale,localeField in form.description %}
-                        <div data-lang="{{ locale }}">
-                            {{ form_row(localeField) }}
+                        <div data-edit-content-target="description.{{ locale }}"
+                             data-lang="{{ locale }}"
+                             data-bs-toggle="modal"
+                             data-bs-target="#{{ id }}Modal"
+                             data-default-text="Texto descriptivo">
+                            {{ localeField.vars.data|default('Texto descriptivo')|raw }}
                         </div>
                     {% endfor %}
                 </div>
@@ -42,13 +45,35 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Two columns description</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% for locale,localeField in form.description %}
+                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                            {{ form_row(localeField) }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </article>
 <script>
     if (typeof initTiny === 'undefined') {
         let initTiny = function () {
             {% for locale,localeField in form.description %}
             tinymce.init({
-                selector: '{{ '#' ~ id ~ ' [data-wysiwyg]' }}',
+                selector: '{{ '#' ~ id ~ ' [data-lang=' ~ locale ~ '] [data-wysiwyg]' }}',
                 height: 300,
                 menubar: false,
                 plugins:
@@ -59,20 +84,27 @@
                     'charmap quickbars emoticons',
                 toolbar: 'undo redo | bold italic underline strikethrough |' +
                     ' alignleft aligncenter alignright alignjustify |' +
-                    ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
-                    ' charmap emoticons | print |' +
-                    ' link anchor code | ltr rtl | fontsize blocks',
+                    ' outdent indent |  numlist bullist | forecolor removeformat | ' +
+                    ' link anchor code | ltr rtl | fontsize blocks | ' +
+                    ' charmap emoticons',
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
-                        editor.setContent('{{ form.description.children[locale].vars.value|replace({'\n': '','\r':''})|raw }}');
+                        editor.setContent('{{ form.description.children[locale].vars.value|raw }}');
                     });
                 }
             });
             {% endfor %}
         }
         window.addEventListener('load', function () {
-            // document.addEventListener("DOMContentLoaded", function() {
+            initTiny();
+        }, false);
+
+        window.addEventListener('cms.module.move.down', function () {
+            initTiny();
+        }, false);
+
+        window.addEventListener('cms.module.move.up', function () {
             initTiny();
         }, false);
 
