@@ -2,12 +2,13 @@
 
 <article id="{{ form.id.vars.data|default('') }}"
      class="text-break content-escape"
-     data-edit-id-target="contentContainerId"
+     data-edit-id-target="contentContainerId">
 
-     data-bs-toggle="modal"
-     data-bs-target="#{{ id }}Modal">
+    <div data-edit-content-target="content"
+        data-edit-content-escape="true"
 
-    <div data-edit-content-target="content" data-edit-content-escape="true">
+        data-bs-toggle="modal"
+        data-bs-target="#{{ id }}Modal">
         {{ form.content.vars.data|default('Enter your text')|replace({'href': ''})|raw }}
     </div>
 
