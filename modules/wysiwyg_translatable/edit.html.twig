@@ -8,7 +8,7 @@
      data-edit-content-escape="true"
 >
     {% for locale,localeField in form.content %}
-        <div data-edit-content-target="description.{{ locale }}"
+        <div data-edit-content-target="content.{{ locale }}"
              data-lang="{{ locale }}"
              data-bs-toggle="modal"
              data-bs-target="#{{ id }}Modal"
@@ -26,7 +26,7 @@
                 </div>
                 <div class="modal-body">
                     {% for locale,localeField in form.content %}
-                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                        <div data-edit-content-target="content.{{ locale }}" data-lang="{{ locale }}">
                             {{ form_row(localeField) }}
                         </div>
                     {% endfor %}
