@@ -8,7 +8,8 @@
      data-edit-content-escape="true"
 >
     {% for locale,localeField in form.content %}
-        <div data-edit-content-target="content.{{ locale }}"
+        <div class="wysiwyg-preview"
+             data-edit-content-target="content.{{ locale }}"
              data-lang="{{ locale }}"
              data-bs-toggle="modal"
              data-bs-target="#{{ id }}Modal"

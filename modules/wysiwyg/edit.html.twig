@@ -4,11 +4,13 @@
      class="text-break content-escape"
      data-edit-id-target="contentContainerId">
 
-    <div data-edit-content-target="content"
+    <div class="wysiwyg-preview"
+        data-edit-content-target="content"
         data-edit-content-escape="true"
 
         data-bs-toggle="modal"
-        data-bs-target="#{{ id }}Modal">
+        data-bs-target="#{{ id }}Modal"
+        data-default-text="Enter your text">
         {{ form.content.vars.data|default('Enter your text')|replace({'href': ''})|raw }}
     </div>
 

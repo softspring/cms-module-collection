@@ -20,7 +20,6 @@ window.addEventListener('load', function () {
       if(field !== 'null') {
         let textCont = moduleCont.querySelector('[data-edit-content-target="' + field + '"]'),
             defaultText = textCont.getAttribute('data-default-text');
-
         textCont.innerHTML = (tinyMCE.activeEditor.getContent() == '' ? defaultText : tinyMCE.activeEditor.getContent());
       }
     });

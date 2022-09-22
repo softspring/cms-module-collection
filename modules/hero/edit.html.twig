@@ -39,7 +39,7 @@
 
             <div class="col-md-10 col-lg-8 mx-auto">
                 {% for locale,localeField in form.description %}
-                    <div class="lead mb-4"
+                    <div class="lead mb-4 wysiwyg-preview"
                          data-edit-content-target="description.{{ locale }}"
                          data-lang="{{ locale }}"
                          data-bs-toggle="modal"

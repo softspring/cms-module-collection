@@ -37,7 +37,7 @@
             {% endfor %}
 
             {% for locale,localeField in form.description %}
-                <div class="cardmod__desc mb-4"
+                <div class="cardmod__desc mb-4 wysiwyg-preview"
                      data-edit-content-target="description.{{ locale }}"
                      data-lang="{{ locale }}"
                      data-bs-toggle="modal"
