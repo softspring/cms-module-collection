@@ -1,3 +1,5 @@
+import './_wysiwyg.scss';
+
 // Simulate .on function
 function delegate(el, evt, sel, handler) {
   el.addEventListener(evt, function(event) {
