@@ -53,7 +53,7 @@
                 toolbar_sticky: false,
                 setup: function (editor) {
                     editor.on('init', function (e) {
-                        editor.setContent('{{ form.content.vars.value|replace({'\n': '','\r':''})|raw }}');
+                        editor.setContent('{{ form.content.vars.value|replace({'\n': '','\r':''})|escape('js')|raw }}');
                     });
                 }
             });
