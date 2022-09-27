@@ -1,6 +1,5 @@
 .hero {
   position: relative;
-  clip-path: inset(0);
 
   &--fullpage {
     min-height: 100vh;
@@ -22,6 +21,7 @@
     height: auto;
     background-color: #000;
     overflow: hidden;
+    clip-path: inset(0);
 
     img {
       left: 50%;
