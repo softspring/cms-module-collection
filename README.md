@@ -4,6 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/softspring/cms-module-collection/v/stable.svg)](https://packagist.org/packages/softspring/cms-module-collection)
 [![Latest Unstable Version](https://poser.pugx.org/softspring/cms-module-collection/v/unstable.svg)](https://packagist.org/packages/softspring/cms-module-collection)
 [![License](https://poser.pugx.org/softspring/cms-module-collection/license.svg)](https://packagist.org/packages/softspring/cms-module-collection)
+[![PHP Version Require](http://poser.pugx.org/softspring/cms-module-collection/require/php)](https://packagist.org/packages/softspring/cms-module-collection)
 [![Total Downloads](https://poser.pugx.org/softspring/cms-module-collection/downloads)](https://packagist.org/packages/softspring/cms-module-collection)
 [![Build status](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml/badge.svg?branch=5.0)](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml)
 
