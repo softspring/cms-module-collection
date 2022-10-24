@@ -2,6 +2,7 @@ title:
     label: "Title"
     prototype_button: "Title"
     form:
+        locale_filter.label: "Locales"
         id.label: "HTML id"
         class.label: "HTML class"
         type.label: "Title type"
@@ -18,6 +19,7 @@ hero:
     label: "Hero"
     prototype_button: "Hero"
     form:
+        locale_filter.label: "Locales"
         background.label: "Background image"
         other.label: "Upper image"
         id.label: "Id"
@@ -39,6 +41,7 @@ wysiwyg:
     label: "WYSIWYG"
     prototype_button: "WYSIWYG"
     form:
+        locale_filter.label: "Locales"
         id.label: "Id"
         content.label: "Content"
 
@@ -46,6 +49,7 @@ wysiwyg_translatable:
     label: "WYSIWYG translatable"
     prototype_button: "WYSIWYG translatable"
     form:
+        locale_filter.label: "Locales"
         id.label: "Id"
         class.label: "Classes"
         content.label: "Content"
@@ -54,6 +58,7 @@ two_columns:
     label: "Two columns"
     prototype_button: "Two columns"
     form:
+        locale_filter.label: "Locales"
         background.label: "Background image"
         image.label: "Image"
         id.label: "Id"
@@ -74,6 +79,7 @@ card:
     label: "Card"
     prototype_button: "Card"
     form:
+        locale_filter.label: "Locales"
         background.label: "Background image"
         other.label: "Image"
         id.label: "Id"
