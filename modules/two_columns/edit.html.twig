@@ -10,7 +10,7 @@
         <div class="row {{ form.image_position_text.vars.value|default('flex-row') }}" data-edit-class-target="imagePositionClass" data-edit-class-default="row">
             <div class="col-12 col-md-6">
                 {% for locale,localeField in form.module_image %}
-                    <div data-image-preview-target="moduleImage.{{ locale }}" data-lang="{{ locale }}">
+                    <div data-media-preview-target="moduleImage.{{ locale }}" data-lang="{{ locale }}">
                         {% if localeField.vars.data %}
                             {{ localeField.vars.data|sfs_media_render_image('sm', {'class':'img-fluid'}) }}
                         {% endif %}

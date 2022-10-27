@@ -11,7 +11,7 @@ module:
                     media_attr:
                         class: 'img-fluid'
                     children_attr:
-                        data-image-preview-input: 'backgroundImage'
+                        data-media-preview-input: 'backgroundImage'
                     media_types:
                         background:
                             picture: '_default'
