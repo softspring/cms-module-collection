@@ -23,7 +23,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{ form_row(form.content) }}
+                    {{ form_row(form.content,{'attr':{'data-initial-value' : form.content.vars.value }}) }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
@@ -32,49 +32,3 @@
         </div>
     </div>
 </article>
-<script>
-    if (typeof initTiny === 'undefined') {
-        let initTiny = function () {
-            tinymce.init({
-                selector: '{{ '#' ~ id ~ ' [data-wysiwyg]' }}',
-                height: 300,
-                menubar: false,
-                plugins:
-                    'code ' +
-                    'image link media template code ' +
-                    'table charmap pagebreak nonbreaking anchor ' +
-                    'insertdatetime advlist lists wordcount help ' +
-                    'charmap quickbars emoticons',
-                toolbar: 'undo redo | bold italic underline strikethrough |' +
-                    ' alignleft aligncenter alignright alignjustify | link anchor | ' +
-                    ' outdent indent |  numlist bullist | forecolor backcolor removeformat | ' +
-                    ' charmap emoticons | print |' +
-                    ' code | ltr rtl | fontsize blocks',
-                toolbar_sticky: false,
-                extended_valid_elements:"svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],i[*]",
-                setup: function (editor) {
-                    editor.on('init', function (e) {
-                        editor.setContent('{{ form.content.vars.value|replace({'\n': '','\r':''})|escape('js')|raw }}');
-                    });
-                }
-            });
-        }
-        window.addEventListener('load', function () {
-            initTiny();
-        }, false);
-
-        window.addEventListener('cms.module.move.down', function () {
-            initTiny();
-        }, false);
-
-        window.addEventListener('cms.module.move.up', function () {
-            initTiny();
-        }, false);
-
-        if (typeof tinymce !== 'undefined') {
-            initTiny();
-        }
-    }
-
-</script>
-

@@ -73,7 +73,7 @@
                 <div class="modal-body">
                     {% for locale,localeField in form.description %}
                         <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
-                            {{ form_row(localeField) }}
+                            {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
                         </div>
                     {% endfor %}
                 </div>
@@ -84,52 +84,3 @@
         </div>
     </div>
 </article>
-
-<script>
-    if (typeof initTiny === 'undefined') {
-        let initTiny = function () {
-            {% for locale,localeField in form.description %}
-            tinymce.init({
-                selector: '{{ '#' ~ id ~ ' [data-lang=' ~ locale ~ '] [data-wysiwyg]' }}',
-                height: 300,
-                menubar: false,
-                plugins:
-                    'code ' +
-                    'image link media template code ' +
-                    'table charmap pagebreak nonbreaking anchor ' +
-                    'insertdatetime advlist lists wordcount help ' +
-                    'charmap quickbars emoticons',
-                toolbar: 'undo redo | bold italic underline strikethrough |' +
-                    ' alignleft aligncenter alignright alignjustify |' +
-                    ' outdent indent |  numlist bullist | forecolor removeformat | ' +
-                    ' link anchor code | ltr rtl | fontsize blocks | ' +
-                    ' charmap emoticons',
-                toolbar_sticky: false,
-                extended_valid_elements:"svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],i[*]",
-                setup: function (editor) {
-                    editor.on('init', function (e) {
-                        editor.setContent('{{ form.description.children[locale].vars.value|replace({'\n': '','\r':''})|escape('js')|raw }}');
-                    });
-                }
-            });
-            {% endfor %}
-        }
-        window.addEventListener('load', function () {
-            initTiny();
-        }, false);
-
-        window.addEventListener('cms.module.move.down', function () {
-            initTiny();
-        }, false);
-
-        window.addEventListener('cms.module.move.up', function () {
-            initTiny();
-        }, false);
-
-        if (typeof tinymce !== 'undefined') {
-            initTiny();
-        }
-    }
-
-</script>
-
