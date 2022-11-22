@@ -1,1 +1,4 @@
-<{{ type }} class="{{ class|default('') }}" id="{{ id|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ type }}>
+
+<div style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+    <{{ type }} class="{{ class|default('mb-0') }}" id="{{ id|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ type }}>
+</div>

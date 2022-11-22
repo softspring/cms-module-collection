@@ -1,16 +1,19 @@
 {% set type = form.type.vars.data|default('h1') %}
-{% for locale,localeField in form.title %}
-    <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
-        data-lang="{{ locale }}"
+<div data-edit-bgcolor-target="titleColorDiv"
+     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}">
+    {% for locale,localeField in form.title %}
+        <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+            data-lang="{{ locale }}"
 
-        data-cms-module-title-type=""
+            data-cms-module-title-type=""
 
-        data-edit-id-target="title"
+            data-edit-id-target="title"
 
-        data-edit-class-target="title"
-        data-edit-class-default=""
+            data-edit-class-target="title"
+            data-edit-class-default=""
 
-        data-edit-content-target="title.{{ locale }}"
-        contenteditable="true"
-    >{{ localeField.vars.data|default('Título')|raw }}</{{ type }}>
-{% endfor %}
+            data-edit-content-target="title.{{ locale }}"
+            contenteditable="true"
+        >{{ localeField.vars.data|default('Título')|raw }}</{{ type }}>
+    {% endfor %}
+</div>
