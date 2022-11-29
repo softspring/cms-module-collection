@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
       initTinyMCE(element, element.getAttribute('data-initial-value'));
     });
 
-    document.addEventListener('cms.module.add', function (e) {
+    document.addEventListener('polymorphic.add', function (e) {
       const module = e.detail.module;
 
       module.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
@@ -91,7 +91,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('cms.module.move.down.before', function (e) {
+    document.addEventListener('polymorphic.move.down.before', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
       description = [];
@@ -109,7 +109,7 @@ window.addEventListener('load', function () {
       console.log(description);
     });
 
-    document.addEventListener('cms.module.move.down', function (e) {
+    document.addEventListener('polymorphic.move.down', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
 
@@ -124,7 +124,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('cms.module.move.up.before', function (e) {
+    document.addEventListener('polymorphic.move.up.before', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
       description = [];
@@ -142,7 +142,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('cms.module.move.up', function (e) {
+    document.addEventListener('polymorphic.move.up', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
 
