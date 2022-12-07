@@ -1,6 +1,6 @@
-<article class="two-columns py-5 {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+<section class="two-columns py-5 {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
-        <div class="hero__bg-picture">
+        <div class="two-columns__bg-media">
             {{ background[app.request.locale]|sfs_media_render_picture }}
         </div>
     {% endif %}
@@ -26,22 +26,4 @@
             </div>
         </div>
     </div>
-</article>
-
-
-
-
-
-
-{#<article class="librio-wrapper content-section-wrapper bg-l8-peach webm-video">#}
-{#    <div class="ui container">#}
-{#        <div class="content-section-container align-image-right fallback-to-gif">#}
-{#            <div class="content-section-image-container">#}
-{#                <div data-librio-fallback-class="content-section-image" data-librio-html-video-fallback="https://storage.googleapis.com/librio-test-statics/media/cache/no_filter/06/1f/e13c0e7412fb0c0e361e76055282.gif">#}
-{#                    <video class="content-section-image" autoplay="" loop="" muted="" playsinline=""><source type="video/webm" src="https://storage.googleapis.com/librio-test-statics/media/video/80/f0/b9e69bbe45758e22a09b493fef13.webm"></video>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="content-section-text-container"><h2 class="content-section-title title-font">NEW:&nbsp;My Fantabulous Orchestra</h2><section class="content-section-body">Our newest book allows your little one to create their very own fantabulous orchestra and embrace their creativity to the full. Not only can you choose how the main character looks, but you can even choose which instrument they play!</section><section class="content-section-cta"><a class="ui button librio-button primary" href="/en/personalised-childrens-books/my-fantabulous-orchestra">Explore this book</a></section></div></div></div></article>#}
-
-{#<article class="librio-wrapper content-section-wrapper bg-librio-six webm-video"><div class="ui container"><div class="content-section-container align-image-left fallback-to-gif"><div class="content-section-image-container"><div data-librio-fallback-class="content-section-image" data-librio-html-video-fallback="https://storage.googleapis.com/librio-test-statics/media/cache/no_filter/ba/bc/087db416ae0f25808f9e78be156b.gif"><video class="content-section-image" autoplay="" loop="" muted="" playsinline=""><source type="video/webm" src="https://storage.googleapis.com/librio-test-statics/media/video/24/71/4cd12da08efe145f0b93790c2b5c.webm"></video></div></div><div class="content-section-text-container"><h2 class="content-section-title title-font">NEW: Globi’s back for his second personalized Librio adventure</h2><section class="content-section-body">Following the success of our 2019 release, Swiss legend Globi returns for more high jinks; this time rescuing a baby lynx deep in the Swiss mountains.&nbsp;<br><br>#}
-{#                    You get to create the child who accompanies him and, with additional personalisation options - even for “kids” with grey hair -, Globi’s latest escapade is sure to be a hit with fans of all ages.</section><section class="content-section-cta"><a class="ui button librio-button primary" href="/en/personalised-childrens-books/you-globi-and-the-little-lynx">Explore this book</a></section></div></div></div></article>#}
+</section>
