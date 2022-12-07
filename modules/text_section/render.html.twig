@@ -1,0 +1,33 @@
+<section id="{{ id|default('') }}"
+         class=text-section {{ class|default('') }}"
+         style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+    <div class="container {{ text_position|default('text-center') }}
+                    {% if image[app.request.locale]|default(false) == false %}container--no-image {% endif %}
+                    {% if (primary_button_text|default(false) == false or primary_button_text|sfs_cms_trans is empty) %}
+                    container--no-cta
+                    {% endif %}">
+            {% if image[app.request.locale]|default(false) %}
+                <div class="text-section__image">
+                    {{ image[app.request.locale]|sfs_media_render_picture }}
+                </div>
+            {% endif %}
+            <div class="text-section__content">
+                {% if title|default(false) %}
+                <h2 class="text-section__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
+                {% endif %}
+                {% if description[app.request.locale]|default(false) %}
+                <div class="text-section__body">
+                    {{ description[app.request.locale]|default('')|raw }}
+                </div>
+                {% endif %}
+                {% if (primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty) %}
+                <div class="text-section__cta">
+                    {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
+                        <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}"
+                           class="btn {{primary_button_class|default('btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+    </div>
+</section>

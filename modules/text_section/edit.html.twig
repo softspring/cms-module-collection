@@ -1,0 +1,91 @@
+{% set defaultDivClass = 'text-section' %}
+<section class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+     data-edit-id-target="textSectionIdDiv"
+
+     data-edit-class-target="textSectionClassDiv"
+     data-edit-class-default="{{ defaultDivClass }}"
+
+     data-edit-bgcolor-target="textSectionColorDiv"
+     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
+>
+    {% set containerNoImageDivClass = '' %}
+    {% set containerNoCtaDivClass = '' %}
+    {% if image[app.request.locale]|default(false) == false %}
+        {% set containerNoImageDivClass = ' container--no-image' %}
+    {% endif %}
+    {% if (primary_button_text|default(false) == false or primary_button_text|sfs_cms_trans is empty))%}
+        {% set containerNoCtaDivClass = ' container--no-cta' %}
+    {% endif %}
+    {% set containerDivClass = 'container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
+    <div class="{{ containerDivClass }} text-center"
+         data-edit-class-target="containerClassDiv"
+         data-edit-class-default="{{ containerDivClass }}">
+        <div class=" {{ form.text_position.vars.value|default('text-center') }}"
+             data-edit-class-target="textPositionClass" >
+            <div class="text-section__image">
+                {% for locale,localeField in form.image %}
+                <div data-image-preview-target="imageImage.{{ locale }}" data-lang="{{ locale }}">
+                    {% if localeField.vars.data %}
+                        {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.media_attr) }}
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-section__content">
+                {% for locale,localeField in form.title %}
+                    {% set titleClassDefault = 'text-section__title' %}
+                    <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                        data-edit-class-target="titleClass"
+                        data-edit-class-default="{{ titleClassDefault }}"
+                        data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
+                {% endfor %}
+                <section class="text-section__body">
+                    {% for locale,localeField in form.description %}
+                        <div data-edit-content-target="description.{{ locale }}"
+                             data-lang="{{ locale }}"
+                             data-bs-toggle="modal"
+                             data-bs-target="#{{ id }}Modal"
+                             data-default-text="Enter description">
+                            {{ localeField.vars.data|default('Enter description')|raw }}
+                        </div>
+                    {% endfor %}
+                </section>
+
+                <section class="text-section__cta">
+                    {% set defaultBtnClass = 'btn btn-primary' %}
+                    {% for locale,localeField in form.primary_button_text %}
+                        <a href="#"
+                           class="{{ defaultBtnClass }}"
+                           data-lang="{{ locale }}"
+                           data-edit-content-target="primaryButtonText.{{ locale }}"
+                           contenteditable="true"
+                           data-edit-class-target="primaryButtonClassBtn"
+                           data-edit-class-default="{{ defaultBtnClass }}">{{ localeField.vars.data|default('') }}</a>
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Text section description</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% for locale,localeField in form.description %}
+                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                            {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

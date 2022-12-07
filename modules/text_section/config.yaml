@@ -1,0 +1,93 @@
+module:
+    revision: 1
+    edit_template: '@module/text_section/edit.html.twig'
+    form_template: '@module/text_section/form.html.twig'
+
+    module_options:
+        form_fields:
+            background:
+                type: 'translatableImage'
+                type_options:
+                    media_attr:
+                        class: 'img-fluid'
+                    children_attr:
+                        data-image-preview-input: 'backgroundImage'
+                    media_types:
+                        background:
+                            picture: '_default'
+
+            image:
+                type: 'translatableImage'
+                type_options:
+                    media_attr:
+                        class: 'img-fluid'
+                    media_types:
+                        content_png:
+                            image: 'sm'
+                        content_jpeg:
+                            image: 'sm'
+
+            id:
+                type: 'id'
+                type_options:
+                    attr:
+                        data-edit-id-input: 'textSectionIdDiv'
+
+            class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'textSectionClassDiv'
+
+            bg_color:
+                type: 'color'
+                type_options:
+                    attr:
+                        data-edit-bgcolor-input: 'textSectionColorDiv'
+
+            title_class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'titleClass'
+
+            title:
+                type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'title'
+
+            description:
+                type: 'translatable'
+                type_options:
+                    type: 'html'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'description'
+                            data-wysiwyg: ''
+
+            primary_button_text:
+                type: 'translatableText'
+                type_options:
+                    children_attr:
+                        data-edit-content-input: 'primaryButtonText'
+
+            primary_button_link:
+                type: 'route'
+                type_options:
+
+            primary_button_class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'primaryButtonClassBtn'
+
+            text_position:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "text_section.form.text_position.values.center": 'text-center'
+                        "text_section.form.text_position.values.left": 'text-start'
+                        "text_section.form.text_position.values.right": 'text-end'
+                    attr:
+                        data-edit-class-input: 'textPositionClass'
