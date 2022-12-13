@@ -13,7 +13,7 @@
     {% if image[app.request.locale]|default(false) == false %}
         {% set containerNoImageDivClass = ' container--no-image' %}
     {% endif %}
-    {% if (primary_button_text|default(false) == false or primary_button_text|sfs_cms_trans is empty))%}
+    {% if (primary_button_text|default(false) == false) or (primary_button_text|sfs_cms_trans is empty)%}
         {% set containerNoCtaDivClass = ' container--no-cta' %}
     {% endif %}
     {% set containerDivClass = 'container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
