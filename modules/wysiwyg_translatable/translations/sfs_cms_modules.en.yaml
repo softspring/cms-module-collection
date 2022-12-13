@@ -1,0 +1,9 @@
+wysiwyg_translatable:
+    label: "WYSIWYG translatable"
+    prototype_button: "WYSIWYG translatable"
+    prototype_button_icon: '<i class="bi bi-table"></i>'
+    form:
+        locale_filter.label: "Locales"
+        id.label: "Id"
+        class.label: "Classes"
+        content.label: "Content"

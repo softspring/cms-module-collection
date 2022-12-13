@@ -1,0 +1,23 @@
+card:
+    label: "Card"
+    prototype_button: "Card"
+    prototype_button_icon: '<i class="bi bi-credit-card-2-front"></i>'
+    form:
+        locale_filter.label: "Locales"
+        background.label: "Background image"
+        other.label: "Image"
+        id.label: "Id"
+        class.label: "Classes"
+        title_class.label: "Title classes"
+        title.label: "Title"
+        description.label: "Description"
+        primary_button_text.label: "Primary button text"
+        primary_button_link.label: "Primary button link"
+        secondary_button_text.label: "Secondary button text"
+        bg_color.label: "Background color"
+        primary_button_class.label: "Primary button classes"
+        content_position.label: "Content position"
+        content_position.values:
+            left: "Left"
+            right: "Right"
+            center: "center"

@@ -1,0 +1,20 @@
+title:
+    label: "Título"
+    prototype_button: "Título"
+    prototype_button_icon: '<i class="bi bi-type-h1"></i>'
+    form:
+        locale_filter.label: "Idiomas"
+        id.label: "HTML id"
+        class.label: "HTML class"
+        type.label: "Tipo de título"
+        bg_color.label: "Color de fondo"
+        type.values:
+            h1: "Encabezado 1"
+            h2: "Encabezado 2"
+            h3: "Encabezado 3"
+            h4: "Encabezado 4"
+            h5: "Encabezado 5"
+            h6: "Encabezado 6"
+        title:
+            label: "Título"
+            placeholder: "Inserta aquí el título"

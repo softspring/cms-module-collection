@@ -1,3 +1,4 @@
+{% trans_default_domain 'sfs_cms_modules' %}
 {% set type = form.type.vars.data|default('h1') %}
 <div data-edit-bgcolor-target="titleColorDiv"
      style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}">
@@ -14,6 +15,7 @@
 
             data-edit-content-target="title.{{ locale }}"
             contenteditable="true"
-        >{{ localeField.vars.data|default('Título')|raw }}</{{ type }}>
+            data-edit-content-placeholder="{{ 'title.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+        >{{ localeField.vars.data|default|raw }}</{{ type }}>
     {% endfor %}
 </div>

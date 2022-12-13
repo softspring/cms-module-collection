@@ -1,0 +1,23 @@
+two_columns:
+    label: "Dos columnas"
+    prototype_button: "Dos columnas"
+    prototype_button_icon: '<i class="bi bi-layout-split"></i>'
+    form:
+        locale_filter.label: "Idiomas"
+        background.label: "Imagen de fondo"
+        image.label: "Imagen"
+        id.label: "Id"
+        class.label: "Clases"
+        title_class.label: "Clases para el título"
+        title.label: "Título"
+        description.label: "Descripción"
+        primary_button_text.label: "Texto del botón primario"
+        primary_button_link.label: "Enlace del botón primario"
+        secondary_button_text.label: "Texto del botón secundario"
+        secondary_button_link.label: "Enlace del botón secundario"
+        bg_color.label: "Color de fondo"
+        image_position_text.values:
+            left: "Izquierda"
+            right: "derecha"
+        image_position_text.label: "Posición de la imagen"
+        module_image.label: "Imagen"
