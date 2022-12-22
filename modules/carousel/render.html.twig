@@ -1,0 +1,24 @@
+<div class="swiper-module {{ class|default('') }}" id="{{ id|default('') }}"
+     style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% for content in contents %}
+                    <div class="swiper-slide">{{ content|raw }}</div>
+                {% endfor %}
+            </div>
+            {% if pagination|default('1') == '1' %}
+            <div class="swiper-pagination"></div>
+            {% endif %}
+            {% if navigation|default('1') == '1' %}
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            {% endif %}
+        </div>
+</div>
+<script>
+    {% if items_per_slide|default(1) == 'auto' %}
+        window.slidesPerViewCaousel = "auto";
+    {% else %}
+        window.slidesPerViewCaousel = parseInt({{ items_per_slide|default(1)}});
+    {% endif %}
+</script>

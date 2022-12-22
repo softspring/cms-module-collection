@@ -1,0 +1,29 @@
+carousel:
+    label: "Carrusel"
+    prototype_button: "Carrusel"
+    prototype_button_icon: '<i class="bi bi-distribute-horizontal"></i>'
+    form:
+        locale_filter.label: "Idiomas"
+        modules.label: "Módulos"
+        id.label: "Id"
+        class.label: "Clases"
+        bg_color.label: "Color de fondo"
+        items_per_slide:
+            label: "Elementos por slide"
+            values:
+                one: "1"
+                two: "2"
+                three: "3"
+                four: "4"
+                five: "5"
+                auto: "Auto"
+        navigation:
+            label: "Navegación"
+            values:
+                yes: "Sí"
+                no: "No"
+        pagination:
+            label: "Paginación"
+            values:
+                yes: "Sí"
+                no: "No"

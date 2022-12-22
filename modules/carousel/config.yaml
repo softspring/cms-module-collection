@@ -1,0 +1,58 @@
+module:
+    revision: 1
+    edit_template: '@module/carousel/edit.html.twig'
+    module_type: 'Softspring\CmsBundle\Form\Module\ContainerModuleType'
+    module_options:
+        module_collection_class: 'row'
+        module_row_class: 'col-auto'
+        allowed_modules: ~
+        allowed_container_modules: []
+        form_fields:
+            id:
+                type: 'id'
+                type_options:
+                    attr:
+                        data-edit-id-input: 'carouselIdDiv'
+
+            class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'carouselClassDiv'
+
+            bg_color:
+                type: 'color'
+                type_options:
+                    attr:
+                        data-edit-bgcolor-input: 'carouselColorDiv'
+
+            items_per_slide:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "carousel.form.items_per_slide.values.one": 1
+                        "carousel.form.items_per_slide.values.two": 2
+                        "carousel.form.items_per_slide.values.three": 3
+                        "carousel.form.items_per_slide.values.four": 4
+                        "carousel.form.items_per_slide.values.five": 5
+                        "carousel.form.items_per_slide.values.auto": 5
+                    attr:
+                        data-edit-class-input: 'itemsPerSlideClass'
+
+            navigation:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "carousel.form.navigation.values.yes": 1
+                        "carousel.form.navigation.values.no": 0
+                    attr:
+                        data-edit-class-input: 'navigationClass'
+
+            pagination:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "carousel.form.pagination.values.yes": 1
+                        "carousel.form.pagination.values.no": 0
+                    attr:
+                        data-edit-class-input: 'paginationClass'
