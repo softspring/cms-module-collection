@@ -21,42 +21,43 @@
              data-edit-class-default="cardmod__content">
 
             {% for locale,localeField in form.other %}
-                <div class="cardmod__image-media" data-media-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
-                    {% if localeField.vars.data %}
-                        {{ localeField.vars.data|sfs_media_render_image('_original', localeField.vars.media_attr) }}
-                    {% endif %}
-                </div>
+            <div class="cardmod__media" data-media-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
+                {% if localeField.vars.data %}
+                    {{ localeField.vars.data|sfs_media_render_image('_original', localeField.vars.media_attr) }}
+                {% endif %}
+            </div>
             {% endfor %}
-
-            {% for locale,localeField in form.title %}
-                {% set titleClassDefault = 'cardmod__title' %}
-                <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
-                    data-edit-class-target="titleClass"
-                    data-edit-class-default="{{ titleClassDefault }}"
-                    data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
-            {% endfor %}
-
-            {% for locale,localeField in form.description %}
-                <div class="cardmod__desc mb-4 wysiwyg-preview"
-                     data-edit-content-target="description.{{ locale }}"
-                     data-lang="{{ locale }}"
-                     data-bs-toggle="modal"
-                     data-bs-target="#{{ id }}Modal"
-                     data-default-text="Texto descriptivo">
-                    {{ localeField.vars.data|default('Texto descriptivo')|raw }}
-                </div>
-            {% endfor %}
-
-            <div class="cardmod__cta">
-                 {% for locale,localeField in form.primary_button_text %}
-                     {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
-
-                     <a href="#" data-edit-content-hide-if-empty="true"
-                       class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
-                       data-edit-class-target="primaryButtonClass"
-                       data-edit-class-default="{{ defaultPrimaryButtonClass }}"
-                       data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+            <div class="cardmod__texts">
+                {% for locale,localeField in form.title %}
+                    {% set titleClassDefault = 'cardmod__title' %}
+                    <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                        data-edit-class-target="titleClass"
+                        data-edit-class-default="{{ titleClassDefault }}"
+                        data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
                 {% endfor %}
+
+                {% for locale,localeField in form.description %}
+                    <div class="cardmod__desc mb-4 wysiwyg-preview"
+                         data-edit-content-target="description.{{ locale }}"
+                         data-lang="{{ locale }}"
+                         data-bs-toggle="modal"
+                         data-bs-target="#{{ id }}Modal"
+                         data-default-text="Texto descriptivo">
+                        {{ localeField.vars.data|default('Texto descriptivo')|raw }}
+                    </div>
+                {% endfor %}
+
+                <div class="cardmod__cta">
+                     {% for locale,localeField in form.primary_button_text %}
+                         {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
+
+                         <a href="#" data-edit-content-hide-if-empty="true"
+                           class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
+                           data-edit-class-target="primaryButtonClass"
+                           data-edit-class-default="{{ defaultPrimaryButtonClass }}"
+                           data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

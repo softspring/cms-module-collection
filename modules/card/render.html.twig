@@ -10,7 +10,7 @@
             <div class="cardmod__content {{ form.content_position.vars.value|default('') }}">
 
                 {% if other[app.request.locale]|default(false) %}
-                <div class="cardmod__picture">
+                <div class="cardmod__media">
                     {{ other[app.request.locale]|sfs_media_render_image(['_original'], {'class':'img-fluid'}) }}
                 </div>
                 {% endif %}
