@@ -26,7 +26,7 @@
                 {% for locale,localeField in form.image %}
                 <div data-image-preview-target="imageImage.{{ locale }}" data-lang="{{ locale }}">
                     {% if localeField.vars.data %}
-                        {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.media_attr) }}
+                        {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.picture_attr) }}
                     {% endif %}
                 </div>
                 {% endfor %}
