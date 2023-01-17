@@ -1,9 +1,13 @@
 <div class="swiper-module {{ class|default('') }}" id="{{ id|default('') }}"
      style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
-        <div class="swiper">
+        <div class="swiper"
+             data-swipper
+             data-slides-per-view="{{ items_per_slide|default(1) == 'auto' ? 'auto' : items_per_slide|default(1) }}"
+             data-infinite-loop="{{ infinite_loop|default(true) == 1 ? '1' : 0 }}"
+             data-autoplay="{{ auto_play|default(true) == 1 ? '1' : 0 }}">
             <div class="swiper-wrapper">
                 {% for content in contents %}
-                    <div class="swiper-slide">{{ content|raw }}</div>
+                    <div class="swiper-slide{{ items_per_slide|default(1) == 'auto' ? ' w-auto' :'' }}">{{ content|raw }}</div>
                 {% endfor %}
             </div>
             {% if pagination|default('1') == '1' %}
@@ -15,10 +19,3 @@
             {% endif %}
         </div>
 </div>
-<script>
-    {% if items_per_slide|default(1) == 'auto' %}
-        window.slidesPerViewCaousel = "auto";
-    {% else %}
-        window.slidesPerViewCaousel = parseInt({{ items_per_slide|default(1)}});
-    {% endif %}
-</script>

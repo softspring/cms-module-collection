@@ -17,6 +17,16 @@ carousel:
                 four: "4"
                 five: "5"
                 auto: "Auto"
+        infinite_loop:
+            label: "Infinite loop"
+            values:
+                yes: "Sí"
+                no: "No"
+        auto_play:
+            label: "Autoplay"
+            values:
+                yes: "Sí"
+                no: "No"
         navigation:
             label: "Navigation"
             values:
