@@ -35,10 +35,21 @@ module:
                         "carousel.form.items_per_slide.values.three": 3
                         "carousel.form.items_per_slide.values.four": 4
                         "carousel.form.items_per_slide.values.five": 5
-                        "carousel.form.items_per_slide.values.auto": 5
+                        "carousel.form.items_per_slide.values.auto": 'auto'
                     attr:
                         data-edit-class-input: 'itemsPerSlideClass'
-
+            infinite_loop:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "carousel.form.infinite_loop.values.yes": 1
+                        "carousel.form.infinite_loop.values.no": 0
+            auto_play:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "carousel.form.auto_play.values.yes": 1
+                        "carousel.form.auto_play.values.no": 0
             navigation:
                 type: 'choice'
                 type_options:
