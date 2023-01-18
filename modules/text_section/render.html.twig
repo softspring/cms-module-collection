@@ -1,7 +1,12 @@
 <section id="{{ id|default('') }}"
          class=text-section {{ class|default('') }}"
          style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
-    <div class="container {{ text_position|default('text-center') }}
+    {% if background[app.request.locale]|default(false) %}
+        <div class="text-section__bg-media">
+            {{ background[app.request.locale]|sfs_media_render_picture }}
+        </div>
+    {% endif %}
+    <div class="text-section__content container {{ text_position|default('text-center') }}
                     {% if image[app.request.locale]|default(false) == false %}container--no-image {% endif %}
                     {% if (primary_button_text|default(false) == false or primary_button_text|sfs_cms_trans is empty) %}
                     container--no-cta
