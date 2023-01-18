@@ -8,6 +8,13 @@
      data-edit-bgcolor-target="textSectionColorDiv"
      style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
+    {% for locale,localeField in form.background %}
+        <div class="text-section__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+            {% if localeField.vars.data %}
+                {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.picture_attr) }}
+            {% endif %}
+        </div>
+    {% endfor %}
     {% set containerNoImageDivClass = '' %}
     {% set containerNoCtaDivClass = '' %}
     {% if image[app.request.locale]|default(false) == false %}
@@ -16,7 +23,7 @@
     {% if (primary_button_text|default(false) == false) or (primary_button_text|sfs_cms_trans is empty)%}
         {% set containerNoCtaDivClass = ' container--no-cta' %}
     {% endif %}
-    {% set containerDivClass = 'container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
+    {% set containerDivClass = 'text-section__content container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
     <div class="{{ containerDivClass }} text-center"
          data-edit-class-target="containerClassDiv"
          data-edit-class-default="{{ containerDivClass }}">

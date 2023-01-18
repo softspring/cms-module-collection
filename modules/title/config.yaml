@@ -17,12 +17,6 @@ module:
                     attr:
                         data-edit-class-input: 'title'
 
-            bg_color:
-                type: 'color'
-                type_options:
-                    attr:
-                        data-edit-bgcolor-input: 'titleColorDiv'
-
             type:
                 type: 'choice'
                 type_options:
