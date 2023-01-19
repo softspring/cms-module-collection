@@ -1,12 +1,9 @@
-.hero {
+.text-section {
   position: relative;
-
-  &--fullpage {
-    min-height: 100vh;
-  }
 
   &__content {
     position: relative;
+    padding: 40px 0;
   }
 
   &__bg-media {

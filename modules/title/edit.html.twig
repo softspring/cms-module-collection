@@ -1,21 +1,20 @@
 {% trans_default_domain 'sfs_cms_modules' %}
 {% set type = form.type.vars.data|default('h1') %}
-<div data-edit-bgcolor-target="titleColorDiv"
-     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}">
-    {% for locale,localeField in form.title %}
-        <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
-            data-lang="{{ locale }}"
 
-            data-cms-module-title-type=""
+{% for locale,localeField in form.title %}
+    <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+        data-lang="{{ locale }}"
 
-            data-edit-id-target="title"
+        data-cms-module-title-type=""
 
-            data-edit-class-target="title"
-            data-edit-class-default=""
+        data-edit-id-target="title"
 
-            data-edit-content-target="title.{{ locale }}"
-            contenteditable="true"
-            data-edit-content-placeholder="{{ 'title.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-        >{{ localeField.vars.data|default|raw }}</{{ type }}>
-    {% endfor %}
-</div>
+        data-edit-class-target="title"
+        data-edit-class-default=""
+
+        data-edit-content-target="title.{{ locale }}"
+        contenteditable="true"
+        data-edit-content-placeholder="{{ 'title.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+    >{{ localeField.vars.data|default|raw }}</{{ type }}>
+{% endfor %}
+
