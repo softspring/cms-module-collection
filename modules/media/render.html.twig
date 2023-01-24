@@ -1,0 +1,10 @@
+{% set versionSplit = media.version|split('#') %}
+{% set versionType = versionSplit[0]|default('image') %}
+{% set versionKey = versionSplit[1]|default('_thumbnail') %}
+{% if versionType == 'image' %}
+    {{ media.media|sfs_media_render_image(versionKey) }}
+{% elseif versionType == 'video' %}
+    {{ media.media|sfs_media_render_video(versionKey) }}
+{% elseif versionType == 'picture' %}
+    {{ media.media|sfs_media_render_picture(versionKey) }}
+{% endif %}

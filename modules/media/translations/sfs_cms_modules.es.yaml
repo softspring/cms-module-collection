@@ -1,0 +1,9 @@
+_group.media.name: "Multimedia"
+
+media:
+    label: "Fichero multimedia"
+    form:
+        locale_filter.label: "Idiomas"
+        media.label: "Fichero"
+    prototype_button_icon: '<i class="bi bi-image"></i>'
+    prototype_button: 'Fichero multimedia'

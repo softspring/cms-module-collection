@@ -1,0 +1,14 @@
+module:
+    revision: 1
+    group: 'media'
+    edit_template: '@module/media/edit.html.twig'
+    form_template: '@module/media/form.html.twig'
+
+    module_options:
+        form_fields:
+            media:
+                type: 'mediaVersion'
+                type_options:
+                    show_thumbnail: true
+                    attr:
+                        data-media-preview-input: 'mediaPreview'
