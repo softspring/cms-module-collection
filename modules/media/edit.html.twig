@@ -1,0 +1,15 @@
+<div data-media-preview-target="mediaPreview">
+    {% if form.media.media.vars.data|default(false) and form.media.version.vars.data|default(false) %}
+        {% set versionSplit = form.media.version.vars.data|split('#') %}
+        {% set versionType = versionSplit[0]|default('image') %}
+        {% set versionKey = versionSplit[1]|default('_thumbnail') %}
+
+        {% if versionType == 'image' %}
+            {{ form.media.media.vars.data|sfs_media_render_image(versionKey, form.media.media.vars.attr) }}
+        {% elseif versionType == 'video' %}
+            {{ form.media.media.vars.data|sfs_media_render_video(versionKey, form.media.media.vars.attr) }}
+        {% elseif versionType == 'picture' %}
+            {{ form.media.media.vars.data|sfs_media_render_picture(versionKey, form.media.media.vars.attr) }}
+        {% endif %}
+    {% endif %}
+</div>
