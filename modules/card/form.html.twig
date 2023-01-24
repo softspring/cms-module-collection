@@ -1,22 +1,25 @@
 <div class="row">
     <div class="col-12">
-        {{ form_row(form.background) }}
-    </div>
-    <div class="col-12">
-        {{ form_row(form.other) }}
-    </div>
-    <div class="col-12">
         {{ form_row(form.id) }}
     </div>
     <div class="col-12">
         {{ form_row(form.class) }}
     </div>
+
+    <div class="col-12">
+        {{ form_row(form.content_position) }}
+    </div>
+
     <div class="col-12">
         {{ form_row(form.title) }}
     </div>
     <div class="col-12">
         {{ form_row(form.title_class) }}
     </div>
+    <div class="col-12">
+        {{ form_row(form.media) }}
+    </div>
+
     <div class="col-12">
         {{ form_row(form.primary_button_text) }}
     </div>
@@ -26,8 +29,14 @@
     <div class="col-12">
         {{ form_row(form.primary_button_class) }}
     </div>
+
+
     <div class="col-12">
-        {{ form_row(form.content_position) }}
+        {{ form_row(form.background) }}
+    </div>
+
+    <div class="col-12">
+        {{ form_row(form.bg_color) }}
     </div>
 </div>
 {{ form_rest(form) }}

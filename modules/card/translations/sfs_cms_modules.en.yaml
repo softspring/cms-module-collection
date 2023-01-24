@@ -5,12 +5,16 @@ card:
     form:
         locale_filter.label: "Locales"
         background.label: "Background image"
-        other.label: "Image"
+        media.label: "Image"
         id.label: "Id"
         class.label: "Classes"
         title_class.label: "Title classes"
-        title.label: "Title"
-        description.label: "Description"
+        title:
+            label: "Title"
+            placeholder: "Card title"
+        description:
+            label: "Description"
+            placeholder: "Card description"
         primary_button_text.label: "Primary button text"
         primary_button_link.label: "Primary button link"
         secondary_button_text.label: "Secondary button text"
