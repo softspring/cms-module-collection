@@ -3,15 +3,15 @@
         <div class="container">
             {% if background[app.request.locale]|default(false) %}
                 <div class="cardmod__bg-picture">
-                    {{ background[app.request.locale]|sfs_media_render_picture }}
+                    {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
                 </div>
             {% endif %}
 
             <div class="cardmod__content {{ form.content_position.vars.value|default('') }}">
 
-                {% if other[app.request.locale]|default(false) %}
+                {% if media[app.request.locale]|default(false) %}
                 <div class="cardmod__media">
-                    {{ other[app.request.locale]|sfs_media_render_image(['_original'], {'class':'img-fluid'}) }}
+                    {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
                 </div>
                 {% endif %}
                 <div class="cardmod__texts">
