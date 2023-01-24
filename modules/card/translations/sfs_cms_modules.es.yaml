@@ -5,12 +5,16 @@ card:
     form:
         locale_filter.label: "Idiomas"
         background.label: "Imagen de fondo"
-        other.label: "Imagen"
+        media.label: "Imagen"
         id.label: "Id"
         class.label: "Clases"
         title_class.label: "Clases para el título"
-        title.label: "Título"
-        description.label: "Descripción"
+        title:
+            label: "Título"
+            placeholder: "Título de la tarjeta"
+        description:
+            label: "Descripción"
+            placeholder: "Descripción de la tarjeta"
         primary_button_text.label: "Texto del botón primario"
         primary_button_link.label: "Enlace del botón primario"
         secondary_button_text.label: "Texto del botón secundario"

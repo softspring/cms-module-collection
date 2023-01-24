@@ -1,5 +1,5 @@
 module:
-    revision: 1
+    revision: 2
     group: 'block'
     edit_template: '@module/card/edit.html.twig'
     form_template: '@module/card/form.html.twig'
@@ -7,28 +7,24 @@ module:
     module_options:
         form_fields:
             background:
-                type: 'translatableImage'
+                type: 'translatable'
                 type_options:
-                    media_attr:
-                        class: 'img-fluid'
-                    children_attr:
-                        data-media-preview-input: 'backgroundImage'
-                    media_types:
-                        background:
-                            picture: '_default'
+                    type: 'mediaVersion'
+                    type_options:
+                        media_attr:
+                            class: 'img-fluid'
+                        attr:
+                            data-media-preview-input: 'backgroundImage'
 
-            other:
-                type: 'translatableImage'
+            media:
+                type: 'translatable'
                 type_options:
-                    media_attr:
-                        class: 'img-fluid'
-                    media_types:
-                        content_png:
-                            image: 'sm'
-                        content_jpeg:
-                            image: 'sm'
-                        icon_png:
-                            image: '_default'
+                    type: 'mediaVersion'
+                    type_options:
+                        media_attr:
+                            class: 'img-fluid'
+                        attr:
+                            data-media-preview-input: 'media'
 
             id:
                 type: 'id'
@@ -55,10 +51,12 @@ module:
                         data-edit-class-input: 'titleClass'
 
             title:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'title'
+                    type: 'text'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'title'
 
             description:
                 type: 'translatable'
@@ -70,10 +68,12 @@ module:
                             data-wysiwyg: ''
 
             primary_button_text:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'primaryButtonText'
+                    type: 'text'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'route'
