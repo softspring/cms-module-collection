@@ -1,17 +1,17 @@
-<section class="hero px-4 py-5 text-center {{ class|default('') }} {{ fullpage|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+<section class="sfs-hero px-4 py-5 text-center {{ class|default('') }} {{ fullpage|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
-        <div class="hero__bg-media">
+        <div class="sfs-hero__bg-media">
             {{ background[app.request.locale]|sfs_media_render_picture }}
         </div>
     {% endif %}
-    <div class="hero__content container">
+    <div class="sfs-hero__content container">
 
         {% if other[app.request.locale]|default(false) %}
-        <div class="hero__image">
+        <div class="sfs-hero__image">
             {{ other[app.request.locale]|sfs_media_render_image('_original') }}
         </div>
         {% endif %}
-        <h1 class="hero__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h1>
+        <h1 class="sfs-hero__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h1>
         <div class="col-md-10 col-lg-8 mx-auto">
             {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

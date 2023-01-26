@@ -1,4 +1,4 @@
-{% set defaultDivClass = 'two-columns py-5' %}
+{% set defaultDivClass = 'sfs-two-columns py-5' %}
 <article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
          data-edit-id-target="twoColumnsIdDiv"
          data-edit-class-target="twoColumnsClassDiv"
@@ -18,14 +18,14 @@
                 {% endfor %}
             </div>
             <div class="col-12 col-md-6">
-                {% set titleClassDefault = 'two-columns__title' %}
+                {% set titleClassDefault = 'sfs-two-columns__title' %}
                 {% for locale,localeField in form.title %}
                 <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                     data-edit-class-target="titleClass"
                     data-edit-class-default="{{ titleClassDefault }}"
                     data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
                 {% endfor %}
-                <div class="two-columns__desc">
+                <div class="sfs-two-columns__desc">
                     {% for locale,localeField in form.description %}
                         <div class="wysiwyg-preview"
                              data-edit-content-target="description.{{ locale }}"
@@ -39,7 +39,7 @@
                 </div>
 
                 {% for locale,localeField in form.primary_button_text %}
-                <div class="two-columns__cta">
+                <div class="sfs-two-columns__cta">
                     <a href="#" class="btn btn-primary" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Botón principal') }}</a>
                 </div>
                 {% endfor %}
