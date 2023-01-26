@@ -9,11 +9,16 @@ two_columns:
         id.label: "Id"
         class.label: "Classes"
         title_class.label: "Title classes"
-        title.label: "Title"
-        description.label: "Description"
-        primary_button_text.label: "Primary button text"
+        title:
+            label: "Title"
+            placeholder: "Insert title here"
+        description:
+            label: "Description"
+            placeholder: "Insert description here"
+        primary_button_text:
+            label: "Primary button text"
+            placeholder: "Primary button text"
         primary_button_link.label: "Primary button link"
-        secondary_button_text.label: "Secondary button text"
         bg_color.label: "Background color"
         image_position_text.values:
             left: "Left"

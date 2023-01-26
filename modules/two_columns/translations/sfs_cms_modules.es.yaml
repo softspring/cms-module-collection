@@ -9,12 +9,16 @@ two_columns:
         id.label: "Id"
         class.label: "Clases"
         title_class.label: "Clases para el título"
-        title.label: "Título"
-        description.label: "Descripción"
-        primary_button_text.label: "Texto del botón primario"
+        title:
+            label: "Título"
+            placeholder: "Inserta aquí el título"
+        description:
+            label: "Descripción"
+            placeholder: "Inserta aquí la descripción"
+        primary_button_text:
+            label: "Texto del botón primario"
+            placeholder: "Texto del botón primario"
         primary_button_link.label: "Enlace del botón primario"
-        secondary_button_text.label: "Texto del botón secundario"
-        secondary_button_link.label: "Enlace del botón secundario"
         bg_color.label: "Color de fondo"
         image_position_text.values:
             left: "Izquierda"
