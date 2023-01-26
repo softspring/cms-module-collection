@@ -7,8 +7,8 @@
     <div class="container">
         <div class="row {{ image_position_text|default('flex-row') }}">
             <div class="col-12 col-md-6">
-                {% if module_image[app.request.locale]|default(false) %}
-                {{ module_image[app.request.locale]|sfs_media_render_image(['sm'], {'class':'img-fluid'}) }}
+                {% if module_image[app.request.locale].media|default(false) %}
+                {{ module_image[app.request.locale].media|sfs_media_render(module_image[app.request.locale].version, {'class':'img-fluid'}) }}
                 {% endif %}
             </div>
             <div class="col-12 col-md-6">
