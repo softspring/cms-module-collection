@@ -1,0 +1,10 @@
+button:
+    label: "Botón"
+    prototype_button: "Botón"
+    prototype_button_icon: '<i class="bi bi-link"></i>'
+    form:
+        locale_filter.label: "Idiomas"
+        id.label: "Id"
+        class.label: "Clases"
+        button_texto.label: "Texto del botón"
+        button_link.label: "Enlace del botón"

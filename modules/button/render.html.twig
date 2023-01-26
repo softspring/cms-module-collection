@@ -1,0 +1,6 @@
+{% if button_text|default(false) and button_text|sfs_cms_trans is not empty %}
+    <a href="{{ button_link|default(false) ? path(button_link) : '#' }}"
+            {{ sfs_cms_route_attr(button_link)}}
+            id="{{ id|default('') }}"
+            class="{{ class|default('btn btn-primary') }}">{{ button_text|sfs_cms_trans|raw }}</a>
+{% endif %}
