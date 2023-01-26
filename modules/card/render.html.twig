@@ -5,7 +5,6 @@
                 {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
             </div>
         {% endif %}
-
         <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}">
             {% if media[app.request.locale]|default(false) %}
                 <div class="sfs-card__media">
