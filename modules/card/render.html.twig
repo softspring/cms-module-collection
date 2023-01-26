@@ -2,15 +2,15 @@
     <div class="h-100" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
         {% if background[app.request.locale]|default(false) %}
             <div class="sfs-card__bg-picture">
-                {{ background[app.request.locale]|sfs_media_render_picture }}
+                {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
             </div>
         {% endif %}
 
         <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}">
-            {% if other[app.request.locale]|default(false) %}
-            <div class="sfs-card__media">
-                {{ other[app.request.locale]|sfs_media_render_image(['_original'], {'class':'img-fluid'}) }}
-            </div>
+            {% if media[app.request.locale]|default(false) %}
+                <div class="sfs-card__media">
+                    {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
+                </div>
             {% endif %}
             <div class="sfs-card__texts">
                 <h2 class="sfs-card__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
