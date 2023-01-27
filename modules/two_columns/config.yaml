@@ -6,15 +6,6 @@ module:
 
     module_options:
         form_fields:
-#            background:
-#                type: 'translatableImage'
-#                type_options:
-#                    children_attr:
-#                        data-media-preview-input: 'backgroundImage'
-#                    media_types:
-#                        background:
-#                            picture: '_default'
-
             module_image:
                 type: 'translatable'
                 type_options:
