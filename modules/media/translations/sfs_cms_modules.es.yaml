@@ -5,5 +5,11 @@ media:
     form:
         locale_filter.label: "Idiomas"
         media.label: "Fichero"
+        aligment_media:
+            label: "Alineación del media"
+            values:
+                left: "Izquierda"
+                right: "Derecha"
+                center: "Centrado"
     prototype_button_icon: '<i class="bi bi-image"></i>'
-    prototype_button: 'Fichero multimedia'
+    prototype_button: "Fichero multimedia"
