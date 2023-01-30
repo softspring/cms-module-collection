@@ -1,5 +1,5 @@
 {% set defaultDivClass = 'cardmod px-4 py-5' %}
-<article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+<div class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
     data-edit-id-target="cardIdDiv"
 
     data-edit-class-target="cardClassDiv"
@@ -83,4 +83,4 @@
             </div>
         </div>
     </div>
-</article>
+</div>
