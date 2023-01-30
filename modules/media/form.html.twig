@@ -1,2 +1,9 @@
-{{ form_widget(form.media) }}
+<div class="row">
+    <div class="col-12 mb-3">
+        {{ form_row(form.media) }}
+    </div>
+    <div class="col-12">
+        {{ form_row(form.aligment_media) }}
+    </div>
+</div>
 {{ form_rest(form) }}

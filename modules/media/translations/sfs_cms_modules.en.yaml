@@ -1,0 +1,15 @@
+_group.media.name: "Multimedia"
+
+media:
+    label: "Multimedia file"
+    form:
+        locale_filter.label: "Locales"
+        media.label: "File"
+        aligment_media:
+            label: "Media aligment"
+            values:
+                left: "Left"
+                right: "Right"
+                center: "Center"
+    prototype_button_icon: '<i class="bi bi-image"></i>'
+    prototype_button: "Multimedia file"
