@@ -8,3 +8,18 @@ button:
         class.label: "Classes"
         button_text.label: "Button text"
         button_link.label: "Button link"
+        button_style:
+            label: "Button style"
+            values:
+                primary: "Primary"
+                secondary: "Secondary"
+                success: "Success"
+                danger: "Danger"
+                link: "Link"
+                outline_primary: "Hollow primary"
+                outline_secondary: "Hollow secondary"
+                outline_success: "Hollow success"
+                outline_danger: "Hollow danger"
+                custom: "Custom"
+            button_style_custom:
+                label: "Custom butom styles (CSS classes)"

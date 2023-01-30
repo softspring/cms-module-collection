@@ -1,6 +1,6 @@
 module:
     revision: 1
-    group: 'block'
+    group: 'basic'
     edit_template: '@module/button/edit.html.twig'
     form_template: '@module/button/form.html.twig'
 
@@ -12,12 +12,28 @@ module:
                     attr:
                         data-edit-id-input: 'buttonId'
 
-            class:
+            button_style:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "button.form.button_style.values.primary": 'btn btn-primary'
+                        "button.form.button_style.values.secondary": 'btn btn-secondary'
+                        "button.form.button_style.values.success": 'btn btn-success'
+                        "button.form.button_style.values.danger": 'btn btn-danger'
+                        "button.form.button_style.values.link": 'btn btn-link'
+                        "button.form.button_style.values.outline_primary": 'btn btn-outline-primary'
+                        "button.form.button_style.values.outline_secondary": 'btn btn-outline-secondary'
+                        "button.form.button_style.values.outline_success": 'btn btn-outline-success'
+                        "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
+                        "button.form.button_style.values.custom": ''
+                    attr:
+                        data-edit-class-input: 'buttonClass'
+
+            button_style_custom:
                 type: 'class'
                 type_options:
                     attr:
                         data-edit-class-input: 'buttonClass'
-
 
             button_text:
                 type: 'translatableText'

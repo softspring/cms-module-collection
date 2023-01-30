@@ -1,8 +1,8 @@
-{% set defaultButtonClass = 'btn btn-primary' %}
+{% set defaultButtonClass = '' %}
 {% for locale,localeField in form.button_text %}
     <a href="#"
        id="{{ form.id.vars.data|default('') }}"
-       class="btn btn-primary btn-lg px-4 gap-3"
+       class="{{ form.button_style.vars.data|default(form.button_style_custom.vars.data|default('btn btn-primary')) }}"
        data-lang="{{ locale }}"
        data-edit-content-target="buttonText.{{ locale }}"
 
