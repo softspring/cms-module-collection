@@ -6,5 +6,20 @@ button:
         locale_filter.label: "Idiomas"
         id.label: "Id"
         class.label: "Clases"
-        button_texto.label: "Texto del botón"
+        button_text.label: "Texto del botón"
         button_link.label: "Enlace del botón"
+        button_style:
+            label: "Estilo del botón"
+            values:
+                primary: "Primario"
+                secondary: "Secundario"
+                success: "Éxito"
+                danger: "Error"
+                link: "Enlace"
+                outline_primary: "Primario hueco"
+                outline_secondary: "Secundario hueco"
+                outline_success: "Éxito hueco"
+                outline_danger: "Error hueco"
+                custom: "Personalizado"
+        button_style_custom:
+            label: "Estilo del botón personalizado (clases CSS)"
