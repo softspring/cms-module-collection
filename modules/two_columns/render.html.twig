@@ -1,25 +1,25 @@
-<section class="two-columns py-5 {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
+<section class="sfs-two-columns py-5 {{ class|default('') }}" id="{{ id|default('') }}" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
-        <div class="two-columns__bg-media">
+        <div class="sfs-two-columns__bg-media">
             {{ background[app.request.locale]|sfs_media_render_picture }}
         </div>
     {% endif %}
     <div class="container">
         <div class="row {{ image_position_text|default('flex-row') }}">
             <div class="col-12 col-md-6">
-                {% if module_image[app.request.locale]|default(false) %}
-                {{ module_image[app.request.locale]|sfs_media_render_image(['sm'], {'class':'img-fluid'}) }}
+                {% if module_image[app.request.locale].media|default(false) %}
+                {{ module_image[app.request.locale].media|sfs_media_render(module_image[app.request.locale].version, {'class':'img-fluid'}) }}
                 {% endif %}
             </div>
             <div class="col-12 col-md-6">
-                <h2 class="two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
-                <div class="two-columns__desc">
+                <h2 class="sfs-two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
+                <div class="sfs-two-columns__desc">
                     {% if description[app.request.locale]|default(false) %}
                         {{ description[app.request.locale]|default('')|raw }}
                     {% endif %}
                 </div>
                 {% if primary_button_text|sfs_cms_trans|default(false) %}
-                    <div class="two-columns__cta">
+                    <div class="sfs-two-columns__cta">
                         <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     </div>
                 {% endif %}

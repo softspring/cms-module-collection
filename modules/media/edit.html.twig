@@ -1,4 +1,9 @@
-<div data-media-preview-target="mediaPreview">
+{% set defaultDivClass = 'd-flex' %}
+<div class="{{ defaultDivClass }} {{ form.aligment_media.vars.data|default('') }}"
+        data-media-preview-target="mediaPreview"
+
+         data-edit-class-target="aligmentMediaClass"
+         data-edit-class-default="{{ defaultDivClass }}">
     {% if form.media.media.vars.data|default(false) and form.media.version.vars.data|default(false) %}
         {% set versionSplit = form.media.version.vars.data|split('#') %}
         {% set versionType = versionSplit[0]|default('image') %}

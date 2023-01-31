@@ -2,7 +2,7 @@
 {% set type = form.type.vars.data|default('h1') %}
 
 {% for locale,localeField in form.title %}
-    <{{ type}} class="{{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+    <{{ type}} class="sfs-title {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
         data-lang="{{ locale }}"
 
         data-cms-module-title-type=""

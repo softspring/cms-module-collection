@@ -1,0 +1,15 @@
+{% set defaultButtonClass = '' %}
+{% for locale,localeField in form.button_text %}
+    <a href="#"
+       id="{{ form.id.vars.data|default('') }}"
+       class="{{ form.button_style.vars.data|default(form.button_style_custom.vars.data|default('btn btn-primary')) }}"
+       data-lang="{{ locale }}"
+       data-edit-content-target="buttonText.{{ locale }}"
+
+       data-edit-id-target="buttonId"
+
+       data-edit-class-target="buttonClass"
+       data-edit-class-default="{{ defaultButtonClass }}"
+
+       contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+{% endfor %}

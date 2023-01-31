@@ -1,27 +1,23 @@
-<div class="cardmod {{ class|default('') }} {{ content_position|default('') }}" id="{{ id|default('') }}">
+<div class="sfs-card {{ class|default('') }} {{ content_position|default('') }}" id="{{ id|default('') }}">
     <div class="h-100" style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
-        <div class="container">
-            {% if background[app.request.locale]|default(false) %}
-                <div class="cardmod__bg-picture">
-                    {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
-                </div>
+        {% if background[app.request.locale]|default(false) %}
+            <div class="sfs-card__bg-picture">
+                {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
+            </div>
+        {% endif %}
+        <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}">
+            {% if media[app.request.locale]|default(false) %}
+            <div class="sfs-card__media">
+                {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
+            </div>
             {% endif %}
-
-            <div class="cardmod__content {{ form.content_position.vars.value|default('') }}">
-
-                {% if media[app.request.locale]|default(false) %}
-                <div class="cardmod__media">
-                    {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
-                </div>
-                {% endif %}
-                <div class="cardmod__texts">
-                    <h2 class="cardmod__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
-                    {% if description|default(false) %}<div class="cardmod__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
-                    <div class="cardmod__cta">
-                        {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
-                            <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
-                        {% endif %}
-                    </div>
+            <div class="sfs-card__texts">
+                <h2 class="sfs-card__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
+                {% if description|default(false) %}<div class="sfs-card__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
+                <div class="sfs-card__cta">
+                    {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
+                        <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

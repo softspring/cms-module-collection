@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
       initTinyMCE(element, element.getAttribute('data-initial-value'));
     });
 
-    document.addEventListener('polymorphic.add', function (e) {
+    document.addEventListener('polymorphic.node.add', function (e) {
       const module = e.detail.module;
 
       module.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
@@ -91,7 +91,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('polymorphic.move.down.before', function (e) {
+    document.addEventListener('polymorphic.node.down.before', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
       description = [];
@@ -106,10 +106,9 @@ window.addEventListener('load', function () {
         description[index+1][element.getAttribute('data-edit-content-input')] = tinymce.get(element.getAttribute('id')).getContent();
         tinymce.remove('#'+element.getAttribute('id'));
       });
-      console.log(description);
     });
 
-    document.addEventListener('polymorphic.move.down', function (e) {
+    document.addEventListener('polymorphic.node.down', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
 
@@ -124,7 +123,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('polymorphic.move.up.before', function (e) {
+    document.addEventListener('polymorphic.node.up.before', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
       description = [];
@@ -142,7 +141,7 @@ window.addEventListener('load', function () {
       });
     });
 
-    document.addEventListener('polymorphic.move.up', function (e) {
+    document.addEventListener('polymorphic.node.up', function (e) {
       const module = e.detail.module,
           index = parseInt(module.getAttribute('data-index'));
 

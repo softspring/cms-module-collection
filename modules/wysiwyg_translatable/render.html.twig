@@ -1,4 +1,4 @@
-<div {% if id %}id="{{ id|default('') }}"{% endif %} class="{{ class|default('') }}">
+<div {% if id %}id="{{ id|default('') }}"{% endif %} class="sfs-wysiwyg-trans {{ class|default('') }}">
     {% if content[app.request.locale]|default(false) %}
         {{ content[app.request.locale]|default('')|raw }}
     {% endif %}

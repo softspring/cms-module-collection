@@ -1,5 +1,5 @@
-{% set defaultDivClass = 'cardmod px-4 py-5' %}
-<article
+{% set defaultDivClass = 'sfs-card px-4 py-5' %}
+<div
     id="{{ form.id.vars.data|default('') }}"
     data-edit-id-target="cardIdDiv"
 
@@ -12,27 +12,27 @@
 >
     <div class="container">
         {% for locale,localeField in form.background %}
-            <div class="cardmod__bg-picture" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+            <div class="sfs-card__bg-picture" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
                 {% if localeField.vars.data %}
                     {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                 {% endif %}
             </div>
         {% endfor %}
-        <div class="cardmod__content {{ form.content_position.vars.value|default('') }}"
+        <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}"
              data-edit-class-target="contentPositionClass"
-             data-edit-class-default="cardmod__content">
+             data-edit-class-default="sfs-card__content">
 
             {% for locale,localeField in form.media %}
-            <div class="cardmod__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+            <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
                 {% if localeField.media.vars.data %}
                     {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                 {% endif %}
             </div>
             {% endfor %}
 
-            <div class="cardmod__texts">
+            <div class="sfs-card__texts">
                 {% for locale,localeField in form.title %}
-                    {% set titleClassDefault = 'cardmod__title' %}
+                    {% set titleClassDefault = 'sfs-card__title' %}
                     <h2
                         class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                         data-edit-class-target="titleClass"
@@ -46,7 +46,7 @@
                 {% endfor %}
 
                 {% for locale,localeField in form.description %}
-                    <div class="cardmod__desc mb-4 wysiwyg-preview"
+                    <div class="sfs-card__desc mb-4 wysiwyg-preview"
 
                          data-lang="{{ locale }}"
                          data-edit-content-target="description.{{ locale }}"
@@ -57,7 +57,7 @@
                     >{{ localeField.vars.data|default('')|raw }}</div>
                 {% endfor %}
 
-                <div class="cardmod__cta">
+                <div class="sfs-card__cta">
                      {% for locale,localeField in form.primary_button_text %}
                          {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
 
@@ -93,4 +93,4 @@
             </div>
         </div>
     </div>
-</article>
+</div>

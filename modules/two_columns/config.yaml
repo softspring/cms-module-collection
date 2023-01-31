@@ -1,34 +1,20 @@
 module:
-    revision: 1
+    revision: 2
     group: 'block'
     edit_template: '@module/two_columns/edit.html.twig'
     form_template: '@module/two_columns/form.html.twig'
 
     module_options:
         form_fields:
-#            background:
-#                type: 'translatableImage'
-#                type_options:
-#                    children_attr:
-#                        data-media-preview-input: 'backgroundImage'
-#                    media_types:
-#                        background:
-#                            picture: '_default'
-
             module_image:
-                type: 'translatableImage'
+                type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-media-preview-input: 'moduleImage'
-                    media_attr:
-                        class: 'img-fluid'
-                    media_types:
-                        content:
-                            image: 'sm'
-                        content_png:
-                            image: 'sm'
-                        content_webp:
-                            image: 'sm'
+                    type: 'mediaVersion'
+                    type_options:
+                        attr:
+                            data-media-preview-input: 'moduleImage'
+                        media_attr:
+                            class: 'img-fluid'
 
             id:
                 type: 'id'

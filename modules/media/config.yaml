@@ -12,3 +12,13 @@ module:
                     show_thumbnail: true
                     attr:
                         data-media-preview-input: 'mediaPreview'
+
+            aligment_media:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "media.form.aligment_media.values.left": 'justify-content-start'
+                        "media.form.aligment_media.values.right": 'justify-content-end'
+                        "media.form.aligment_media.values.center": 'justify-content-center'
+                    attr:
+                        data-edit-class-input: 'aligmentMediaClass'
