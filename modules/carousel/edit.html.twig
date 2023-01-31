@@ -2,10 +2,10 @@
     {{ form_row(form.modules, {'container': {
         'attr': {
             'id': form.id.vars.data,
-            'class': 'py-5 '~form.class.vars.data|default(''),
+            'class': 'sfs-carousel py-5 '~form.class.vars.data|default(''),
             'data-edit-id-target': 'carouselIdDiv',
             'data-edit-class-target': 'carouselClassDiv',
-            'data-edit-class-default': 'sfs-carousel p-2',
+            'data-edit-class-default': 'sfs-carousel py-5',
             'data-edit-bgcolor-target': 'carouselColorDiv',
             'style': form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : ''
         }
