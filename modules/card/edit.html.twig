@@ -10,64 +10,62 @@
     data-edit-bgcolor-target="cardColorDiv"
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
-    <div class="container">
-        {% for locale,localeField in form.background %}
-            <div class="sfs-card__bg-picture" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
-                {% if localeField.vars.data %}
-                    {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
-                {% endif %}
-            </div>
-        {% endfor %}
-        <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}"
-             data-edit-class-target="contentPositionClass"
-             data-edit-class-default="sfs-card__content">
+    {% for locale,localeField in form.background %}
+        <div class="sfs-card__bg-picture" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+            {% if localeField.vars.data %}
+                {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}"
+         data-edit-class-target="contentPositionClass"
+         data-edit-class-default="sfs-card__content">
 
-            {% for locale,localeField in form.media %}
-            <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
-                {% if localeField.media.vars.data %}
-                    {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
-                {% endif %}
-            </div>
+        {% for locale,localeField in form.media %}
+        <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+            {% if localeField.media.vars.data %}
+                {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="sfs-card__texts">
+            {% for locale,localeField in form.title %}
+                {% set titleClassDefault = 'sfs-card__title' %}
+                <h2
+                    class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                    data-edit-class-target="titleClass"
+                    data-edit-class-default="{{ titleClassDefault }}"
+
+                    data-lang="{{ locale }}"
+                    data-edit-content-target="title.{{ locale }}"
+                    data-edit-content-placeholder="{{ 'card.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+                    contenteditable="true"
+                >{{ localeField.vars.data|default('')|raw }}</h2>
             {% endfor %}
 
-            <div class="sfs-card__texts">
-                {% for locale,localeField in form.title %}
-                    {% set titleClassDefault = 'sfs-card__title' %}
-                    <h2
-                        class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
-                        data-edit-class-target="titleClass"
-                        data-edit-class-default="{{ titleClassDefault }}"
+            {% for locale,localeField in form.description %}
+                <div class="sfs-card__desc mb-4 wysiwyg-preview"
 
-                        data-lang="{{ locale }}"
-                        data-edit-content-target="title.{{ locale }}"
-                        data-edit-content-placeholder="{{ 'card.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-                        contenteditable="true"
-                    >{{ localeField.vars.data|default('')|raw }}</h2>
+                     data-lang="{{ locale }}"
+                     data-edit-content-target="description.{{ locale }}"
+                     data-edit-content-placeholder="{{ 'card.form.description.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+
+                     data-bs-toggle="modal"
+                     data-bs-target="#{{ id }}Modal"
+                >{{ localeField.vars.data|default('')|raw }}</div>
+            {% endfor %}
+
+            <div class="sfs-card__cta">
+                 {% for locale,localeField in form.primary_button_text %}
+                     {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
+
+                     <a href="#" data-edit-content-hide-if-empty="true"
+                       class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
+                       data-edit-class-target="primaryButtonClass"
+                       data-edit-class-default="{{ defaultPrimaryButtonClass }}"
+                       data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
-
-                {% for locale,localeField in form.description %}
-                    <div class="sfs-card__desc mb-4 wysiwyg-preview"
-
-                         data-lang="{{ locale }}"
-                         data-edit-content-target="description.{{ locale }}"
-                         data-edit-content-placeholder="{{ 'card.form.description.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-
-                         data-bs-toggle="modal"
-                         data-bs-target="#{{ id }}Modal"
-                    >{{ localeField.vars.data|default('')|raw }}</div>
-                {% endfor %}
-
-                <div class="sfs-card__cta">
-                     {% for locale,localeField in form.primary_button_text %}
-                         {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
-
-                         <a href="#" data-edit-content-hide-if-empty="true"
-                           class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
-                           data-edit-class-target="primaryButtonClass"
-                           data-edit-class-default="{{ defaultPrimaryButtonClass }}"
-                           data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
-                    {% endfor %}
-                </div>
             </div>
         </div>
     </div>
