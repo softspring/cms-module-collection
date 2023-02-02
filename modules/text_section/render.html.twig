@@ -1,5 +1,5 @@
 <section id="{{ id|default('') }}"
-         class=sfs-sfs-text-section {{ class|default('') }}"
+         class="sfs-text-section {{ class|default('') }}"
          style="{{ bg_color|default(false) ? 'background-color:'~bg_color : '' }}">
     {% if background[app.request.locale]|default(false) %}
         <div class="sfs-text-section__bg-media">
@@ -12,9 +12,7 @@
                     container--no-cta
                     {% endif %}">
             {% if media[app.request.locale]|default(false) %}
-                <div class="sfs-text-section__image">
-                    {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
-                </div>
+                {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'sfs-text-section__image img-fluid'}) }}
             {% endif %}
             <div class="sfs-text-section__content">
                 {% if title|default(false) %}
