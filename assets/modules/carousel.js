@@ -1,14 +1,8 @@
-// import './swiper/swiper.scss';
-// import './_carousel.scss';
-// import Swiper from './swiper/core/core';
-// import { Navigation, Pagination } from './swiper/swiper-bundle';
-
 // core version + navigation, pagination modules:
-import Swiper, { Navigation, Pagination, Autoplay } from './swiper';
-// import Swiper and modules styles
-import './swiper/swiper.scss';
-import './swiper/modules/navigation/navigation.scss';
-import './swiper/modules/pagination/pagination.scss';
+// import Swiper, { Navigation, Pagination, Autoplay } from './swiper';
+import Swiper from './swiper/swiper-bundle.esm.browser.min'
+import './swiper/swiper-bundle.min.css'
+
 import './_carousel.scss';
 
 class Carousel {
@@ -32,12 +26,10 @@ class Carousel {
                 // init Swiper:
                 if(autoplayCarousel) {
                     const swiper = new Swiper('.'+ classSwiper, {
-                        // configure Swiper to use modules
-                        modules: [Navigation, Pagination],
                         loop: infiniteLoopCarousel,
                         slidesPerView: slidesPerViewCarousel,
                         autoplay: {
-                            delay: 2500,
+                            delay: 3500,
                             disableOnInteraction: false,
                         },
                         // If we need pagination
@@ -54,7 +46,7 @@ class Carousel {
                 } else {
                     const swiper = new Swiper('.'+ classSwiper, {
                         // configure Swiper to use modules
-                        modules: [Navigation, Pagination],
+                        // modules: [Navigation, Pagination],
                         loop: infiniteLoopCarousel,
                         slidesPerView: slidesPerViewCarousel,
                         // If we need pagination

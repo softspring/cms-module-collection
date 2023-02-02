@@ -1,1 +1,7 @@
-$themeColor: #000;
+$themeColor: #666;
+@at-root {
+  :root {
+    --swiper-theme-color: #{$themeColor};
+    --swiper-navigation-size: 40px;
+  }
+}
