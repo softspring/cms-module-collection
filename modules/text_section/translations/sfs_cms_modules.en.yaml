@@ -11,6 +11,7 @@ text_section:
         title_class.label: "Title classes"
         title.label: "Title"
         description.label: "Description"
+        image.label: "Main image"
         primary_button_text.label: "Primary button text"
         primary_button_link.label: "Primary button link"
         secondary_button_text.label: "Secondary button text"
