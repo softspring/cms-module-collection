@@ -25,7 +25,6 @@ module:
                         "button.form.button_style.values.outline_secondary": 'btn btn-outline-secondary'
                         "button.form.button_style.values.outline_success": 'btn btn-outline-success'
                         "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
-                        "button.form.button_style.values.custom": ''
                     attr:
                         data-edit-class-input: 'buttonClass'
 

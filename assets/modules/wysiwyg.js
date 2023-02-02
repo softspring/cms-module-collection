@@ -33,10 +33,23 @@ const initTinyMCE =  function(wyysiwyg, content) {
       toolbar_sticky: false,
       extended_valid_elements:"svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],i[*]",
       setup: function (editor) {
-      editor.on('init', function (e) {
-        editor.setContent(content);
-      });
-    }
+        editor.on('init', function (e) {
+          editor.setContent(content);
+        });
+     }
+  });
+};
+
+const initAllTinyMCE =  function(wyysiwyg, content) {
+  //Init all elements
+  document.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+    initTinyMCE(element, element.value);
+  });
+};
+const removeAllTinyMCE =  function(wyysiwyg, content) {
+  //Remove all elements
+  document.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+    tinymce.remove('#'+element.getAttribute('id'));
   });
 };
 
@@ -46,17 +59,17 @@ window.addEventListener('load', function () {
 
   if (typeof tinyMCE !== 'undefined') {
     delegate(document, 'hidden.bs.modal', '[data-wysiwyg-modal]', function(event) {
-      var modal = event.target,
+      let modal = event.target,
         moduleCont = event.target.closest('[data-edit-id-target]');
-      var field = modal.querySelector('#' + tinyMCE.activeEditor.id).getAttribute('data-edit-content-input');
 
-      if(field !== 'null') {
-        let textCont = moduleCont.querySelector('[data-edit-content-target="' + field + '"]'),
-            defaultText = textCont.getAttribute('data-default-text');
-        textCont.innerHTML = (tinyMCE.activeEditor.getContent() == '' ? defaultText : tinyMCE.activeEditor.getContent());
-        modal.querySelector('#' + tinyMCE.activeEditor.id).setAttribute('data-initial-value', tinyMCE.activeEditor.getContent());
-        modal.querySelector('#' + tinyMCE.activeEditor.id).setAttribute('value', tinyMCE.activeEditor.getContent());
-      }
+      if(modal.querySelector('#' + tinyMCE.activeEditor.id) === null) return;
+
+      let field = modal.querySelector('#' + tinyMCE.activeEditor.id).getAttribute('data-edit-content-input');
+      let textCont = moduleCont.querySelector('[data-edit-content-target="' + field + '"]'),
+          defaultText = textCont.getAttribute('data-default-text');
+      textCont.innerHTML = (tinyMCE.activeEditor.getContent() == '' ? defaultText : tinyMCE.activeEditor.getContent());
+      modal.querySelector('#' + tinyMCE.activeEditor.id).setAttribute('data-initial-value', tinyMCE.activeEditor.getContent());
+      modal.querySelector('#' + tinyMCE.activeEditor.id).setAttribute('value', tinyMCE.activeEditor.getContent());
     });
 
     delegate(document, 'shown.bs.modal', '[data-wysiwyg-modal]', function(event) {
@@ -79,20 +92,26 @@ window.addEventListener('load', function () {
       }
     });
 
-    document.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
-      initTinyMCE(element, element.getAttribute('data-initial-value'));
+    initAllTinyMCE();
+
+    document.addEventListener('polymorphic.node.insert.before', function (e) {
+      removeAllTinyMCE();
     });
 
-    document.addEventListener('polymorphic.node.add', function (e) {
-      const module = e.detail.module;
+    document.addEventListener('polymorphic.node.insert.after', function (e) {
+      initAllTinyMCE();
+    });
 
-      module.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
-        initTinyMCE(element, element.getAttribute('data-initial-value'));
-      });
+    document.addEventListener('polymorphic.node.delete.before', function (e) {
+      removeAllTinyMCE();
+    });
+
+    document.addEventListener('polymorphic.node.delete.after', function (e) {
+      initAllTinyMCE();
     });
 
     document.addEventListener('polymorphic.node.down.before', function (e) {
-      const module = e.detail.module,
+      const module = e.node(),
           index = parseInt(module.getAttribute('data-index'));
       description = [];
 
@@ -102,14 +121,14 @@ window.addEventListener('load', function () {
         tinymce.remove('#'+element.getAttribute('id'));
       });
       description[index+1] = [];
-      module.closest('.polymorphic-collection-widget').querySelector('[data-index="'+ (index+1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+      module.closest('[data-polymorphic="collection"]').querySelector('[data-index="'+ (index+1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
         description[index+1][element.getAttribute('data-edit-content-input')] = tinymce.get(element.getAttribute('id')).getContent();
         tinymce.remove('#'+element.getAttribute('id'));
       });
     });
 
-    document.addEventListener('polymorphic.node.down', function (e) {
-      const module = e.detail.module,
+    document.addEventListener('polymorphic.node.down.after', function (e) {
+      const module = e.node(),
           index = parseInt(module.getAttribute('data-index'));
 
       module.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
@@ -117,14 +136,14 @@ window.addEventListener('load', function () {
         initTinyMCE(element,content);
       });
 
-      module.closest('.polymorphic-collection-widget').querySelector('[data-index="'+ (index-1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+      module.closest('[data-polymorphic="collection"]').querySelector('[data-index="'+ (index-1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
         let content = description[index][element.getAttribute('data-edit-content-input')];
         initTinyMCE(element,content);
       });
     });
 
     document.addEventListener('polymorphic.node.up.before', function (e) {
-      const module = e.detail.module,
+      const module = e.node(),
           index = parseInt(module.getAttribute('data-index'));
       description = [];
 
@@ -135,14 +154,16 @@ window.addEventListener('load', function () {
       });
 
       description[index-1] = [];
-      module.closest('.polymorphic-collection-widget').querySelector('[data-index="'+ (index-1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+      module.closest('[data-polymorphic="collection"]').querySelector('[data-index="'+ (index-1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
        description[index-1][element.getAttribute('data-edit-content-input')] = tinymce.get(element.getAttribute('id')).getContent();
         tinymce.remove('#'+element.getAttribute('id'));
       });
+      console.log('------description polymorphic.node.up.before')
+      console.log(description)
     });
 
-    document.addEventListener('polymorphic.node.up', function (e) {
-      const module = e.detail.module,
+    document.addEventListener('polymorphic.node.up.after', function (e) {
+      const module = e.node(),
           index = parseInt(module.getAttribute('data-index'));
 
       module.querySelectorAll('[data-wysiwyg]').forEach(function(element) {
@@ -150,7 +171,7 @@ window.addEventListener('load', function () {
         initTinyMCE(element,content);
       });
 
-      module.closest('.polymorphic-collection-widget').querySelector('[data-index="'+ (index+1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
+      module.closest('[data-polymorphic="collection"]').querySelector('[data-index="'+ (index+1) +'"]').querySelectorAll('[data-wysiwyg]').forEach(function(element) {
         let content = description[index][element.getAttribute('data-edit-content-input')]
         initTinyMCE(element,content);
       });
