@@ -8,32 +8,33 @@
     data-edit-bgcolor-target="heroColorDiv"
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
-
     {% for locale,localeField in form.background %}
         <div class="sfs-hero__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
-                {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.picture_attr) }}
+                {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
     <div class="sfs-hero__content container">
-        {% for locale,localeField in form.other %}
-            <div class="sfs-hero__image-media" data-media-preview-target="image.{{ locale }}" data-lang="{{ locale }}">
-                {% if localeField.vars.data %}
-                    {{ localeField.vars.data|sfs_media_render_image('_original', localeField.vars.image_attr) }}
+        {% for locale,localeField in form.media %}
+            <div class="sfs-hero__image-media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+                {% if localeField.media.vars.data %}
+                    {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                 {% endif %}
             </div>
         {% endfor %}
-        {% set defaultTitleClass = 'sfs-hero__title' %}
+        {% set titleClassDefault = 'sfs-hero__title' %}
         {% for locale,localeField in form.title %}
-            <h1 class="sfs-hero__title"
-                data-edit-content-target="title.{{ locale }}"
-                data-lang="{{ locale }}"
-
+            <h2
+                class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                 data-edit-class-target="titleClass"
-                data-edit-class-default="{{ defaultDivClass }}"
+                data-edit-class-default="{{ titleClassDefault }}"
 
-                contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h1>
+                data-lang="{{ locale }}"
+                data-edit-content-target="title.{{ locale }}"
+                data-edit-content-placeholder="{{ 'two_columns.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+                contenteditable="true"
+        >{{ localeField.vars.data|default|raw }}</h2>
         {% endfor %}
 
         <div class="col-md-10 col-lg-8 mx-auto">
