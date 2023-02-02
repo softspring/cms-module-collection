@@ -24,13 +24,11 @@
         {% set containerNoCtaDivClass = ' container--no-cta' %}
     {% endif %}
     {% set containerDivClass = 'sfs-text-section__content container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
-    <div class="{{ containerDivClass }} text-center"
-         data-edit-class-target="containerClassDiv"
-         data-edit-class-default="{{ containerDivClass }}">
-        <div class=" {{ form.text_position.vars.value|default('text-center') }}"
-             data-edit-class-target="textPositionClass" >
+        <div class="{{ form.text_position.vars.value|default('text-center') }}"
+             data-edit-class-target="textPositionClass"
+             data-edit-class-default="{{ containerDivClass }}" >
             {% for locale,localeField in form.media %}
-                <div class="sfs-text-section__image" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+                <div class="sfs-text-section__image position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
                     {% if localeField.media.vars.data %}
                         {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                     {% endif %}
@@ -51,7 +49,7 @@
                         contenteditable="true"
                     >{{ localeField.vars.data|default('')|raw }}</h2>
                 {% endfor %}
-                <section class="sfs-text-section__body">
+                <div class="sfs-text-section__body">
                     {% for locale,localeField in form.description %}
                         <div data-edit-content-target="description.{{ locale }}"
                              data-lang="{{ locale }}"
@@ -61,10 +59,8 @@
                             {{ localeField.vars.data|default('Enter description')|raw }}
                         </div>
                     {% endfor %}
-                </section>
 
-                <section class="sfs-text-section__cta">
-                    {% set defaultBtnClass = 'btn btn-primary' %}
+                    {% set defaultBtnClass = 'sfs-text-section__cta btn btn-primary' %}
                     {% for locale,localeField in form.primary_button_text %}
                         <a href="#"
                            class="{{ defaultBtnClass }}"
@@ -74,9 +70,8 @@
                            data-edit-class-target="primaryButtonClassBtn"
                            data-edit-class-default="{{ defaultBtnClass }}">{{ localeField.vars.data|default('') }}</a>
                     {% endfor %}
-                </section>
+                </div>
             </div>
-        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">

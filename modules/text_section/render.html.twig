@@ -24,12 +24,10 @@
                 </div>
                 {% endif %}
                 {% if (primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty) %}
-                <div class="sfs-text-section__cta">
                     {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
                         <a href="{{ primary_button_link|default(false) ? sfs_cms_path(primary_button_link) : '#' }}"
-                           class="btn {{primary_button_class|default('btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                           class="sfs-text-section__cta btn {{primary_button_class|default('btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
-                </div>
                 {% endif %}
             </div>
     </div>
