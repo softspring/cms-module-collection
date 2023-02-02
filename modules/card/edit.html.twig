@@ -11,7 +11,7 @@
     style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
 >
     {% for locale,localeField in form.background %}
-        <div class="sfs-card__bg-picture" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+        <div class="sfs-card__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
@@ -22,7 +22,7 @@
          data-edit-class-default="sfs-card__content">
 
         {% for locale,localeField in form.media %}
-        <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+        <div class="sfs-card__media position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.media.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
