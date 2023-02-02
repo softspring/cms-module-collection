@@ -11,13 +11,14 @@ text_section:
         title_class.label: "Classes para el título"
         title.label: "Título"
         description.label: "Descripción"
-        image.label: "Imagen principal"
+        text_position:
+            label: "Position del texto"
+            values:
+                center: "Centrado"
+                left: "Izquierda"
+                right: "Derecha"
+        media.label: "Imagen principal"
+        primary_button_class.label: "Classes del botón primario"
         primary_button_text.label: "Texto del botón primario"
         primary_button_link.label: "Enlace del botón primario"
-        secondary_button_text.label: "Texto del botón secundario"
-        secondary_button_link.label: "Enlace del botón secundario"
         bg_color.label: "Color de fondo"
-        fullpage.label: "A pantalla completa"
-        fullpage.values:
-            yes: "Sí"
-            no: "No"

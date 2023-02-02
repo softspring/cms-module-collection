@@ -11,7 +11,7 @@
     {% for locale,localeField in form.background %}
         <div class="sfs-text-section__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
-                {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.picture_attr) }}
+                {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
@@ -29,23 +29,27 @@
          data-edit-class-default="{{ containerDivClass }}">
         <div class=" {{ form.text_position.vars.value|default('text-center') }}"
              data-edit-class-target="textPositionClass" >
-            <div class="sfs-text-section__image">
-                {% for locale,localeField in form.image %}
-                <div data-image-preview-target="imageImage.{{ locale }}" data-lang="{{ locale }}">
-                    {% if localeField.vars.data %}
-                        {{ localeField.vars.data|sfs_media_render_picture('_default', localeField.vars.picture_attr) }}
+            {% for locale,localeField in form.media %}
+                <div class="sfs-text-section__image" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+                    {% if localeField.media.vars.data %}
+                        {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                     {% endif %}
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
 
             <div class="sfs-text-section__content">
                 {% for locale,localeField in form.title %}
                     {% set titleClassDefault = 'sfs-text-section__title' %}
-                    <h2 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+                    <h2
+                        class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                         data-edit-class-target="titleClass"
                         data-edit-class-default="{{ titleClassDefault }}"
-                        data-edit-content-target="title.{{ locale }}" data-lang="{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('Título')|raw }}</h2>
+
+                        data-lang="{{ locale }}"
+                        data-edit-content-target="title.{{ locale }}"
+                        data-edit-content-placeholder="{{ 'card.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+                        contenteditable="true"
+                    >{{ localeField.vars.data|default('')|raw }}</h2>
                 {% endfor %}
                 <section class="sfs-text-section__body">
                     {% for locale,localeField in form.description %}

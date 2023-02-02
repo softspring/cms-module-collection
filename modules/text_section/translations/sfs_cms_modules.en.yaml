@@ -11,13 +11,14 @@ text_section:
         title_class.label: "Title classes"
         title.label: "Title"
         description.label: "Description"
-        image.label: "Main image"
+        media.label: "Main image"
+        text_position:
+            label: "Text position"
+            values:
+                center: "Center"
+                left: "Left"
+                right: "Right"
+        primary_button_class.label: "Primary button classes"
         primary_button_text.label: "Primary button text"
         primary_button_link.label: "Primary button link"
-        secondary_button_text.label: "Secondary button text"
-        secondary_button_link.label: "Secondary button link"
         bg_color.label: "Background color"
-        fullpage.label: "Fullpage"
-        fullpage.values:
-            yes: "Yes"
-            no: "No"
