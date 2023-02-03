@@ -22,7 +22,7 @@
          data-edit-class-default="sfs-card__content">
 
         {% for locale,localeField in form.media %}
-        <div class="sfs-card__media position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+        <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.media.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
