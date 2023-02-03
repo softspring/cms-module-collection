@@ -5,7 +5,7 @@ hero:
     form:
         locale_filter.label: "Locales"
         background.label: "Background image"
-        other.label: "Upper image"
+        media.label: "Upper image"
         id.label: "Id"
         class.label: "Classes"
         title_class.label: "Title classes"
