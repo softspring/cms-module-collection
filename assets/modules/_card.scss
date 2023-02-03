@@ -1,6 +1,61 @@
 .sfs-card,
 .cardmod {
-  &__media + &__texts {
+  position: relative;
+  padding: 1rem;
+
+  &__bg-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    //background-color: #000;
+    overflow: hidden;
+    clip-path: inset(0);
+
+    img, video {
+      left: 50%;
+      max-height: 100%;
+      max-width: none;
+      min-height: 100%;
+      min-width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      width: auto;
+    }
+  }
+
+  @supports ((-o-object-fit: cover) or (object-fit:cover)) {
+    &__bg-media {
+      -o-object-fit:cover;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: none;
+      transform: none
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__media {
+    + &__texts {
       margin-top: 15px;
+    }
   }
 }
