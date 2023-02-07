@@ -1,5 +1,5 @@
 module:
-    revision: 2
+    revision: 3
     group: 'block'
     edit_template: '@module/hero/edit.html.twig'
     form_template: '@module/hero/form.html.twig'
@@ -83,7 +83,7 @@ module:
                             data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
-                type: 'route'
+                type: 'symfonyRoute'
                 type_options:
 
             secondary_button_text:
@@ -93,5 +93,5 @@ module:
                         data-edit-content-input: 'secondaryButtonText'
 
             secondary_button_link:
-                type: 'route'
+                type: 'symfonyRoute'
                 type_options:

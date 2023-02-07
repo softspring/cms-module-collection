@@ -15,11 +15,11 @@
             {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
-                    <a href="{{ primary_button_link|default(false) ? path(primary_button_link) : '#' }}" {{ sfs_cms_route_attr(primary_button_link)}} class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    <a href="{{ sfs_cms_url(primary_button_link) }}" {{ sfs_cms_route_attr(primary_button_link)}} class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
 
                 {% if secondary_button_text|default(false) and secondary_button_text|sfs_cms_trans is not empty  %}
-                    <a href="{{ secondary_button_link|default(false) ? path(secondary_button_link) : '#' }}" {{ sfs_cms_route_attr(secondary_button_link)}} class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
+                    <a href="{{ sfs_cms_url(secondary_button_link) }}" {{ sfs_cms_route_attr(secondary_button_link)}} class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
             </div>
         </div>
