@@ -1,5 +1,5 @@
 module:
-    revision: 2
+    revision: 3
     group: 'block'
     edit_template: '@module/two_columns/edit.html.twig'
     form_template: '@module/two_columns/form.html.twig'
@@ -62,7 +62,7 @@ module:
                         data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
-                type: 'route'
+                type: 'symfonyRoute'
                 type_options:
 
             image_position_text:
