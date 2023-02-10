@@ -12,9 +12,13 @@ hero:
         title.label: "Title"
         description.label: "Description"
         primary_button_text.label: "Primary button text"
-        primary_button_link.label: "Primary button link"
+        primary_button_link:
+            route_name.label: "Primary button link"
+            route_params.label: "Link parameters"
         secondary_button_text.label: "Secondary button text"
-        secondary_button_link.label: "Secondary button link"
+        secondary_button_link:
+            route_name.label: "Secondary button link"
+            route_params.label: "Link parameters"
         bg_color.label: "Background color"
         fullpage.label: "Fullpage"
         fullpage.values:

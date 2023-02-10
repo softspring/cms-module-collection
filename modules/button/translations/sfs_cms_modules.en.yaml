@@ -7,7 +7,9 @@ button:
         id.label: "Id"
         class.label: "Classes"
         button_text.label: "Button text"
-        button_link.label: "Button link"
+        button_link:
+            route_name.label: "Button link"
+            route_params.label: "Link parameters"
         button_style:
             label: "Button style"
             values:

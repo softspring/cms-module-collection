@@ -11,14 +11,16 @@ text_section:
         title_class.label: "Classes para el título"
         title.label: "Título"
         description.label: "Descripción"
+        media.label: "Imagen principal"
         text_position:
             label: "Position del texto"
             values:
                 center: "Centrado"
                 left: "Izquierda"
                 right: "Derecha"
-        media.label: "Imagen principal"
         primary_button_class.label: "Classes del botón primario"
         primary_button_text.label: "Texto del botón primario"
-        primary_button_link.label: "Enlace del botón primario"
+        primary_button_link:
+            route_name.label: "Enlace del botón primario"
+            route_params.label: "Parámetros del enlace"
         bg_color.label: "Color de fondo"

@@ -18,7 +18,9 @@ two_columns:
         primary_button_text:
             label: "Texto del botón primario"
             placeholder: "Texto del botón primario"
-        primary_button_link.label: "Enlace del botón primario"
+        primary_button_link:
+            route_name.label: "Enlace del botón primario"
+            route_params.label: "Parámetros del enlace"
         bg_color.label: "Color de fondo"
         image_position_text.values:
             left: "Izquierda"
