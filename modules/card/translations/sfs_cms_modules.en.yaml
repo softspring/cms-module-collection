@@ -16,8 +16,9 @@ card:
             label: "Description"
             placeholder: "Card description"
         primary_button_text.label: "Primary button text"
-        primary_button_link.label: "Primary button link"
-        secondary_button_text.label: "Secondary button text"
+        primary_button_link:
+            route_name.label: "Primary button link"
+            route_params.label: "Link parameters"
         bg_color.label: "Background color"
         primary_button_class.label: "Primary button classes"
         content_position.label: "Content position"

@@ -20,5 +20,7 @@ text_section:
                 right: "Right"
         primary_button_class.label: "Primary button classes"
         primary_button_text.label: "Primary button text"
-        primary_button_link.label: "Primary button link"
+        primary_button_link:
+            route_name.label: "Primary button link"
+            route_params.label: "Link parameters"
         bg_color.label: "Background color"

@@ -12,9 +12,13 @@ hero:
         title.label: "Título"
         description.label: "Descripción"
         primary_button_text.label: "Texto del botón primario"
-        primary_button_link.label: "Enlace del botón primario"
+        primary_button_link:
+            route_name.label: "Enlace del botón primario"
+            route_params.label: "Parámetros del enlace"
         secondary_button_text.label: "Texto del botón secundario"
-        secondary_button_link.label: "Enlace del botón secundario"
+        secondary_button_link:
+            route_name.label: "Enlace del botón secundario"
+            route_params.label: "Parámetros del enlace"
         bg_color.label: "Color de fondo"
         fullpage.label: "A pantalla completa"
         fullpage.values:
