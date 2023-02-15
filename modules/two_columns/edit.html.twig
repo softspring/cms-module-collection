@@ -12,7 +12,7 @@
                 {% for locale,localeField in form.module_image %}
                     <div data-media-preview-target="moduleImage.{{ locale }}" data-lang="{{ locale }}">
                         {% if localeField.vars.data.media|default(false) %}
-                            {{ localeField.vars.data.media|sfs_media_render(localeField.vars.data.version) }}
+                            {{ localeField.vars.data.media|sfs_media_render(localeField.vars.data.version, localeField.media.vars.image_attr) }}
                         {% endif %}
                     </div>
                 {% endfor %}
