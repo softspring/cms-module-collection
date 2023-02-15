@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## [v5.0.5](https://github.com/softspring/cms-module-collection/releases/tag/v5.0.5)
+
+### Upgrading
+
+*Nothing to do on upgrading*
+
+### Commits
+
+- [a6d5f71](https://github.com/softspring/cms-module-collection/commit/a6d5f714a96a8d5b260617b3d89c23fc337653bb): Update changelog
+- [05f12b8](https://github.com/softspring/cms-module-collection/commit/05f12b8935a5fa54c7973f3b94df9ecb27dd4c31): Fix image preview size in Two columns module
+
+### Changes
+
+```
+ CHANGELOG.md                       | 82 ++++++++++++++++++++++++++++++++++++++
+ modules/two_columns/edit.html.twig |  2 +-
+ 2 files changed, 83 insertions(+), 1 deletion(-)
+```
+
 ## [v5.0.4](https://github.com/softspring/cms-module-collection/releases/tag/v5.0.4)
 
 ### Upgrading
