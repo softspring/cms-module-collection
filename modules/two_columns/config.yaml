@@ -46,6 +46,17 @@ module:
                     children_attr:
                         data-edit-content-input: 'title'
 
+            title_type:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "title.form.type.values.h2": h2
+                        "title.form.type.values.h1": h1
+                        "title.form.type.values.h3": h3
+                        "title.form.type.values.h4": h4
+                        "title.form.type.values.h5": h5
+                        "title.form.type.values.h6": h6
+
             description:
                 type: 'translatable'
                 type_options:

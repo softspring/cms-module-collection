@@ -11,7 +11,7 @@
         </div>
         {% endif %}
         <div class="sfs-card__texts">
-            <h2 class="sfs-card__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h2>
+            <{{ title_type }} class="sfs-card__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type }}>
             {% if description|default(false) %}<div class="sfs-card__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
             <div class="sfs-card__cta">
                 {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}

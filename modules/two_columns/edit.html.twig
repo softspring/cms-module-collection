@@ -1,4 +1,5 @@
 {% set defaultDivClass = 'sfs-two-columns py-5' %}
+{% set titleType = form.title_type.vars.data|default('h2') %}
 <section class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
          data-edit-id-target="twoColumnsIdDiv"
          data-edit-class-target="twoColumnsClassDiv"
@@ -20,7 +21,7 @@
             <div class="col-12 col-md-6">
                 {% set titleClassDefault = 'sfs-two-columns__title' %}
                 {% for locale,localeField in form.title %}
-                <h2
+                <{{ titleType }}
                     class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                     data-edit-class-target="titleClass"
                     data-edit-class-default="{{ titleClassDefault }}"
@@ -29,7 +30,7 @@
                     data-edit-content-target="title.{{ locale }}"
                     data-edit-content-placeholder="{{ 'two_columns.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
                     contenteditable="true"
-                >{{ localeField.vars.data|default|raw }}</h2>
+                >{{ localeField.vars.data|default|raw }}</{{ titleType }}>
                 {% endfor %}
                 <div class="sfs-two-columns__desc">
                     {% for locale,localeField in form.description %}
