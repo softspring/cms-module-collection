@@ -12,6 +12,14 @@ card:
         title:
             label: "Título"
             placeholder: "Título de la tarjeta"
+        title_type.label: "Tipo de título"
+        title_type.values:
+            h1: "Encabezado 1"
+            h2: "Encabezado 2"
+            h3: "Encabezado 3"
+            h4: "Encabezado 4"
+            h5: "Encabezado 5"
+            h6: "Encabezado 6"
         description:
             label: "Descripción"
             placeholder: "Descripción de la tarjeta"

@@ -1,4 +1,5 @@
 {% set defaultDivClass = 'sfs-hero' %}
+{% set titleType = form.title_type.vars.data|default('h1') %}
 <article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }} {{ form.fullpage.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
     data-edit-id-target="heroIdDiv"
 
@@ -25,7 +26,7 @@
         {% endfor %}
         {% set titleClassDefault = 'sfs-hero__title' %}
         {% for locale,localeField in form.title %}
-            <h2
+            <{{ titleType }}
                 class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
                 data-edit-class-target="titleClass"
                 data-edit-class-default="{{ titleClassDefault }}"
@@ -34,7 +35,7 @@
                 data-edit-content-target="title.{{ locale }}"
                 data-edit-content-placeholder="{{ 'two_columns.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
                 contenteditable="true"
-        >{{ localeField.vars.data|default|raw }}</h2>
+        >{{ localeField.vars.data|default|raw }}</{{ titleType }}>
         {% endfor %}
 
         <div class="col-md-10 col-lg-8 mx-auto">

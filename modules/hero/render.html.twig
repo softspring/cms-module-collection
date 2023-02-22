@@ -10,7 +10,7 @@
                 {{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}
             </div>
         {% endif %}
-        <h1 class="sfs-hero__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</h1>
+        <{{ title_type }} class="sfs-hero__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type }}>
         <div class="col-md-10 col-lg-8 mx-auto">
             {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
