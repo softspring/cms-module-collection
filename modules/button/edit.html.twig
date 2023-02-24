@@ -2,7 +2,7 @@
 {% for locale,localeField in form.button_text %}
     <a href="#"
        id="{{ form.id.vars.data|default('') }}"
-       class="{{ form.button_style.vars.data|default(form.button_style_custom.vars.data|default('btn btn-primary')) }}"
+       class="{{ (form.button_style.vars.data == 'custom')? '' : form.button_style.vars.data|default('btn btn-primary') }} {{ form.button_style_custom.vars.data|default('') }}"
        data-lang="{{ locale }}"
        data-edit-content-target="buttonText.{{ locale }}"
 
