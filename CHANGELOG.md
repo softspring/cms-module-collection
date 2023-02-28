@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## [v5.0.6](https://github.com/softspring/cms-module-collection/releases/tag/v5.0.6)
+
+### Upgrading
+
+*Nothing to do on upgrading*
+
+### Commits
+
+- [f613f26](https://github.com/softspring/cms-module-collection/commit/f613f26b0b43e311dfb1110d30dc240bd68b46b8): Migrate button module to 3rd revision
+- [2ef512a](https://github.com/softspring/cms-module-collection/commit/2ef512adb07a7d0dddff291f950626b9cc519b8e): BUNDLES-165 Set default value in render
+- [5dadf77](https://github.com/softspring/cms-module-collection/commit/5dadf77696400af6526ede2444882b1c3dc62acb): BUNDLES-165 Remove default values
+- [7afaf29](https://github.com/softspring/cms-module-collection/commit/7afaf29f74ff6af355ca34407ef1d94ea22d1015): BUNDLE-165 Add none button styles
+- [03d0854](https://github.com/softspring/cms-module-collection/commit/03d0854a0b62133ee580dc452965ee2d0dc281d6): BUNDLES-165 fixed button classes preview and render
+
+### Changes
+
+```
+ modules/button/config.yaml                          | 5 +++--
+ modules/button/edit.html.twig                       | 2 +-
+ modules/button/form.html.twig                       | 2 +-
+ modules/button/migrate.php                          | 6 ++++++
+ modules/button/render.html.twig                     | 2 +-
+ modules/button/translations/sfs_cms_modules.en.yaml | 4 ++--
+ modules/button/translations/sfs_cms_modules.es.yaml | 4 ++--
+ 7 files changed, 16 insertions(+), 9 deletions(-)
+```
+
 ## [v5.0.5](https://github.com/softspring/cms-module-collection/releases/tag/v5.0.5)
 
 ### Upgrading
