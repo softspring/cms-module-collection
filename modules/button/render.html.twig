@@ -2,5 +2,5 @@
     <a href="{{ sfs_cms_url(button_link) }}"
             {{ sfs_cms_route_attr(button_link)}}
             id="{{ id|default('') }}"
-            class="{{ button_style|default('btn btn-primary') }} {{ button_classes|default('') }}">{{ button_text|sfs_cms_trans|raw }}</a>
+            class="{{ button_style }} {{ button_classes|default('') }}">{{ button_text|sfs_cms_trans|raw }}</a>
 {% endif %}
