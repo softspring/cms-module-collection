@@ -22,6 +22,6 @@ button:
                 outline_secondary: "Secundario hueco"
                 outline_success: "Éxito hueco"
                 outline_danger: "Error hueco"
-                custom: "Personalizado"
-        button_style_custom:
+                none: "Ninguno"
+        button_classes:
             label: "Estilo del botón personalizado (clases CSS)"

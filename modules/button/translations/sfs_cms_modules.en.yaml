@@ -22,6 +22,6 @@ button:
                 outline_secondary: "Hollow secondary"
                 outline_success: "Hollow success"
                 outline_danger: "Hollow danger"
-                custom: "Custom"
-            button_style_custom:
+                none: "None"
+            button_classes:
                 label: "Custom butom styles (CSS classes)"
