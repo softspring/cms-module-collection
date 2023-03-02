@@ -12,5 +12,11 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         $data['button_link'] = ModuleMigrator::routeToSymfonyRoute($data['button_link'] ?? null);
     }
 
+    if ($originVersion < 3 && $targetVersion >= 3) {
+        // Migrate button_style_custom field to button_classes
+        $data['button_classes'] = $data['button_style_custom'] ?? null;
+        unset($data['button_style_custom']);
+    }
+
     return $data;
 };

@@ -1,5 +1,5 @@
 module:
-    revision: 2
+    revision: 3
     group: 'basic'
     edit_template: '@module/button/edit.html.twig'
     form_template: '@module/button/form.html.twig'
@@ -25,10 +25,11 @@ module:
                         "button.form.button_style.values.outline_secondary": 'btn btn-outline-secondary'
                         "button.form.button_style.values.outline_success": 'btn btn-outline-success'
                         "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
+                        "button.form.button_style.values.none": ''
                     attr:
                         data-edit-class-input: 'buttonClass'
 
-            button_style_custom:
+            button_classes:
                 type: 'class'
                 type_options:
                     attr:
