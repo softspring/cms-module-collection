@@ -1,5 +1,5 @@
 module:
-    revision: 3
+    revision: 4
     group: 'block'
     edit_template: '@module/card/edit.html.twig'
     form_template: '@module/card/form.html.twig'

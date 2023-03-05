@@ -39,5 +39,9 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         $data['primary_button_link'] = ModuleMigrator::routeToSymfonyRoute($data['primary_button_link'] ?? null);
     }
 
+    if ($originVersion < 4 && $targetVersion >= 4) {
+        $data['title_type'] = $data['title_type'] ?? 'h2';
+    }
+
     return $data;
 };

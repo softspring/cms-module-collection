@@ -12,7 +12,7 @@
                 {% endif %}
             </div>
             <div class="col-12 col-md-6">
-                <{{ title_type }} class="sfs-two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type }}>
+                <{{ title_type|default('h2') }} class="sfs-two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type|default('h2') }}>
                 <div class="sfs-two-columns__desc">
                     {% if description[app.request.locale]|default(false) %}
                         {{ description[app.request.locale]|default('')|raw }}

@@ -1,5 +1,5 @@
 module:
-    revision: 3
+    revision: 4
     group: 'block'
     edit_template: '@module/two_columns/edit.html.twig'
     form_template: '@module/two_columns/form.html.twig'
