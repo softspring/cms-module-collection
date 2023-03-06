@@ -27,6 +27,8 @@ module:
                         "title.form.type.values.h4": h4
                         "title.form.type.values.h5": h5
                         "title.form.type.values.h6": h6
+                    attr:
+                        data-cms-module-title-type-field: ''
 
             title:
                 type: 'translatableText'
