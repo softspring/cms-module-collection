@@ -23,6 +23,9 @@
                 {% for locale,localeField in form.title %}
                 <{{ titleType }}
                     class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
+
+                    data-cms-module-title-type=""
+
                     data-edit-class-target="titleClass"
                     data-edit-class-default="{{ titleClassDefault }}"
 
