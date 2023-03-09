@@ -16,7 +16,7 @@
             {% endif %}
             <div class="sfs-text-section__content">
                 {% if title|default(false) %}
-                <{{ title_type }} class="sfs-text-section__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type }}>
+                <{{ title_type|default('h2') }} class="sfs-text-section__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type|default('h2') }}>
                 {% endif %}
                 {% if description[app.request.locale]|default(false) %}
                 <div class="sfs-text-section__body">
