@@ -4,6 +4,7 @@ media:
     label: "Multimedia file"
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         media.label: "File"
         aligment_media:
             label: "Media aligment"

@@ -4,6 +4,7 @@ hero:
     prototype_button_icon: '<i class="bi bi-postcard"></i>'
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         background.label: "Background image"
         media.label: "Upper image"
         id.label: "Id"

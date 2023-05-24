@@ -4,6 +4,7 @@ media:
     label: "Fichero multimedia"
     form:
         locale_filter.label: "Idiomas"
+        site_filter.label: "Sites"
         media.label: "Fichero"
         aligment_media:
             label: "Alineación del media"

@@ -4,6 +4,7 @@ carousel:
     prototype_button_icon: '<i class="bi bi-distribute-horizontal"></i>'
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         modules.label: "Modules"
         id.label: "Id"
         class.label: "Classes"
