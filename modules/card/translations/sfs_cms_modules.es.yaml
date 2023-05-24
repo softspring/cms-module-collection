@@ -4,6 +4,7 @@ card:
     prototype_button_icon: '<i class="bi bi-credit-card-2-front"></i>'
     form:
         locale_filter.label: "Idiomas"
+        site_filter.label: "Sites"
         background.label: "Imagen de fondo"
         media.label: "Imagen"
         id.label: "Id"

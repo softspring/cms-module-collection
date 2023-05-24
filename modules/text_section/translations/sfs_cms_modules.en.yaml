@@ -4,6 +4,7 @@ text_section:
     prototype_button_icon: '<i class="bi bi-body-text"></i>'
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         background.label: "Background image"
         other.label: "Upper image"
         id.label: "Id"

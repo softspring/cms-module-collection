@@ -4,6 +4,7 @@ wysiwyg:
     prototype_button_icon: '<i class="bi bi-table"></i>'
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Class"
         content.label: "Content"

@@ -4,6 +4,7 @@ two_columns:
     prototype_button_icon: '<i class="bi bi-layout-split"></i>'
     form:
         locale_filter.label: "Locales"
+        site_filter.label: "Sites"
         background.label: "Background image"
         image.label: "Image"
         id.label: "Id"
