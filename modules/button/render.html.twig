@@ -1,6 +1,7 @@
+{% spaceless %}
 {% if button_text|default(false) and button_text|sfs_cms_trans is not empty %}
-    <a href="{{ sfs_cms_url(button_link) }}"
-            {{ sfs_cms_route_attr(button_link)}}
-            id="{{ id|default('') }}"
+    <a {{ sfs_cms_link_attr(button_link) }}
+            {% if id %}id="{{ id }}"{% endif %}
             class="{{ button_style|default('') }} {{ button_classes|default('') }}">{{ button_text|sfs_cms_trans|raw }}</a>
 {% endif %}
+{% endspaceless %}

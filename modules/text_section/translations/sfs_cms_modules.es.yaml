@@ -30,6 +30,11 @@ text_section:
         primary_button_class.label: "Classes del botón primario"
         primary_button_text.label: "Texto del botón primario"
         primary_button_link:
-            route_name.label: "Enlace del botón primario"
-            route_params.label: "Parámetros del enlace"
+            type.label: "Tipo de enlace del botón primario"
+            route_name.label: "Ruta"
+            route_params.label: "Parámetros de la ruta"
+            anchor.label: "Ancla"
+            target.label: "Target"
+            custom_target.label: "Identificador de target"
+            url.label: "URL directa"
         bg_color.label: "Color de fondo"

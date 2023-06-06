@@ -8,9 +8,15 @@ button:
         id.label: "Id"
         class.label: "Clases"
         button_text.label: "Texto del botón"
+        button_classes.label: "Clases del botón"
         button_link:
-            route_name.label: "Enlace del botón"
-            route_params.label: "Parámetros del enlace"
+            type.label: "Tipo de link del botón"
+            route_name.label: "Ruta"
+            route_params.label: "Parámetros de la ruta"
+            anchor.label: "Anchor"
+            target.label: "Target"
+            custom_target.label: "Identificador de target"
+            url.label: "URL directa"
         button_style:
             label: "Estilo del botón"
             values:

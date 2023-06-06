@@ -43,5 +43,9 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         $data['title_type'] = $data['title_type'] ?? 'h2';
     }
 
+    if ($originVersion < 5 && $targetVersion >= 5) {
+        $data['primarY_button_link'] = ModuleMigrator::symfonyRouteToLink($data['primarY_button_link'] ?? null);
+    }
+
     return $data;
 };

@@ -39,5 +39,10 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         $data['primary_button_link'] = ModuleMigrator::routeToSymfonyRoute($data['primary_button_link'] ?? null);
     }
 
+    if ($originVersion < 4 && $targetVersion >= 4) {
+        $data['primary_button_link'] = ModuleMigrator::symfonyRouteToLink($data['primary_button_link'] ?? null);
+        $data['secondary_button_link'] = ModuleMigrator::symfonyRouteToLink($data['secondary_button_link'] ?? null);
+    }
+
     return $data;
 };

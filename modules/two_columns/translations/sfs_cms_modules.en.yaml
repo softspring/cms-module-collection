@@ -28,8 +28,13 @@ two_columns:
             label: "Primary button text"
             placeholder: "Primary button text"
         primary_button_link:
-            route_name.label: "Primary button link"
-            route_params.label: "Link parameters"
+            type.label: "Primary button link type"
+            route_name.label: "Route"
+            route_params.label: "Route parameters"
+            anchor.label: "Anchor"
+            target.label: "Target"
+            custom_target.label: "Target id"
+            url.label: "Direct URL"
         bg_color.label: "Background color"
         image_position_text.values:
             left: "Left"

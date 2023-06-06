@@ -18,5 +18,9 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         unset($data['button_style_custom']);
     }
 
+    if ($originVersion < 4 && $targetVersion >= 4) {
+        $data['button_link'] = ModuleMigrator::symfonyRouteToLink($data['button_link'] ?? null);
+    }
+
     return $data;
 };
