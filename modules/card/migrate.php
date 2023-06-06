@@ -44,7 +44,7 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
     }
 
     if ($originVersion < 5 && $targetVersion >= 5) {
-        $data['primarY_button_link'] = ModuleMigrator::symfonyRouteToLink($data['primarY_button_link'] ?? null);
+        $data['primary_button_link'] = ModuleMigrator::symfonyRouteToLink($data['primary_button_link'] ?? null);
     }
 
     return $data;
