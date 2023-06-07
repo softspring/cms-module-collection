@@ -25,8 +25,7 @@
                 {% endif %}
                 {% if (primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty) %}
                     {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
-                        <a href="{{ sfs_cms_url(primary_button_link) }}"
-                           class="sfs-text-section__cta btn {{primary_button_class|default('btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                        <a {{ sfs_cms_link_attr(primary_button_link) }} class="sfs-text-section__cta btn {{primary_button_class|default('btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     {% endif %}
                 {% endif %}
             </div>

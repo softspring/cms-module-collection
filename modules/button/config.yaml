@@ -1,5 +1,5 @@
 module:
-    revision: 3
+    revision: 4
     group: 'basic'
     edit_template: '@module/button/edit.html.twig'
     form_template: '@module/button/form.html.twig'
@@ -42,5 +42,5 @@ module:
                         data-edit-content-input: 'buttonText'
 
             button_link:
-                type: 'symfonyRoute'
+                type: 'link'
                 type_options:
