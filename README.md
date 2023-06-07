@@ -7,6 +7,7 @@
 [![PHP Version Require](http://poser.pugx.org/softspring/cms-module-collection/require/php)](https://packagist.org/packages/softspring/cms-module-collection)
 [![Total Downloads](https://poser.pugx.org/softspring/cms-module-collection/downloads)](https://packagist.org/packages/softspring/cms-module-collection)
 [![Build status](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml/badge.svg?branch=5.1)](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml)
+![Coverage](https://raw.githubusercontent.com/softspring/cms-module-collection/5.1/.github/badges/coverage.svg)
 
 # Installation
 
