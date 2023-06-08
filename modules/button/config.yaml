@@ -36,8 +36,10 @@ module:
                         data-edit-class-input: 'buttonClass'
 
             button_text:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
+                    type_options:
+                        constraints: [ 'notBlank' ]
                     children_attr:
                         data-edit-content-input: 'buttonText'
 

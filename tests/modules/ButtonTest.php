@@ -8,6 +8,8 @@ class ButtonTest extends ModuleTestCase
 {
     protected function setUp(): void
     {
+        parent::setUp();
+        $this->moduleName = 'button';
         $this->modulePath = realpath(__DIR__ . '/../../modules/button');
     }
 
@@ -61,5 +63,66 @@ class ButtonTest extends ModuleTestCase
                 ],
             ],
         ];
+    }
+
+    public function testEmptyForm(): void
+    {
+        $config = $this->readModuleConfiguration();
+        $form = $this->getModuleForm($config);
+        $form->submit([]);
+        $procesedData = $form->getData();
+
+        $this->assertTrue($form->isSynchronized());
+        // $this->assertFalse($form->isValid());
+    }
+
+    public function testForm(): void
+    {
+        $config = $this->readModuleConfiguration();
+        $form = $this->getModuleForm($config);
+        $form->submit([
+            'locale_filter' => ['es'],
+            'id' => '',
+            'button_style' => 'btn btn-primary',
+            'button_classes' => '',
+            'button_text' => [
+                'es' => 'Prueba',
+                'en' => 'Test',
+            ],
+            'button_link' => [
+                'type' => 'url',
+                'route_name' => '',
+                'route_params' => '',
+                'anchor' => '',
+                'url' => 'https://github.com/softspring/cms-bundle',
+                'target' => '_self',
+                'custom_target' => '',
+            ],
+        ]);
+        $procesedData = $form->getData();
+
+        $this->assertTrue($form->isSynchronized());
+
+        $this->assertEquals([
+            '_node_discr' => null,
+            '_revision' => null,
+            'locale_filter' => ['es'],
+            'id' => null,
+            'button_style' => 'btn btn-primary',
+            'button_classes' => null,
+            'button_text' => [
+                'es' => 'Prueba',
+                'en' => 'Test',
+            ],
+            'button_link' => [
+                'type' => 'url',
+                'route_name' => '',
+                'route_params' => '',
+                'anchor' => '',
+                'url' => 'https://github.com/softspring/cms-bundle',
+                'target' => '_self',
+                'custom_target' => '',
+            ],
+        ], $procesedData);
     }
 }
