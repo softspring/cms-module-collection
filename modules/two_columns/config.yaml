@@ -41,7 +41,7 @@ module:
                         data-edit-class-input: 'titleClass'
 
             title:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
                     children_attr:
                         data-edit-content-input: 'title'
@@ -70,7 +70,7 @@ module:
                             data-wysiwyg: ''
 
             primary_button_text:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
                     children_attr:
                         data-edit-content-input: 'primaryButtonText'

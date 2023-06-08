@@ -100,7 +100,7 @@ module:
                 type_options:
 
             secondary_button_text:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
                     children_attr:
                         data-edit-content-input: 'secondaryButtonText'
