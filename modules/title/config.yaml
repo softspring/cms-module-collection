@@ -31,7 +31,9 @@ module:
                         data-cms-module-title-type-field: ''
 
             title:
-                type: 'translatableText'
+                type: 'translatable'
                 type_options:
+                    type_options:
+                        constraints: [ { constraint: 'notBlank' } ]
                     children_attr:
                         data-edit-content-input: 'title'
