@@ -1,7 +1,7 @@
-{% spaceless %}
+{% apply spaceless %}
 {% if button_text|default(false) and button_text|sfs_cms_trans is not empty %}
     <a {{ sfs_cms_link_attr(button_link) }}
             {% if id %}id="{{ id }}"{% endif %}
             class="{{ button_style|default('') }} {{ button_classes|default('') }}">{{ button_text|sfs_cms_trans|raw }}</a>
 {% endif %}
-{% endspaceless %}
+{% endapply %}
