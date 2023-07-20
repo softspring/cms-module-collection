@@ -7,7 +7,9 @@ button:
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Clases"
-        button_text.label: "Texto del botón"
+        button_text:
+            label: "Texto del botón"
+            placeholder: "Botón"
         button_classes.label: "Clases del botón"
         button_link:
             type.label: "Tipo de link del botón"
