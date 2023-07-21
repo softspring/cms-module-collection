@@ -3,8 +3,8 @@
 {% for locale,localeField in form.button_text %}
     <a href="#"
         {{ module.link_id(form.id) }}
-        {{ module.link_class(form.button_classes, form.button_style.vars.data) }}
-        {{ module.link_content(localeField, locale) }}>
+        {{ module.link_class([form.button_classes, form.button_style]) }}
+        {{ module.link_content(localeField) }}>
         {{ localeField.vars.data|default('') }}
     </a>
 {% endfor %}
