@@ -1,13 +1,9 @@
-{% set defaultDivClass = 'sfs-hero' %}
-{% set titleType = form.title_type.vars.data|default('h1') %}
-<article class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }} {{ form.fullpage.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
-    data-edit-id-target="heroIdDiv"
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-    data-edit-class-target="heroClassDiv"
-    data-edit-class-default="{{ defaultDivClass }}"
-
-    data-edit-bgcolor-target="heroColorDiv"
-    style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
+<article
+    {{ module.link_id(form.id) }}
+    {{ module.link_class([form.class, form.fullpage], 'sfs-hero') }}
+    {{ module.link_bg_color(form.bg_color) }}
 >
     {% for locale,localeField in form.background %}
         <div class="sfs-hero__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
@@ -24,42 +20,30 @@
                 {% endif %}
             </div>
         {% endfor %}
-        {% set titleClassDefault = 'sfs-hero__title' %}
         {% for locale,localeField in form.title %}
-            <{{ titleType }}
-                class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
-
-                data-cms-module-title-type=""
-
-                data-edit-class-target="titleClass"
-                data-edit-class-default="{{ titleClassDefault }}"
-
-                data-lang="{{ locale }}"
-                data-edit-content-target="title.{{ locale }}"
-                data-edit-content-placeholder="{{ 'two_columns.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-                contenteditable="true"
-        >{{ localeField.vars.data|default|raw }}</{{ titleType }}>
+            {{ module.start_link_tag_type(form.title_type, [
+                module.link_class(form.title_class, 'sfs-hero__title'),
+                module.link_content(localeField, locale, true, 'two_columns.form.title.placeholder')
+            ]) }}
+                {{ localeField.vars.data|default|raw }}
+            {{ module.end_link_tag_type(form.title_type) }}
         {% endfor %}
 
         <div class="col-md-10 col-lg-8 mx-auto">
             {% for locale,localeField in form.description %}
                 <div class="lead mb-4 wysiwyg-preview"
-                     data-edit-content-target="description.{{ locale }}"
-                     data-lang="{{ locale }}"
+                     {{ module.link_content(localeField, locale, false) }}
                      data-bs-toggle="modal"
-                     data-bs-target="#{{ id }}Modal"
-                     data-default-text="Texto descriptivo">
-                    {{ localeField.vars.data|default('Texto descriptivo')|raw }}
-                </div>
+                     data-bs-target="#{{ id }}Modal">{{ localeField.vars.data|raw }}</div>
             {% endfor %}
 
             <div class="d-grid gap-2 d-sm-flex justify-content-center">
                 {% for locale,localeField in form.primary_button_text %}
-                    <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-primary btn-lg px-4 gap-3" data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                    <a href="#" {{ module.link_content(localeField, locale, true, '', true )}} class="btn btn-primary btn-lg px-4 gap-3">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
 
                 {% for locale,localeField in form.secondary_button_text %}
-                    <a href="#" data-edit-content-hide-if-empty="true" class="btn btn-outline-secondary btn-lg px-4" data-lang="{{ locale }}" data-edit-content-target="secondaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                    <a href="#" {{ module.link_content(localeField, locale, true, '', true )}} class="btn btn-outline-secondary btn-lg px-4">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -75,7 +59,7 @@
                 </div>
                 <div class="modal-body">
                     {% for locale,localeField in form.description %}
-                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                        <div {{ module.link_content(localeField, locale, false)}}>
                             {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
                         </div>
                     {% endfor %}

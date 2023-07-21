@@ -1,9 +1,6 @@
-{% set defaultDivClass = 'd-flex' %}
-<div class="{{ defaultDivClass }} {{ form.aligment_media.vars.data|default('') }}"
-        data-media-preview-target="mediaPreview"
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-         data-edit-class-target="aligmentMediaClass"
-         data-edit-class-default="{{ defaultDivClass }}">
+<div {{ module.link_class(form.aligment_media, 'd-flex') }} {{ module.link_media_preview(form.media) }}>
     {% if form.media.media.vars.data|default(false) and form.media.version.vars.data|default(false) %}
         {% set versionSplit = form.media.version.vars.data|split('#') %}
         {% set versionType = versionSplit[0]|default('image') %}
