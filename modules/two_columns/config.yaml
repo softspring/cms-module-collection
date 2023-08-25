@@ -83,7 +83,7 @@ module:
                 type: 'choice'
                 type_options:
                     choices:
-                        "two_columns.form.image_position_text.values.left": flex-row
-                        "two_columns.form.image_position_text.values.right": flex-row-reverse
+                        "two_columns.form.image_position_text.values.left": flex-column flex-md-row
+                        "two_columns.form.image_position_text.values.right": flex-column flex-md-row-reverse
                     attr:
                         data-edit-class-input: 'imagePositionClass'
