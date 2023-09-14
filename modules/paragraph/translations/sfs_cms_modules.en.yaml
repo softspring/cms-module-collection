@@ -1,0 +1,13 @@
+paragraph:
+    label: "Paragraph"
+    prototype_button: "Paragraph"
+    prototype_button_icon: '<i class="bi bi-text-paragraph"></i>'
+    form:
+        locale_filter.label: "Locales"
+        site_filter.label: "Sites"
+        id.label: "HTML id"
+        class.label: "HTML class"
+        bg_color.label: "Background color"
+        paragraph:
+            label: "Paragraph"
+            placeholder: "Insert paragraph here"
