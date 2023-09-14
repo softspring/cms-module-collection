@@ -1,0 +1,25 @@
+module:
+    revision: 1
+    group: 'basic'
+    edit_template: '@module/code/edit.html.twig'
+    form_template: '@module/code/form.html.twig'
+    module_options:
+        form_fields:
+            id:
+                type: 'id'
+                type_options:
+                    attr:
+                        data-edit-id-input: 'code'
+
+            class:
+                type: 'class'
+                type_options:
+                    attr:
+                        data-edit-class-input: 'code'
+
+            code:
+                type: 'text'
+                type_options:
+                    constraints: [ 'notBlank' ]
+                    attr:
+                        data-edit-content-input: 'code'

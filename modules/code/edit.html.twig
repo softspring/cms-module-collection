@@ -1,0 +1,12 @@
+{% trans_default_domain 'sfs_cms_modules' %}
+
+<pre class="sfs-code {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+    data-edit-id-target="code"
+
+    data-edit-class-target="code"
+    data-edit-class-default=""
+><code data-edit-content-target="code"
+       contenteditable="true"
+       data-edit-content-placeholder="{{ 'code.form.code.placeholder'|trans({}, 'sfs_cms_modules') }}"
+    >{{ form.code.vars.data|default|raw }}</code></pre>
+
