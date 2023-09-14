@@ -102,8 +102,9 @@ module:
             secondary_button_text:
                 type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'secondaryButtonText'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'secondaryButtonText'
 
             secondary_button_link:
                 type: 'link'

@@ -40,8 +40,8 @@ module:
                 type_options:
                     type_options:
                         constraints: [ 'notBlank' ]
-                    children_attr:
-                        data-edit-content-input: 'buttonText'
+                        attr:
+                            data-edit-content-input: 'buttonText'
 
             button_link:
                 type: 'link'
