@@ -1,0 +1,19 @@
+{% trans_default_domain 'sfs_cms_modules' %}
+
+{% for locale,localeField in form.quote %}
+    <blockquote class="sfs-quote {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
+        data-lang="{{ locale }}"
+
+        data-edit-id-target="quote"
+
+        data-edit-class-target="quote"
+        data-edit-class-default=""
+
+        data-edit-content-enter-inserts-module="paragraph"
+
+        data-edit-content-target="quote.{{ locale }}"
+        contenteditable="true"
+        data-edit-content-placeholder="{{ 'quote.form.quote.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
+    >{{ localeField.vars.data|default|raw }}</blockquote>
+{% endfor %}
+
