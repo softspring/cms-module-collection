@@ -9,6 +9,8 @@
         {{ module.link_id(form.id) }}
         {{ module.link_class(form.class, 'sfs-title') }}
         {{ module.link_content(localeField, locale, true, 'title.form.title.placeholder') }}
+
+        data-edit-content-enter-inserts-module="paragraph"
     >
         {{ localeField.vars.data|default|raw }}
     </{{ type }}>

@@ -1,0 +1,13 @@
+code:
+    label: "Código fuente"
+    prototype_button: "Código fuente"
+    prototype_button_icon: '<i class="bi bi-braces"></i>'
+    form:
+        locale_filter.label: "Idiomas"
+        site_filter.label: "Sites"
+        id.label: "HTML id"
+        class.label: "HTML class"
+        bg_color.label: "Color de fondo"
+        code:
+            label: "Código fuente"
+            placeholder: "Inserta aquí el código"

@@ -51,7 +51,7 @@ module:
 
             primary_button_text:
                 type: 'translatable'
-                
+
             primary_button_link:
                 type: 'link'
 
