@@ -11,41 +11,23 @@ module:
                 type_options:
                     type: 'mediaVersion'
                     type_options:
-                        attr:
-                            data-media-preview-input: 'moduleImage'
                         media_attr:
                             class: 'img-fluid'
 
             id:
                 type: 'id'
-                type_options:
-                    attr:
-                        data-edit-id-input: 'twoColumnsIdDiv'
 
             class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'twoColumnsClassDiv'
 
             bg_color:
                 type: 'color'
-                type_options:
-                    attr:
-                        data-edit-bgcolor-input: 'twoColumnsBgColorDiv'
 
             title_class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'titleClass'
 
             title:
                 type: 'translatable'
-                type_options:
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'title'
 
             title_type:
                 type: 'choice'
@@ -58,8 +40,6 @@ module:
                         "title.form.type.values.h4": h4
                         "title.form.type.values.h5": h5
                         "title.form.type.values.h6": h6
-                    attr:
-                        data-cms-module-title-type-field: ''
 
             description:
                 type: 'translatable'
@@ -67,25 +47,18 @@ module:
                     type: 'html'
                     type_options:
                         attr:
-                            data-edit-content-input: 'description'
                             data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatable'
-                type_options:
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'link'
-                type_options:
 
             image_position_text:
                 type: 'choice'
                 type_options:
+                    default_value: 'flex-row'
                     choices:
                         "two_columns.form.image_position_text.values.left": flex-row
                         "two_columns.form.image_position_text.values.right": flex-row-reverse
-                    attr:
-                        data-edit-class-input: 'imagePositionClass'

@@ -13,8 +13,6 @@ module:
                     type_options:
                         media_attr:
                             class: 'img-fluid'
-                        attr:
-                            data-media-preview-input: 'backgroundImage'
 
             media:
                 type: 'translatable'
@@ -23,20 +21,12 @@ module:
                     type_options:
                         media_attr:
                             class: 'img-fluid'
-                        attr:
-                            data-media-preview-input: 'media'
 
             id:
                 type: 'id'
-                type_options:
-                    attr:
-                        data-edit-id-input: 'heroIdDiv'
 
             class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'heroClassDiv'
 
             fullpage:
                 type: 'choice'
@@ -47,27 +37,19 @@ module:
 
             bg_color:
                 type: 'color'
-                type_options:
-                    attr:
-                        data-edit-bgcolor-input: 'heroColorDiv'
 
             title_class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'titleClass'
 
             title:
                 type: 'translatable'
                 type_options:
                     type: 'text'
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'title'
 
             title_type:
                 type: 'choice'
                 type_options:
+                    default_value: h1
                     choices:
                         "title.form.type.values.h1": h1
                         "title.form.type.values.h2": h2
@@ -75,8 +57,6 @@ module:
                         "title.form.type.values.h4": h4
                         "title.form.type.values.h5": h5
                         "title.form.type.values.h6": h6
-                    attr:
-                        data-cms-module-title-type-field: ''
 
             description:
                 type: 'translatable'
@@ -84,16 +64,12 @@ module:
                     type: 'html'
                     type_options:
                         attr:
-                            data-edit-content-input: 'description'
                             data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatable'
                 type_options:
                     type: 'text'
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'link'
@@ -102,9 +78,6 @@ module:
             secondary_button_text:
                 type: 'translatable'
                 type_options:
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'secondaryButtonText'
 
             secondary_button_link:
                 type: 'link'

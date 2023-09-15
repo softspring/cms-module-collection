@@ -1,15 +1,10 @@
-{% set defaultButtonClass = '' %}
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
+
 {% for locale,localeField in form.button_text %}
     <a href="#"
-       id="{{ form.id.vars.data|default('') }}"
-       class="{{ form.button_style.vars.data }} {{ form.button_classes.vars.data|default('') }}"
-       data-lang="{{ locale }}"
-       data-edit-content-target="buttonText.{{ locale }}"
-
-       data-edit-id-target="buttonId"
-
-       data-edit-class-target="buttonClass"
-       data-edit-class-default="{{ defaultButtonClass }}"
-
-       contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+        {{ module.link_id(form.id) }}
+        {{ module.link_class([form.button_classes, form.button_style]) }}
+        {{ module.link_content(localeField) }}>
+        {{ localeField.vars.data|default('') }}
+    </a>
 {% endfor %}

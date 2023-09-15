@@ -13,8 +13,6 @@ module:
                     type_options:
                         media_attr:
                             class: 'img-fluid'
-                        attr:
-                            data-media-preview-input: 'backgroundImage'
 
             media:
                 type: 'translatable'
@@ -23,40 +21,23 @@ module:
                     type_options:
                         media_attr:
                             class: 'img-fluid'
-                        attr:
-                            data-media-preview-input: 'media'
 
             id:
                 type: 'id'
-                type_options:
-                    attr:
-                        data-edit-id-input: 'textSectionIdDiv'
 
             class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'textSectionClassDiv'
 
             bg_color:
                 type: 'color'
-                type_options:
-                    attr:
-                        data-edit-bgcolor-input: 'textSectionColorDiv'
 
             title_class:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'titleClass'
 
             title:
                 type: 'translatable'
                 type_options:
                     type: 'text'
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'title'
 
             title_type:
                 type: 'choice'
@@ -69,8 +50,6 @@ module:
                         "title.form.type.values.h4": h4
                         "title.form.type.values.h5": h5
                         "title.form.type.values.h6": h6
-                    attr:
-                        data-cms-module-title-type-field: ''
 
             description:
                 type: 'translatable'
@@ -78,33 +57,26 @@ module:
                     type: 'html'
                     type_options:
                         attr:
-                            data-edit-content-input: 'description'
                             data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatable'
                 type_options:
                     type: 'text'
-                    type_options:
-                        attr:
-                            data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'link'
-                type_options:
 
             primary_button_class:
                 type: 'class'
                 type_options:
-                    attr:
-                        data-edit-class-input: 'primaryButtonClassBtn'
+                    default_value: 'btn-primary'
 
             text_position:
                 type: 'choice'
                 type_options:
+                    default_value: 'text-center'
                     choices:
                         "text_section.form.text_position.values.center": 'text-center'
                         "text_section.form.text_position.values.left": 'text-start'
                         "text_section.form.text_position.values.right": 'text-end'
-                    attr:
-                        data-edit-class-input: 'textPositionClass'

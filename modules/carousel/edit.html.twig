@@ -1,11 +1,16 @@
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
+
+{# TODO THIS EDIT TEMPLATE DOES NOT MATCH WITH RENDER TEMPLATE, REVIEW PLEASE! #}
 <div class="border border-2 module-container">
     {{ form_row(form.modules, {'container': {
         'attr': {
             'id': form.id.vars.data,
-            'class': 'sfs-carousel py-5 '~form.class.vars.data|default(''),
             'data-edit-id-target': 'carouselIdDiv',
+
+            'class': 'sfs-carousel py-5 '~form.class.vars.data|default(''),
             'data-edit-class-target': 'carouselClassDiv',
             'data-edit-class-default': 'sfs-carousel py-5',
+
             'data-edit-bgcolor-target': 'carouselColorDiv',
             'style': form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : ''
         }
