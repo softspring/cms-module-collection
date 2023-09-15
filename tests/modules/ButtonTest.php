@@ -106,7 +106,6 @@ class ButtonTest extends ModuleTestCase
         $this->assertEquals([
             '_node_discr' => null,
             '_revision' => null,
-            'locale_filter' => ['es'],
             'id' => null,
             'button_style' => 'btn btn-primary',
             'button_classes' => null,
