@@ -19,7 +19,9 @@ hero:
             h4: "Heading 4"
             h5: "Heading 5"
             h6: "Heading 6"
-        description.label: "Description"
+        description:
+            label: "Description"
+            placeholder: "Write optional description here"
         primary_button_text.label: "Primary button text"
         primary_button_link:
             type.label: "Primary button link type"
