@@ -19,7 +19,9 @@ hero:
             h4: "Encabezado 4"
             h5: "Encabezado 5"
             h6: "Encabezado 6"
-        description.label: "Descripción"
+        description:
+            label: "Descripción"
+            placeholder: "Escribe aquí una descripción opcional"
         primary_button_text.label: "Texto del botón primario"
         primary_button_link:
             type.label: "Tipo de enlace del botón primario"
