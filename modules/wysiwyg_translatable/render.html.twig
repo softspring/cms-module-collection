@@ -1,4 +1,6 @@
-<div {% if id %}id="{{ id|default('') }}"{% endif %} class="sfs-wysiwyg-trans {{ class|default('') }}">
+{% import '@SfsCms/macros/modules_render.html.twig' as module %}
+
+<div {{ module.id(id) }} {{ module.class(class, 'sfs-wysiwyg-trans') }}>
     {% if content[app.request.locale]|default(false) %}
         {{ content[app.request.locale]|default('')|raw }}
     {% endif %}

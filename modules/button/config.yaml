@@ -8,9 +8,6 @@ module:
         form_fields:
             id:
                 type: 'id'
-                type_options:
-                    attr:
-                        data-edit-id-input: 'buttonId'
 
             button_style:
                 type: 'choice'
@@ -26,23 +23,15 @@ module:
                         "button.form.button_style.values.outline_success": 'btn btn-outline-success'
                         "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
                         "button.form.button_style.values.none": ''
-                    attr:
-                        data-edit-class-input: 'buttonClass'
 
             button_classes:
                 type: 'class'
-                type_options:
-                    attr:
-                        data-edit-class-input: 'buttonClass'
 
             button_text:
                 type: 'translatable'
                 type_options:
                     type_options:
                         constraints: [ 'notBlank' ]
-                    children_attr:
-                        data-edit-content-input: 'buttonText'
 
             button_link:
                 type: 'link'
-                type_options:

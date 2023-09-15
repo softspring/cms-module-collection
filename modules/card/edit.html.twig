@@ -1,15 +1,9 @@
-{% set defaultDivClass = 'sfs-card h-100' %}
-{% set titleType = form.title_type.vars.data|default('h2') %}
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
+
 <div
-    id="{{ form.id.vars.data|default('') }}"
-    data-edit-id-target="cardIdDiv"
-
-    class="{{ defaultDivClass }} {{ form.class.vars.data|default('') }}"
-    data-edit-class-target="cardClassDiv"
-    data-edit-class-default="{{ defaultDivClass }}"
-
-    data-edit-bgcolor-target="cardColorDiv"
-    style="{{ form.bg_color.vars.data ? 'background-color:'~form.bg_color.vars.data : '' }}"
+    {{ module.link_id(form.id) }}
+    {{ module.link_class(form.class, 'sfs-card h-100') }}
+    {{ module.link_bg_color(form.bg_color) }}
 >
     {% for locale,localeField in form.background %}
         <div class="sfs-card__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
@@ -18,10 +12,7 @@
             {% endif %}
         </div>
     {% endfor %}
-    <div class="sfs-card__content {{ form.content_position.vars.value|default('') }}"
-         data-edit-class-target="contentPositionClass"
-         data-edit-class-default="sfs-card__content">
-
+    <div {{ module.link_class(form.content_position, 'sfs-card__content') }}>
         {% for locale,localeField in form.media %}
         <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.media.vars.data %}
@@ -31,30 +22,16 @@
         {% endfor %}
 
         <div class="sfs-card__texts">
+            {% set titleType = form.title_type.vars.data %}
             {% for locale,localeField in form.title %}
-                {% set titleClassDefault = 'sfs-card__title' %}
-                <{{ titleType }}
-                    class="{{ titleClassDefault }} {{ form.title_class.vars.data|default('') }}"
-
-                    data-cms-module-title-type=""
-
-                    data-edit-class-target="titleClass"
-                    data-edit-class-default="{{ titleClassDefault }}"
-
-                    data-lang="{{ locale }}"
-                    data-edit-content-target="title.{{ locale }}"
-                    data-edit-content-placeholder="{{ 'card.form.title.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-                    contenteditable="true"
-                >{{ localeField.vars.data|default('')|raw }}</{{ titleType }}>
+                <{{ titleType }} data-cms-module-title-type="" {{ module.link_class(form.title_class, 'sfs-card__title') }} {{ module.link_content(localeField) }}>
+                    {{ localeField.vars.data|default('')|raw }}
+                </{{ titleType }}>
             {% endfor %}
 
             {% for locale,localeField in form.description %}
                 <div class="sfs-card__desc mb-4 wysiwyg-preview"
-
-                     data-lang="{{ locale }}"
-                     data-edit-content-target="description.{{ locale }}"
-                     data-edit-content-placeholder="{{ 'card.form.description.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-
+                     {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder') }}
                      data-bs-toggle="modal"
                      data-bs-target="#{{ id }}Modal"
                 >{{ localeField.vars.data|default('')|raw }}</div>
@@ -62,13 +39,9 @@
 
             <div class="sfs-card__cta">
                  {% for locale,localeField in form.primary_button_text %}
-                     {% set defaultPrimaryButtonClass = 'btn btn-primary' %}
-
-                     <a href="#" data-edit-content-hide-if-empty="true"
-                       class="{{ form.primary_button_class.vars.data|default(defaultPrimaryButtonClass) }}"
-                       data-edit-class-target="primaryButtonClass"
-                       data-edit-class-default="{{ defaultPrimaryButtonClass }}"
-                       data-lang="{{ locale }}" data-edit-content-target="primaryButtonText.{{ locale }}" contenteditable="true">{{ localeField.vars.data|default('') }}</a>
+                     <a href="#" {{ module.link_class(form.primary_button_class, 'btn btn-primary') }}
+                         {{ module.link_content(localeField, locale, true, '', true) }}
+                     >{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -84,7 +57,7 @@
                 </div>
                 <div class="modal-body">
                     {% for locale,localeField in form.description %}
-                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
+                        <div {{ module.link_content(localeField, locale, false) }}>
                             {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
                         </div>
                     {% endfor %}
