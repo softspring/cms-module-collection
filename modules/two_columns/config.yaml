@@ -43,8 +43,9 @@ module:
             title:
                 type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'title'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'title'
 
             title_type:
                 type: 'choice'
@@ -72,8 +73,9 @@ module:
             primary_button_text:
                 type: 'translatable'
                 type_options:
-                    children_attr:
-                        data-edit-content-input: 'primaryButtonText'
+                    type_options:
+                        attr:
+                            data-edit-content-input: 'primaryButtonText'
 
             primary_button_link:
                 type: 'link'
