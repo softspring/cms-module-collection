@@ -23,6 +23,7 @@ module:
                         "button.form.button_style.values.outline_success": 'btn btn-outline-success'
                         "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
                         "button.form.button_style.values.none": ''
+                    choice_translation_domain: false
 
             button_classes:
                 type: 'class'
