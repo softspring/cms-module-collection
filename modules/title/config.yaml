@@ -35,5 +35,5 @@ module:
                 type_options:
                     type_options:
                         constraints: [ 'notBlank' ]
-                    children_attr:
-                        data-edit-content-input: 'title'
+                        attr:
+                            data-edit-content-input: 'title'

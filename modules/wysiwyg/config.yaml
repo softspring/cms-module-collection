@@ -12,12 +12,12 @@ module:
                 type: 'id'
                 type_options:
                     attr:
-                        data-edit-id-input: 'codeContainerId'
+                        data-edit-id-input: 'wysiwygId'
             class:
                 type: 'class'
                 type_options:
                     attr:
-                        data-edit-class-input: 'wysiwygClassDiv'
+                        data-edit-class-input: 'wysiwygClass'
             content:
                 type: 'html'
                 type_options:
