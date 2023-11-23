@@ -3,6 +3,11 @@ paragraph:
     prototype_button: "Paragraph"
     prototype_button_icon: '<i class="bi bi-text-paragraph"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            paragraph: "Paragraph"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "HTML id"

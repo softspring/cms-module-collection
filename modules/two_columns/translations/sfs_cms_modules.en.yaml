@@ -3,6 +3,10 @@ two_columns:
     prototype_button: "Two columns"
     prototype_button_icon: '<i class="bi bi-layout-split"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         background.label: "Background image"
@@ -28,6 +32,7 @@ two_columns:
             label: "Primary button text"
             placeholder: "Primary button text"
         primary_button_link:
+            label: "Primary button link"
             type.label: "Primary button link type"
             route_name.label: "Route"
             route_params.label: "Route parameters"

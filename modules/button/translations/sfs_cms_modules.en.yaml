@@ -3,6 +3,11 @@ button:
     prototype_button: "Button"
     prototype_button_icon: '<i class="bi bi-link"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            button: "Button"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "Id"

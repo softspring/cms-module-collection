@@ -1,18 +1,28 @@
-<div class="row">
-    <div class="col-12">
-        {{ form_row(form.id) }}
-    </div>
-    <div class="col-12">
-        {{ form_row(form.button_style) }}
-    </div>
-    <div class="col-12">
-        {{ form_row(form.button_classes) }}
-    </div>
-    <div class="col-12">
-        {{ form_row(form.button_text) }}
-    </div>
-    <div class="col-12">
-        {{ form_widget(form.button_link) }}
-    </div>
-</div>
-{{ form_rest(form) }}
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'attributes', 'accordion': accordion } %}
+    {% block form %}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.id) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}
+
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'button', 'accordion': accordion, 'open': true } %}
+    {% block form %}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.button_style) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.button_classes) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.button_text) }}
+            </div>
+            <div class="col-12">
+                {{ form_widget(form.button_link) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

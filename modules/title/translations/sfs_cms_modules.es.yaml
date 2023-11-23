@@ -3,6 +3,10 @@ title:
     prototype_button: "Título"
     prototype_button_icon: '<i class="bi bi-type-h1"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "HTML id"

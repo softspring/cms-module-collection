@@ -3,6 +3,13 @@ card:
     prototype_button: "Card"
     prototype_button_icon: '<i class="bi bi-credit-card-2-front"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            background: "Fondo"
+            title: "Título"
+            primary_button: "Botón primario"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         background.label: "Imagen de fondo"

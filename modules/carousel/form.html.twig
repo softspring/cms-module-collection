@@ -1,0 +1,46 @@
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'attributes', 'accordion': accordion } %}
+    {% block form %}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.id) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.class) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}
+
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'background', 'accordion': accordion } %}
+    {% block form %}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.bg_color) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}
+
+
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'properties', 'accordion': accordion, 'open': true } %}
+    {% block form %}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.items_per_slide) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.infinite_loop) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.auto_play) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.navigation) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(form.pagination) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}
+
