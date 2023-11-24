@@ -15,4 +15,4 @@ quote:
         bg_color.label: "Color de fondo"
         quote:
             label: "Cita"
-            placeholder: "Inserta aquí el párrafo"
+            placeholder: "Inserta aquí la cita"

@@ -7,6 +7,7 @@ title:
             filters: "Filtros"
             others: "Otros"
             attributes: "Atributos"
+            title: "Título"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "HTML id"
