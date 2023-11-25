@@ -1,10 +1,10 @@
 {% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'attributes', 'accordion': accordion } %}
     {% block form %}
-        <div class="col-12">
-            {{ form_row(form.id) }}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.id) }}
         </div>
-        <div class="col-12">
-            {{ form_row(form.class) }}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.class) }}
         </div>
         <div class="col-12">
             {{ form_row(form.content_position) }}
@@ -25,14 +25,14 @@
 
 {% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'title', 'accordion': accordion } %}
     {% block form %}
-        <div class="col-12">
-            {{ form_row(form.title) }}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.title_type) }}
+        </div>
+        <div class="col-12 mb-3">
+            {{ form_widget(form.title_class) }}
         </div>
         <div class="col-12">
-            {{ form_row(form.title_type) }}
-        </div>
-        <div class="col-12">
-            {{ form_row(form.title_class) }}
+            {{ form_widget(form.title) }}
         </div>
     {% endblock %}
 {% endembed %}
@@ -41,15 +41,18 @@
     {% block title %}Image{% endblock %}
     {% block form %}
         <div class="col-12">
-            {{ form_row(form.media) }}
+            {{ form_widget(form.media) }}
         </div>
     {% endblock %}
 {% endembed %}
 
 {% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'primary_button', 'accordion': accordion } %}
     {% block form %}
-        <div class="col-12">
-            {{ form_row(form.primary_button_text) }}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.primary_button_class) }}
+        </div>
+        <div class="col-12 mb-3">
+            {{ form_widget(form.primary_button_text) }}
         </div>
         <div class="col-12">
             {{ form_widget(form.primary_button_link) }}

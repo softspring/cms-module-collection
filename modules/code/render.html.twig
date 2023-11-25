@@ -1,1 +1,1 @@
-<pre class="sfs-code {{ class|default('mb-0') }}" id="{{ id|default('') }}"><code>{{ code|raw }}</code></pre>
+<pre {{ module.id(id) }} {{ module.class(class|default('mb-0'), 'sfs-code') }}><code>{{ code|raw }}</code></pre>

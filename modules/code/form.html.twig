@@ -8,7 +8,10 @@
         </div>
     {% endblock %}
 {% endembed %}
-
-<div class="container">
-    <div class="row">{{ form_row(form.code, {'attr': {'data-content-edit-preview': 'code'}}) }}</div>
-</div>
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'code', 'accordion': accordion, 'open': true } %}
+    {% block form %}
+        <div class="col-12">
+            {{ form_widget(form.code, {'attr': {'style': 'min-height: 300px'}}) }}
+        </div>
+    {% endblock %}
+{% endembed %}

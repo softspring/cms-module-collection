@@ -9,7 +9,7 @@ card:
             attributes: "Attributes"
             background: "Background"
             title: "Title"
-            primary_button: "Primary button"
+            primary_button: "Button"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         background.label: "Background image"
@@ -31,9 +31,9 @@ card:
         description:
             label: "Description"
             placeholder: "Card description"
-        primary_button_text.label: "Primary button text"
+        primary_button_text.label: "Text"
         primary_button_link:
-            type.label: "Primary button link type"
+            type.label: "Link type"
             route_name.label: "Route"
             route_params.label: "Route parameters"
             anchor.label: "Anchor"
@@ -41,7 +41,7 @@ card:
             custom_target.label: "Target id"
             url.label: "Direct URL"
         bg_color.label: "Background color"
-        primary_button_class.label: "Primary button classes"
+        primary_button_class.label: "Classes"
         content_position.label: "Content position"
         content_position.values:
             left: "Left"

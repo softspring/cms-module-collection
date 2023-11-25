@@ -9,9 +9,13 @@ module:
             id:
                 type: 'id'
 
+            button_classes:
+                type: 'class'
+
             button_style:
                 type: 'choice'
                 type_options:
+                    default_value: 'btn btn-primary'
                     choices:
                         "button.form.button_style.values.primary": 'btn btn-primary'
                         "button.form.button_style.values.secondary": 'btn btn-secondary'
@@ -23,10 +27,6 @@ module:
                         "button.form.button_style.values.outline_success": 'btn btn-outline-success'
                         "button.form.button_style.values.outline_danger": 'btn btn-outline-danger'
                         "button.form.button_style.values.none": ''
-                    choice_translation_domain: false
-
-            button_classes:
-                type: 'class'
 
             button_text:
                 type: 'translatable'

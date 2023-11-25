@@ -7,6 +7,7 @@ code:
             filters: "Filters"
             others: "Others"
             attributes: "Attributes"
+            code: "Code"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "HTML id"
