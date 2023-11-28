@@ -3,6 +3,11 @@ _group.media.name: "Multimedia"
 media:
     label: "Fichero multimedia"
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            media: "Fichero multimedia"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         media.label: "Fichero"

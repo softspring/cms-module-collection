@@ -3,6 +3,12 @@ carousel:
     prototype_button: "Carousel"
     prototype_button_icon: '<i class="bi bi-distribute-horizontal"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            background: "Background"
+            properties: "Properties"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         modules.label: "Modules"

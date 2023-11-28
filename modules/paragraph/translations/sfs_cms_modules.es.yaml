@@ -3,6 +3,11 @@ paragraph:
     prototype_button: "Párrafo"
     prototype_button_icon: '<i class="bi bi-text-paragraph"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            paragraph: "Párrafo"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "HTML id"

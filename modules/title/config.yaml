@@ -1,5 +1,5 @@
 module:
-    revision: 1
+    revision: 2
     group: 'basic'
     edit_template: '@module/title/edit.html.twig'
     form_template: '@module/title/form.html.twig'
@@ -11,9 +11,13 @@ module:
             class:
                 type: 'class'
 
+            spacing:
+                type: 'spacing'
+
             type:
                 type: 'choice'
                 type_options:
+                    default_value: h1
                     choices:
                         "title.form.type.values.h1": h1
                         "title.form.type.values.h2": h2

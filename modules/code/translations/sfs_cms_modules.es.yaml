@@ -3,6 +3,11 @@ code:
     prototype_button: "Código fuente"
     prototype_button_icon: '<i class="bi bi-braces"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            code: "Código"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "HTML id"

@@ -1,1 +1,2 @@
-<p class="sfs-paragraph {{ class|default('mb-0') }}" id="{{ id|default('') }}">{{ paragraph|sfs_cms_trans|raw }}</p>
+{% import '@SfsCms/macros/modules_render.html.twig' as module %}
+<p {{ module.id(id) }} {{ module.class([class]|merge(spacing), 'sfs-paragraph') }}>{{ paragraph|sfs_cms_trans|raw }}</p>

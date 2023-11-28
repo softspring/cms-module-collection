@@ -1,18 +1,13 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{% trans_default_domain 'sfs_cms_modules' %}
-{% set type = form.type.vars.data|default('h1') %}
-
 {% for locale,localeField in form.title %}
-    <{{ type}}
-        data-cms-module-title-type=""
-        {{ module.link_id(form.id) }}
-        {{ module.link_class(form.class, 'sfs-title') }}
-        {{ module.link_content(localeField, locale, true, 'title.form.title.placeholder') }}
-
-        data-edit-content-enter-inserts-module="paragraph"
-    >
+    {{ module.start_link_tag_type(form.type, [
+        module.link_id(form.id),
+        module.link_class([form.class]|merge(form.spacing.children), 'sfs-title'),
+        module.link_content(localeField, locale, true, 'title.form.title.placeholder'),
+        module.enter_inserts_module('paragraph')
+    ]) }}
         {{ localeField.vars.data|default|raw }}
-    </{{ type }}>
+    {{ module.end_link_tag_type(form.type) }}
 {% endfor %}
 

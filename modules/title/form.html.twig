@@ -1,7 +1,24 @@
-<div class="container">
-    <div class="row">{{ form_row(form.id) }}</div>
-    <div class="row">{{ form_row(form.class) }}</div>
-    <div class="row">{{ form_row(form.type) }}</div>
-    <div class="row">{{ form_row(form.title, {'attr': {'data-content-edit-preview': 'title'}}) }}</div>
-    <div class="row">{{ form_rest(form) }}</div>
-</div>
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'attributes', 'accordion': accordion } %}
+    {% block form %}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.id) }}
+        </div>
+        <div class="col-12">
+            {{ form_widget(form.class) }}
+        </div>
+        <div class="col-12">
+            {{ form_widget(form.spacing) }}
+        </div>
+    {% endblock %}
+{% endembed %}
+
+{% embed '@SfsCms/forms/modules_form_block.html.twig' with { 'name': 'title', 'accordion': accordion, 'open': true } %}
+    {% block form %}
+        <div class="col-12 mb-3">
+            {{ form_widget(form.type) }}
+        </div>
+        <div class="col-12">
+            {{ form_widget(form.title, {'attr': {'style': 'min-height: 300px'}}) }}
+        </div>
+    {% endblock %}
+{% endembed %}

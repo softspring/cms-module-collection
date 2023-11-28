@@ -1,1 +1,2 @@
-<blockquote class="sfs-quote {{ class|default('mb-0') }}" id="{{ id|default('') }}">{{ quote|sfs_cms_trans|raw }}</blockquote>
+{% import '@SfsCms/macros/modules_render.html.twig' as module %}
+<blockquote {{ module.id(id) }} {{ module.class(class|default('mb-0'), 'sfs-quote') }}><p>{{ quote|sfs_cms_trans|raw }}</p></blockquote>

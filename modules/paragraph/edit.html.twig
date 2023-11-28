@@ -1,19 +1,12 @@
-{% trans_default_domain 'sfs_cms_modules' %}
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
 {% for locale,localeField in form.paragraph %}
-    <p class="sfs-paragraph {{ form.class.vars.data|default('') }}" id="{{ form.id.vars.data|default('') }}"
-        data-lang="{{ locale }}"
-
-        data-edit-id-target="paragraph"
-
-        data-edit-class-target="paragraph"
-        data-edit-class-default=""
-
-        data-edit-content-enter-inserts-module="paragraph"
-
-        data-edit-content-target="paragraph.{{ locale }}"
-        contenteditable="true"
-        data-edit-content-placeholder="{{ 'paragraph.form.paragraph.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-    >{{ localeField.vars.data|default|raw }}</p>
+    <p {{ module.link_id(form.id) }}
+       {{ module.link_class([form.class]|merge(form.spacing.children), 'sfs-paragraph') }}
+       {{ module.link_content(localeField, locale, true, 'paragraph.form.paragraph.placeholder') }}
+       {{ module.enter_inserts_module('paragraph') }}
+    >
+        {{ localeField.vars.data|default|raw }}
+    </p>
 {% endfor %}
 

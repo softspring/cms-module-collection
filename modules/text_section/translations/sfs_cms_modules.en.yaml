@@ -3,6 +3,10 @@ text_section:
     prototype_button: "Text section"
     prototype_button_icon: '<i class="bi bi-body-text"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         background.label: "Background image"
@@ -19,7 +23,9 @@ text_section:
             h4: "Heading 4"
             h5: "Heading 5"
             h6: "Heading 6"
-        description.label: "Description"
+        description:
+            label: "Description"
+            placeholder: "Insert description here"
         media.label: "Main image"
         text_position:
             label: "Text position"
@@ -28,8 +34,11 @@ text_section:
                 left: "Left"
                 right: "Right"
         primary_button_class.label: "Primary button classes"
-        primary_button_text.label: "Primary button text"
+        primary_button_text:
+            label: "Primary button text"
+            placeholder: "Primary button"
         primary_button_link:
+            label: "Primary button link"
             type.label: "Primary button link type"
             route_name.label: "Route"
             route_params.label: "Route parameters"

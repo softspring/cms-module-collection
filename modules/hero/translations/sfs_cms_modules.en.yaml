@@ -3,6 +3,15 @@ hero:
     prototype_button: "Hero"
     prototype_button_icon: '<i class="bi bi-postcard"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            background: "Background"
+            title: "Title"
+            image: "Main image"
+            primary_button: "Primary button"
+            secondary_button: "Secondary button"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         background.label: "Background image"
