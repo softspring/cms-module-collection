@@ -3,6 +3,11 @@ quote:
     prototype_button: "Cita"
     prototype_button_icon: '<i class="bi bi-blockquote-left"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            quote: "Cita"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "HTML id"
@@ -10,4 +15,4 @@ quote:
         bg_color.label: "Color de fondo"
         quote:
             label: "Cita"
-            placeholder: "Inserta aquí el párrafo"
+            placeholder: "Inserta aquí la cita"

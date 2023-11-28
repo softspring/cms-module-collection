@@ -3,16 +3,20 @@ button:
     prototype_button: "Botón"
     prototype_button_icon: '<i class="bi bi-link"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            button: "Botón"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Clases"
         button_text:
-            label: "Texto del botón"
+            label: "Texto"
             placeholder: "Botón"
-        button_classes.label: "Clases del botón"
+        button_classes.label: "Clases"
         button_link:
-            type.label: "Tipo de link del botón"
+            type.label: "Tipo de link"
             route_name.label: "Ruta"
             route_params.label: "Parámetros de la ruta"
             anchor.label: "Anchor"
@@ -20,7 +24,7 @@ button:
             custom_target.label: "Identificador de target"
             url.label: "URL directa"
         button_style:
-            label: "Estilo del botón"
+            label: "Estilo"
             values:
                 primary: "Primario"
                 secondary: "Secundario"
@@ -33,4 +37,4 @@ button:
                 outline_danger: "Error hueco"
                 none: "Ninguno"
         button_classes:
-            label: "Estilo del botón personalizado (clases CSS)"
+            label: "Estilo personalizado (clases CSS)"

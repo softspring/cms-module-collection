@@ -3,6 +3,13 @@ card:
     prototype_button: "Card"
     prototype_button_icon: '<i class="bi bi-credit-card-2-front"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            background: "Background"
+            title: "Title"
+            primary_button: "Button"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         background.label: "Background image"
@@ -24,9 +31,9 @@ card:
         description:
             label: "Description"
             placeholder: "Card description"
-        primary_button_text.label: "Primary button text"
+        primary_button_text.label: "Text"
         primary_button_link:
-            type.label: "Primary button link type"
+            type.label: "Link type"
             route_name.label: "Route"
             route_params.label: "Route parameters"
             anchor.label: "Anchor"
@@ -34,7 +41,7 @@ card:
             custom_target.label: "Target id"
             url.label: "Direct URL"
         bg_color.label: "Background color"
-        primary_button_class.label: "Primary button classes"
+        primary_button_class.label: "Classes"
         content_position.label: "Content position"
         content_position.values:
             left: "Left"

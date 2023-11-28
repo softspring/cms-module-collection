@@ -3,16 +3,20 @@ button:
     prototype_button: "Button"
     prototype_button_icon: '<i class="bi bi-link"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            button: "Button"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Classes"
         button_text:
-            label: "Button text"
+            label: "Text"
             placeholder: "Button"
-        button_classes.label: "Button classes"
+        button_classes.label: "Classes"
         button_link:
-            type.label: "Button link type"
+            type.label: "Link type"
             route_name.label: "Route"
             route_params.label: "Route parameters"
             anchor.label: "Anchor"
@@ -20,7 +24,7 @@ button:
             custom_target.label: "Target id"
             url.label: "Direct URL"
         button_style:
-            label: "Button style"
+            label: "Style"
             values:
                 primary: "Primary"
                 secondary: "Secondary"

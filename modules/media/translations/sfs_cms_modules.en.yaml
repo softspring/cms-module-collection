@@ -3,6 +3,11 @@ _group.media.name: "Multimedia"
 media:
     label: "Multimedia file"
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            media: "Media file"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         media.label: "File"

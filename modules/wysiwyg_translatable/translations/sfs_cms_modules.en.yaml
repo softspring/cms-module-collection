@@ -3,8 +3,14 @@ wysiwyg_translatable:
     prototype_button: "WYSIWYG translatable"
     prototype_button_icon: '<i class="bi bi-table"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Classes"
-        content.label: "Content"
+        content:
+            label: "Content"
+            placeholder: "Insert content here"

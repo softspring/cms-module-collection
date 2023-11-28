@@ -3,6 +3,10 @@ two_columns:
     prototype_button: "Dos columnas"
     prototype_button_icon: '<i class="bi bi-layout-split"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         background.label: "Imagen de fondo"
@@ -28,6 +32,7 @@ two_columns:
             label: "Texto del botón primario"
             placeholder: "Texto del botón primario"
         primary_button_link:
+            label: "Enlace del botón primario"
             type.label: "Tipo de enlace del botón primario"
             route_name.label: "Ruta"
             route_params.label: "Parámetros de la ruta"

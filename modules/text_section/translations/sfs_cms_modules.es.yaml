@@ -3,6 +3,10 @@ text_section:
     prototype_button: "Sección texto"
     prototype_button_icon: '<i class="bi bi-body-text"></i>'
     form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         background.label: "Imagen de fondo"
@@ -19,7 +23,9 @@ text_section:
             h4: "Encabezado 4"
             h5: "Encabezado 5"
             h6: "Encabezado 6"
-        description.label: "Descripción"
+        description:
+            label: "Descripción"
+            placeholder: "Inserta aquí la descripción"
         media.label: "Imagen principal"
         text_position:
             label: "Position del texto"
@@ -28,8 +34,11 @@ text_section:
                 left: "Izquierda"
                 right: "Derecha"
         primary_button_class.label: "Classes del botón primario"
-        primary_button_text.label: "Texto del botón primario"
+        primary_button_text:
+            label: "Texto del botón primario"
+            placeholder: "Botón primario"
         primary_button_link:
+            label: "Enlace del botón primario"
             type.label: "Tipo de enlace del botón primario"
             route_name.label: "Ruta"
             route_params.label: "Parámetros de la ruta"

@@ -3,6 +3,11 @@ quote:
     prototype_button: "quote"
     prototype_button_icon: '<i class="bi bi-blockquote-left"></i>'
     form:
+        _group:
+            filters: "Filters"
+            others: "Others"
+            attributes: "Attributes"
+            quote: "Quote"
         locale_filter.label: "Locales"
         site_filter.label: "Sites"
         id.label: "HTML id"
