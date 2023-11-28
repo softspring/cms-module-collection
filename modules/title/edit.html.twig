@@ -1,9 +1,9 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
 {% for locale,localeField in form.title %}
-    {{ module.start_link_tag_type(form.type,[
+    {{ module.start_link_tag_type(form.type, [
         module.link_id(form.id),
-        module.link_class(form.class, 'sfs-title'),
+        module.link_class([form.class]|merge(form.spacing.children), 'sfs-title'),
         module.link_content(localeField, locale, true, 'title.form.title.placeholder'),
         module.enter_inserts_module('paragraph')
     ]) }}

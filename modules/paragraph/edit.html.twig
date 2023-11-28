@@ -2,7 +2,7 @@
 
 {% for locale,localeField in form.paragraph %}
     <p {{ module.link_id(form.id) }}
-       {{ module.link_class(form.class, 'sfs-paragraph') }}
+       {{ module.link_class([form.class]|merge(form.spacing.children), 'sfs-paragraph') }}
        {{ module.link_content(localeField, locale, true, 'paragraph.form.paragraph.placeholder') }}
        {{ module.enter_inserts_module('paragraph') }}
     >

@@ -1,5 +1,5 @@
 module:
-    revision: 1
+    revision: 2
     group: 'basic'
     edit_template: '@module/paragraph/edit.html.twig'
     form_template: '@module/paragraph/form.html.twig'
@@ -11,6 +11,9 @@ module:
             class:
                 type: 'class'
 
+            spacing:
+                type: 'spacing'
+                
             paragraph:
                 type: 'translatable'
                 type_options:
