@@ -68,7 +68,6 @@ module:
                     type_options:
                         attr:
                             data-edit-content-input: 'description'
-                            data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatable'
