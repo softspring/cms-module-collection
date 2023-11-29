@@ -15,7 +15,7 @@
             {% if description|default(false) %}<div class="sfs-card__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
             <div class="sfs-card__cta">
                 {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
-                    <a {{ sfs_cms_link_attr(primary_button_link) }} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    <a {{ sfs_cms_link_attr(primary_button_link, app.request.locale) }} class="{{ primary_button_class|default('btn btn-primary') }}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
             </div>
         </div>
