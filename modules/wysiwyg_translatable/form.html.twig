@@ -6,3 +6,9 @@
     {{ form_row(form.class) }}
 </div>
 {{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'code') }}
+<div class="col-12">
+    {{ form_widget(form.content, {'children_attr': {'style': 'height: 300px'}}) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}

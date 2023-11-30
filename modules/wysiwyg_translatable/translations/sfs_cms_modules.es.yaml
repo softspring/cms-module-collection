@@ -7,10 +7,11 @@ wysiwyg_translatable:
             filters: "Filtros"
             others: "Otros"
             attributes: "Atributos"
+            code: "Código"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Clases"
         content:
-            label: "Contenido"
+            label: "Código"
             placeholder: "Inserta aquí el contenido"

@@ -1,7 +1,7 @@
 {
     "name": "@softspring/cms-module-collection",
     "license": "MIT",
-    "version": "5.1.0-dev",
+    "version": "5.2.0-dev",
     "peerDependencies": {
         "@softspring/cms-bundle": "*"
     }

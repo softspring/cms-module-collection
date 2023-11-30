@@ -22,65 +22,44 @@
         {% set containerNoCtaDivClass = ' container--no-cta' %}
     {% endif %}
     {% set containerDivClass = 'sfs-text-section__content container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
-        <div
-            {{ module.link_class(form.text_position) }}>
-            {% for locale,localeField in form.media %}
-                <div class="sfs-text-section__image position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
-                    {% if localeField.media.vars.data %}
-                        {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
-                    {% endif %}
-                </div>
-            {% endfor %}
-
-            <div class="sfs-text-section__content">
-                {% for locale,localeField in form.title %}
-                    <{{ titleType }}
-                        data-cms-module-title-type=""
-                        {{ module.link_class(form.title_class, 'sfs-text-section__title') }}
-                        {{ module.link_content(localeField, locale, true, 'card.form.title.placeholder') }}
-                    >
-                        {{ localeField.vars.data|default('')|raw }}
-                    </{{ titleType }}>
-                {% endfor %}
-                <div class="sfs-text-section__body">
-                    {% for locale,localeField in form.description %}
-                        <div {{ module.link_content(localeField, locale, false) }}
-                             data-bs-toggle="modal"
-                             data-bs-target="#{{ id }}Modal"
-                             data-default-text="Enter description">
-                            {{ localeField.vars.data|default('Enter description')|raw }}
-                        </div>
-                    {% endfor %}
-
-                    {% for locale,localeField in form.primary_button_text %}
-                        <a href="#"
-                            {{ module.link_class(form.primary_button_class, 'sfs-text-section__cta btn') }}
-                            {{ module.link_content(localeField, locale) }}
-                        >
-                            {{ localeField.vars.data|default('') }}
-                        </a>
-                    {% endfor %}
-                </div>
+    <div
+        {{ module.link_class(form.text_position) }}>
+        {% for locale,localeField in form.media %}
+            <div class="sfs-text-section__image position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
+                {% if localeField.media.vars.data %}
+                    {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
+                {% endif %}
             </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Text section description</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {% for locale,localeField in form.description %}
-                        <div {{ module.link_content(localeField, locale, false) }}>
-                            {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
-                </div>
+        {% endfor %}
+
+        <div class="sfs-text-section__content">
+            {% for locale,localeField in form.title %}
+                <{{ titleType }}
+                    data-cms-module-title-type=""
+                    {{ module.link_class(form.title_class, 'sfs-text-section__title') }}
+                    {{ module.link_content(localeField, locale, true, 'card.form.title.placeholder') }}
+                >
+                    {{ localeField.vars.data|default('')|raw }}
+                </{{ titleType }}>
+            {% endfor %}
+            <div class="sfs-text-section__body">
+                {% for locale,localeField in form.description %}
+                    <div
+                        {{ module.link_content(localeField, locale, false) }}
+                        {{ module.wysiwyg('tinymce') }}
+                    >
+                        {{ localeField.vars.data|default('Enter description')|raw }}
+                    </div>
+                {% endfor %}
+
+                {% for locale,localeField in form.primary_button_text %}
+                    <a href="#"
+                        {{ module.link_class(form.primary_button_class, 'sfs-text-section__cta btn') }}
+                        {{ module.link_content(localeField, locale) }}
+                    >
+                        {{ localeField.vars.data|default('') }}
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </div>

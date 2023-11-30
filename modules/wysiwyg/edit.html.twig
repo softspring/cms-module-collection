@@ -1,32 +1,11 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{#<script src="https://cdn.tiny.cloud/1/0zxo7hhr52tjj8ir7zp8ujyxq2xrwy561vrc8oqr6oozfjbi/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>#}
-
-<article {{ module.link_id(form.id) }} {{ module.link_class(form.class, 'sfs-wysiwyg text-break content-escape') }}>
-    <div class="wysiwyg-preview"
-         {{ module.link_content(form.content, null, false) }}
-        data-edit-content-escape="true"
-        data-bs-toggle="modal"
-        data-bs-target="#{{ id }}Modal"
-        data-default-text="Enter your text">
-        {{ form.content.vars.data|default('Enter your text')|replace({'href': ''})|raw }}
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">WYSIWYG description</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ form_row(form.content,{'attr':{'data-initial-value' : form.content.vars.value }}) }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<article
+        {{ module.link_id(form.id) }}
+        {{ module.link_class(form.class, 'sfs-wysiwyg text-break content-escape') }}
+        {{ module.link_content(form.content) }}
+        data-edit-content-escape="false"
+        {{ module.wysiwyg('tinymce') }}
+>
+    {{ form.content.vars.data|default|raw }}
 </article>
