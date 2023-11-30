@@ -45,9 +45,6 @@ module:
                 type: 'translatable'
                 type_options:
                     type: 'html'
-                    type_options:
-                        attr:
-                            data-wysiwyg: ''
 
             primary_button_text:
                 type: 'translatable'
