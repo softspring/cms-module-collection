@@ -3,10 +3,7 @@ module:
     group: 'basic'
     edit_template: '@module/wysiwyg_translatable/edit.html.twig'
     form_template: '@module/wysiwyg_translatable/form.html.twig'
-    render_template: '@module/wysiwyg_translatable/render.html.twig'
     module_options:
-        label_format: 'modules.wysiwyg_translatable.%%name%%.label'
-        translation_domain: 'custom_domain'
         form_fields:
             id:
                 type: 'id'
@@ -25,6 +22,5 @@ module:
                     type_options:
                         attr:
                             data-edit-content-input: 'content'
-                            data-wysiwyg: ''
 
                 

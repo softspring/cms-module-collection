@@ -40,9 +40,9 @@
                         <div class="wysiwyg-preview"
                              data-edit-content-target="description.{{ locale }}"
                              data-lang="{{ locale }}"
-                             data-bs-toggle="modal"
-                             data-bs-target="#{{ id }}Modal"
-                             data-default-text="Texto descriptivo">
+                             data-edit-content-wysiwyg="tinymce"
+                             contenteditable="true"
+                         >
                             {{ localeField.vars.data|default('Texto descriptivo')|raw }}
                         </div>
                     {% endfor %}
@@ -64,25 +64,4 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="{{ id }}Modal" data-wysiwyg-modal data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Two columns description</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {% for locale,localeField in form.description %}
-                        <div data-edit-content-target="description.{{ locale }}" data-lang="{{ locale }}">
-                            {{ form_row(localeField,{'attr':{'data-initial-value' : form.description.children[locale].vars.value }}) }}
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
