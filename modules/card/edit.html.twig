@@ -50,13 +50,11 @@
 
             {% for locale,localeField in form.description %}
                 <div class="sfs-card__desc mb-4 wysiwyg-preview"
-
                      data-lang="{{ locale }}"
                      data-edit-content-target="description.{{ locale }}"
                      data-edit-content-placeholder="{{ 'card.form.description.placeholder'|trans({}, 'sfs_cms_modules', locale) }}"
-
-                     data-bs-toggle="modal"
-                     data-bs-target="#{{ id }}Modal"
+                     data-edit-content-wysiwyg="tinymce"
+                     contenteditable="true"
                 >{{ localeField.vars.data|default('')|raw }}</div>
             {% endfor %}
 

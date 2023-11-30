@@ -57,9 +57,9 @@
                     {% for locale,localeField in form.description %}
                         <div data-edit-content-target="description.{{ locale }}"
                              data-lang="{{ locale }}"
-                             data-bs-toggle="modal"
-                             data-bs-target="#{{ id }}Modal"
-                             data-default-text="Enter description">
+                             data-edit-content-wysiwyg="tinymce"
+                             contenteditable="true"
+                         >
                             {{ localeField.vars.data|default('Enter description')|raw }}
                         </div>
                     {% endfor %}

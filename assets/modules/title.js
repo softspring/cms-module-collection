@@ -1,3 +1,6 @@
+/**
+ * @deprecated will be removed in 5.2, see cms-bundle/assets/scripts/admin/content-edit/preview-tag-type.js
+ */
 document.addEventListener('change', function (event) {
     if (!event.target || !event.target.hasAttribute('data-cms-module-title-type-field')) return;
     event.preventDefault();

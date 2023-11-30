@@ -12,10 +12,9 @@
     <div class="wysiwyg-preview"
         data-edit-content-target="content"
         data-edit-content-escape="true"
-
-        data-bs-toggle="modal"
-        data-bs-target="#{{ id }}Modal"
-        data-default-text="Enter your text">
+         data-edit-content-wysiwyg="tinymce"
+         contenteditable="true"
+    >
         {{ form.content.vars.data|default('Enter your text')|replace({'href': ''})|raw }}
     </div>
 

@@ -15,9 +15,9 @@
         <div class="wysiwyg-preview"
              data-edit-content-target="content.{{ locale }}"
              data-lang="{{ locale }}"
-             data-bs-toggle="modal"
-             data-bs-target="#{{ id }}Modal"
-             data-default-text="Enter your translatable text">
+             data-edit-content-wysiwyg="tinymce"
+             contenteditable="true"
+         >
             {{ localeField.vars.data|default('Enter your translatable text')|raw }}
         </div>
     {% endfor %}
