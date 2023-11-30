@@ -20,7 +20,7 @@
                 </div>
                 {% if primary_button_text|sfs_cms_trans|default(false) %}
                     <div class="sfs-two-columns__cta">
-                        <a {{ sfs_cms_link_attr(primary_button_link) }} class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                        <a {{ sfs_cms_link_attr(primary_button_link, app.request.locale) }} class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     </div>
                 {% endif %}
             </div>
