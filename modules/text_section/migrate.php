@@ -1,6 +1,6 @@
 <?php
 
-use Softspring\CmsBundle\Utils\ModuleMigrator;
+use Softspring\CmsBundle\Utils\DataMigrator;
 
 return static function (array $data, int $originVersion, int $targetVersion): array {
     if (1 == $originVersion && $targetVersion >= 2) {
@@ -36,11 +36,11 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
          *  v1.primary_button_link route___<route_name>
          *  v3.primary_button_link { route_name = <route_name>, route_ }
          */
-        $data['primary_button_link'] = ModuleMigrator::routeToSymfonyRoute($data['primary_button_link'] ?? null);
+        $data['primary_button_link'] = DataMigrator::routeToSymfonyRoute($data['primary_button_link'] ?? null);
     }
 
     if ($originVersion < 4 && $targetVersion >= 4) {
-        $data['primary_button_link'] = ModuleMigrator::symfonyRouteToLink($data['primary_button_link'] ?? null);
+        $data['primary_button_link'] = DataMigrator::symfonyRouteToLink($data['primary_button_link'] ?? null);
     }
 
     return $data;
