@@ -4,7 +4,7 @@
 <blockquote {{ module.link_id(form.id) }}
         {{ module.link_class(form.class, 'sfs-quote blockquote') }}
 >
-    {% for locale,localeField in form.quote %}
+    {% for locale,localeField in form.quote|filter((f, locale) => not (locale starts with '_')) %}
         <p
                 {{ module.link_content(localeField, locale, true, 'quote.form.quote.placeholder') }}
                 {{ module.enter_inserts_module('paragraph') }}

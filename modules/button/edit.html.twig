@@ -1,6 +1,6 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{% for locale,localeField in form.button_text %}
+{% for locale,localeField in form.button_text|filter((f, locale) => not (locale starts with '_')) %}
     <a href="#"
         {{ module.link_id(form.id) }}
         {{ module.link_class([form.button_classes, form.button_style]) }}
