@@ -1,6 +1,6 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{% for locale,localeField in form.content %}
+{% for locale,localeField in form.content|filter((f, locale) => not (locale starts with '_')) %}
     <article
             {{ module.link_id(form.id) }}
             {{ module.link_class(form.class, 'sfs-wysiwyg text-break content-escape') }}

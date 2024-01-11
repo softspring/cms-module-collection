@@ -6,7 +6,7 @@
     {{ module.link_class(form.class, 'sfs-text-section') }}
     {{ module.link_bg_color(form.bg_color) }}
 >
-    {% for locale,localeField in form.background %}
+    {% for locale,localeField in form.background|filter((f, locale) => not (locale starts with '_')) %}
         <div class="sfs-text-section__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
@@ -24,7 +24,7 @@
     {% set containerDivClass = 'sfs-text-section__content container' ~ containerNoImageDivClass ~ containerNoCtaDivClass %}
     <div
         {{ module.link_class(form.text_position) }}>
-        {% for locale,localeField in form.media %}
+        {% for locale,localeField in form.media|filter((f, locale) => not (locale starts with '_')) %}
             <div class="sfs-text-section__image position-relative" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
                 {% if localeField.media.vars.data %}
                     {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
@@ -33,7 +33,7 @@
         {% endfor %}
 
         <div class="sfs-text-section__content">
-            {% for locale,localeField in form.title %}
+            {% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
                 <{{ titleType }}
                     data-cms-module-title-type=""
                     {{ module.link_class(form.title_class, 'sfs-text-section__title') }}
@@ -43,7 +43,7 @@
                 </{{ titleType }}>
             {% endfor %}
             <div class="sfs-text-section__body">
-                {% for locale,localeField in form.description %}
+                {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}
                     <div
                         {{ module.link_content(localeField, locale, false) }}
                         {{ module.wysiwyg('tinymce') }}
@@ -52,7 +52,7 @@
                     </div>
                 {% endfor %}
 
-                {% for locale,localeField in form.primary_button_text %}
+                {% for locale,localeField in form.primary_button_text|filter((f, locale) => not (locale starts with '_')) %}
                     <a href="#"
                         {{ module.link_class(form.primary_button_class, 'sfs-text-section__cta btn') }}
                         {{ module.link_content(localeField, locale) }}

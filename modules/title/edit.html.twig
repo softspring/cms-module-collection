@@ -1,6 +1,6 @@
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{% for locale,localeField in form.title %}
+{% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
     {{ module.start_link_tag_type(form.type,[
         module.link_id(form.id),
         module.link_class(form.class, 'sfs-title'),
@@ -10,4 +10,3 @@
         {{ localeField.vars.data|default|raw }}
     {{ module.end_link_tag_type(form.type) }}
 {% endfor %}
-

@@ -5,7 +5,7 @@
     {{ module.link_class([form.class, form.fullpage], 'sfs-hero') }}
     {{ module.link_bg_color(form.bg_color) }}
 >
-    {% for locale,localeField in form.background %}
+    {% for locale,localeField in form.background|filter((f, locale) => not (locale starts with '_')) %}
         <div class="sfs-hero__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
@@ -13,14 +13,14 @@
         </div>
     {% endfor %}
     <div class="sfs-hero__content container">
-        {% for locale,localeField in form.media %}
+        {% for locale,localeField in form.media|filter((f, locale) => not (locale starts with '_')) %}
             <div class="sfs-hero__image-media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
                 {% if localeField.media.vars.data %}
                     {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                 {% endif %}
             </div>
         {% endfor %}
-        {% for locale,localeField in form.title %}
+        {% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
             {{ module.start_link_tag_type(form.title_type, [
                 module.link_class(form.title_class, 'sfs-hero__title'),
                 module.link_content(localeField, locale, true, 'two_columns.form.title.placeholder')
@@ -30,7 +30,7 @@
         {% endfor %}
 
         <div class="col-md-10 col-lg-8 mx-auto">
-            {% for locale,localeField in form.description %}
+            {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}
                 <div class="lead mb-4 wysiwyg-preview"
                     {{ module.link_content(localeField, locale, false) }}
                     {{ module.wysiwyg('tinymce') }}
@@ -38,11 +38,11 @@
             {% endfor %}
 
             <div class="d-grid gap-2 d-sm-flex justify-content-center">
-                {% for locale,localeField in form.primary_button_text %}
+                {% for locale,localeField in form.primary_button_text|filter((f, locale) => not (locale starts with '_')) %}
                     <a href="#" {{ module.link_content(localeField, locale, true, '', true )}} class="btn btn-primary btn-lg px-4 gap-3">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
 
-                {% for locale,localeField in form.secondary_button_text %}
+                {% for locale,localeField in form.secondary_button_text|filter((f, locale) => not (locale starts with '_')) %}
                     <a href="#" {{ module.link_content(localeField, locale, true, '', true )}} class="btn btn-outline-secondary btn-lg px-4">{{ localeField.vars.data|default('') }}</a>
                 {% endfor %}
             </div>

@@ -5,7 +5,7 @@
     {{ module.link_class(form.class, 'sfs-card h-100') }}
     {{ module.link_bg_color(form.bg_color) }}
 >
-    {% for locale,localeField in form.background %}
+    {% for locale,localeField in form.background|filter((f, locale) => not (locale starts with '_')) %}
         <div class="sfs-card__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
@@ -13,7 +13,7 @@
         </div>
     {% endfor %}
     <div {{ module.link_class(form.content_position, 'sfs-card__content') }}>
-        {% for locale,localeField in form.media %}
+        {% for locale,localeField in form.media|filter((f, locale) => not (locale starts with '_')) %}
         <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
             {% if localeField.media.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
@@ -23,13 +23,13 @@
 
         <div class="sfs-card__texts">
             {% set titleType = form.title_type.vars.data %}
-            {% for locale,localeField in form.title %}
+            {% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
                 <{{ titleType }} data-cms-module-title-type="" {{ module.link_class(form.title_class, 'sfs-card__title') }} {{ module.link_content(localeField) }}>
                     {{ localeField.vars.data|default('')|raw }}
                 </{{ titleType }}>
             {% endfor %}
 
-            {% for locale,localeField in form.description %}
+            {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}
                 <div class="sfs-card__desc mb-4 wysiwyg-preview"
                     {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder') }}
                     {{ module.wysiwyg('tinymce') }}
@@ -37,7 +37,7 @@
             {% endfor %}
 
             <div class="sfs-card__cta">
-                 {% for locale,localeField in form.primary_button_text %}
+                 {% for locale,localeField in form.primary_button_text|filter((f, locale) => not (locale starts with '_')) %}
                      <a href="#" {{ module.link_class(form.primary_button_class, 'btn btn-primary') }}
                          {{ module.link_content(localeField, locale, true, '', true) }}
                      >{{ localeField.vars.data|default('') }}</a>
