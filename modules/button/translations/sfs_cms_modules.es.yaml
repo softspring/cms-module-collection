@@ -6,6 +6,7 @@ button:
         _group:
             filters: "Filtros"
             others: "Otros"
+            attributes: "Atributos"
             button: "Botón"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"

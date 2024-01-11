@@ -31,6 +31,12 @@
 </div>
 {{ sfs_cms_admin_module_accordion_block_end() }}
 
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'description') }}
+<div class="col-12 mb-3">
+    {{ form_widget(form.description) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
 {{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'image') }}
 <div class="col-12">
     {{ form_widget(form.media) }}

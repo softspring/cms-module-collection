@@ -9,6 +9,8 @@ card:
             attributes: "Atributos"
             background: "Fondo"
             title: "Título"
+            description: "Texto"
+            image: "Imagen"
             primary_button: "Botón"
         locale_filter.label: "Idiomas"
         site_filter.label: "Sites"

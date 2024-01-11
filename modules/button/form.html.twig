@@ -1,10 +1,13 @@
-{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'button', true) }}
-<div class="col-12">
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'attributes') }}
+<div class="col-12 mb-3">
     {{ form_widget(form.id) }}
 </div>
-<div class="col-12">
-    {{ form_row(form.button_classes) }}
+<div class="col-12 mb-3">
+    {{ form_widget(form.button_classes) }}
 </div>
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'button', true) }}
 <div class="col-12">
     {{ form_row(form.button_style) }}
 </div>
