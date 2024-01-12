@@ -24,9 +24,8 @@
             {{ module.start_link_tag_type(form.title_type, [
                 module.link_class(form.title_class, 'sfs-hero__title'),
                 module.link_content(localeField, locale, true, 'two_columns.form.title.placeholder')
-            ]) }}
-                {{ localeField.vars.data|default|raw }}
-            {{ module.end_link_tag_type(form.title_type) }}
+            ]) }}{{ localeField.vars.data|default|raw }}{{ module.end_link_tag_type(form.title_type) }}
+            {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
         {% endfor %}
 
         <div class="col-md-10 col-lg-8 mx-auto">

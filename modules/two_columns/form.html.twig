@@ -6,3 +6,44 @@
     {{ form_row(form.class) }}
 </div>
 {{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'background') }}
+<div class="col-12">
+    {{ form_row(form.bg_color) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'title') }}
+<div class="col-12">
+    {{ form_row(form.title) }}
+</div>
+<div class="col-12">
+    {{ form_row(form.title_type) }}
+</div>
+<div class="col-12">
+    {{ form_row(form.title_class) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'description') }}
+<div class="col-12">
+    {{ form_row(form.description) }}
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'image') }}
+<div class="col-12">
+    {{ form_row(form.module_image) }}
+</div>
+<div class="col-12">
+    {{ form_row(form.image_position_text) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}
+
+{{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'primary_button') }}
+<div class="col-12">
+    {{ form_row(form.primary_button_text) }}
+</div>
+<div class="col-12">
+    {{ form_widget(form.primary_button_link) }}
+</div>
+{{ sfs_cms_admin_module_accordion_block_end() }}

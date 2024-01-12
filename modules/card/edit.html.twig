@@ -34,6 +34,7 @@
                     {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder') }}
                     {{ module.wysiwyg('tinymce') }}
                 >{{ localeField.vars.data|default('')|raw }}</div>
+                {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}
 
             <div class="sfs-card__cta">

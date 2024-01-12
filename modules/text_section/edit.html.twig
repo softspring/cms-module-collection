@@ -38,9 +38,8 @@
                     data-cms-module-title-type=""
                     {{ module.link_class(form.title_class, 'sfs-text-section__title') }}
                     {{ module.link_content(localeField, locale, true, 'card.form.title.placeholder') }}
-                >
-                    {{ localeField.vars.data|default('')|raw }}
-                </{{ titleType }}>
+                >{{ localeField.vars.data|default('')|raw }}</{{ titleType }}>
+                {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}
             <div class="sfs-text-section__body">
                 {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}

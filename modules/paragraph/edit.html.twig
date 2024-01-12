@@ -5,8 +5,7 @@
        {{ module.link_class(form.class, 'sfs-paragraph') }}
        {{ module.link_content(localeField, locale, true, 'paragraph.form.paragraph.placeholder') }}
        {{ module.enter_inserts_module('paragraph') }}
-    >
-        {{ localeField.vars.data|default|raw }}
-    </p>
+    >{{ localeField.vars.data|default|raw }}</p>
+    {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
 {% endfor %}
 

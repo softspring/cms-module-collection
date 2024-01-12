@@ -8,8 +8,7 @@
         <p
                 {{ module.link_content(localeField, locale, true, 'quote.form.quote.placeholder') }}
                 {{ module.enter_inserts_module('paragraph') }}
-        >
-            {{ localeField.vars.data|default|raw }}
-        </p>
+        >{{ localeField.vars.data|default|raw }}</p>
+        {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
     {% endfor %}
 </blockquote>
