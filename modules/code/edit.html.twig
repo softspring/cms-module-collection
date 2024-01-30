@@ -3,7 +3,8 @@
 
 <pre
     {{ module.link_id(form.id) }}
-    {{ module.link_class(form.class, 'sfs-code') }}
+    {{ module.link_class(form.class, 'sfs-code hljs p-2') }}
+    data-language="{{ form.language.vars.data|default }}"
 ><code
     {{ module.link_content(form.code, null, true, 'code.form.code.placeholder') }}
     >{{ form.code.vars.data|default }}</code></pre>

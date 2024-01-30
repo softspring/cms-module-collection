@@ -1,2 +1,2 @@
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
-<pre {{ module.id(id) }} {{ module.class(class, 'sfs-code') }}><code>{{ code|raw }}</code></pre>
+<pre {{ module.id(id) }} {{ module.class(class, 'sfs-code hljs p-2') }} data-language="{{ language|default('') }}"><code>{{ code|raw }}</code></pre>
