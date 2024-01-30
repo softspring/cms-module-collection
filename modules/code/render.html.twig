@@ -1,1 +1,2 @@
-<pre {{ module.id(id) }} {{ module.class(class|default('mb-0'), 'sfs-code') }}><code>{{ code|raw }}</code></pre>
+{% import '@SfsCms/macros/modules_render.html.twig' as module %}
+<pre {{ module.id(id) }} {{ module.class(class, 'sfs-code') }}><code>{{ code|raw }}</code></pre>
