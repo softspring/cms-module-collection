@@ -14,6 +14,7 @@ module:
             language:
                 type: 'choice'
                 type_options:
+                    choice_translation_domain: false
                     choices:
                         "(auto)" : ''
                         "accesslog" : 'accesslog'
