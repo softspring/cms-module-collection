@@ -13,6 +13,7 @@ code:
         id.label: "HTML id"
         class.label: "HTML class"
         bg_color.label: "Background color"
+        language.label: "Language"
         code:
             label: "Source code"
             placeholder: "Insert source code here"

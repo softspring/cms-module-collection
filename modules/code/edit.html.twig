@@ -3,8 +3,9 @@
 
 <pre
     {{ module.link_id(form.id) }}
-    {{ module.link_class(form.class, 'sfs-code') }}
-><code
+    {{ module.link_class(form.class, 'sfs-code hljs p-2') }}
+    data-language="{{ form.language.vars.data|default }}"
+><code data-edit-content-escape="true"
     {{ module.link_content(form.code, null, true, 'code.form.code.placeholder') }}
     >{{ form.code.vars.data|default }}</code></pre>
 {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}

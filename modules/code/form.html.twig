@@ -8,6 +8,7 @@
 {{ sfs_cms_admin_module_accordion_block_end() }}
 {{ sfs_cms_admin_module_accordion_block_start(form, accordion, 'code', true) }}
 <div class="col-12">
+    {{ form_row(form.language) }}
     {{ form_widget(form.code, {'attr': {'style': 'min-height: 300px'}}) }}
 </div>
 {{ sfs_cms_admin_module_accordion_block_end() }}

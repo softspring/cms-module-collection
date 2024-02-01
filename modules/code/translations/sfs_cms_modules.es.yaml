@@ -13,6 +13,7 @@ code:
         id.label: "HTML id"
         class.label: "HTML class"
         bg_color.label: "Color de fondo"
+        language.label: "Lenguaje de programación"
         code:
             label: "Código fuente"
             placeholder: "Inserta aquí el código"
