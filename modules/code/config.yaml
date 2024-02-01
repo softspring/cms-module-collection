@@ -98,3 +98,5 @@ module:
                 type: 'textarea'
                 type_options:
                     constraints: [ 'notBlank' ]
+                    attr:
+                        data-allow-tabs: true
