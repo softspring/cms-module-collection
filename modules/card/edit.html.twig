@@ -1,47 +1,54 @@
+{% set containerDivClass = containerDivClass|default('sfs-card h-100') %}
+{% set backgroundDivClass = backgroundDivClass|default('sfs-card__bg-media') %}
+{% set contentDivClass = contentDivClass|default('sfs-card__content') %}
+{% set mediaDivClass = mediaDivClass|default('sfs-card__media') %}
+{% set textsContainerClass = textsContainerClass|default('sfs-card__texts') %}
+{% set titleClass = titleClass|default('sfs-card__title') %}
+{% set descriptionClass = descriptionClass|default('sfs-card__desc mb-4') %}
+{% set ctaContainerClass = ctaContainerClass|default('sfs-card__cta') %}
+{% set primaryButtonClass = primaryButtonClass|default('btn btn-primary') %}
+
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-<div
-    {{ module.link_id(form.id) }}
-    {{ module.link_class(form.class, 'sfs-card h-100') }}
-    {{ module.link_bg_color(form.bg_color) }}
->
-    {% for locale,localeField in form.background|filter((f, locale) => not (locale starts with '_')) %}
-        <div class="sfs-card__bg-media" data-media-preview-target="backgroundImage.{{ locale }}" data-lang="{{ locale }}">
+<div {{ module.link_id(form.id) }} {{ module.link_class([form.class, form.content_position], containerDivClass) }} {{ module.link_bg_color(form.bg_color) }}>
+    {% for locale,localeField in form.background.vars.localeFields %}
+        <div class="{{ backgroundDivClass }}" {{ module.link_media_preview(localeField, locale) }}>
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
-    <div {{ module.link_class(form.content_position, 'sfs-card__content') }}>
-        {% for locale,localeField in form.media|filter((f, locale) => not (locale starts with '_')) %}
-        <div class="sfs-card__media" data-media-preview-target="media.{{ locale }}" data-lang="{{ locale }}">
-            {% if localeField.media.vars.data %}
-                {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
-            {% endif %}
-        </div>
+
+    <div {{ module.link_class(form.content_position, contentDivClass) }}>
+        {% for locale,localeField in form.media.vars.localeFields %}
+            <div class="{{ mediaDivClass }}" {{ module.link_media_preview(localeField, locale) }}>
+                {% if localeField.media.vars.data %}
+                    {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
+                {% endif %}
+            </div>
         {% endfor %}
 
-        <div class="sfs-card__texts">
-            {% set titleType = form.title_type.vars.data %}
-            {% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
-                <{{ titleType }} data-cms-module-title-type="" {{ module.link_class(form.title_class, 'sfs-card__title') }} {{ module.link_content(localeField) }}>
-                    {{ localeField.vars.data|default('')|raw }}
-                </{{ titleType }}>
+        <div class="{{ textsContainerClass }}">
+            {% for locale,localeField in form.title.vars.localeFields %}
+                {{ module.start_link_tag_type(form.title_type,[
+                    module.link_id(form.id),
+                    module.link_class(form.class, titleClass),
+                    module.link_content(localeField, locale, true, 'card.form.title.placeholder'),
+                ]) }}{{ localeField.vars.data|default|raw }}{{ module.end_link_tag_type(form.title_type) }}
             {% endfor %}
 
-            {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}
-                <div class="sfs-card__desc mb-4 wysiwyg-preview"
-                    {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder') }}
-                    {{ module.wysiwyg('tinymce') }}
-                >{{ localeField.vars.data|default('')|raw }}</div>
+            {% for locale,localeField in form.description.vars.localeFields %}
+                <div class="{{ descriptionClass }}"
+                    {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder', false, false, true) }}
+                >{{ localeField.vars.data|default|raw }}</div>
                 {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}
 
-            <div class="sfs-card__cta">
-                 {% for locale,localeField in form.primary_button_text|filter((f, locale) => not (locale starts with '_')) %}
-                     <a href="#" {{ module.link_class(form.primary_button_class, 'btn btn-primary') }}
-                         {{ module.link_content(localeField, locale, true, '', true) }}
-                     >{{ localeField.vars.data|default('') }}</a>
+            <div class="{{ ctaContainerClass }}">
+                {% for locale,localeField in form.primary_button_text.vars.localeFields %}
+                    <a href="#" {{ module.link_class(form.primary_button_class, primaryButtonClass) }}
+                        {{ module.link_content(localeField, locale, true, '', true) }}
+                    >{{ localeField.vars.data|default }}</a>
                 {% endfor %}
             </div>
         </div>

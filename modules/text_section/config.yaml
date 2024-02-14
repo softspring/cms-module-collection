@@ -66,8 +66,6 @@ module:
 
             primary_button_class:
                 type: 'class'
-                type_options:
-                    default_value: 'btn-primary'
 
             text_position:
                 type: 'choice'

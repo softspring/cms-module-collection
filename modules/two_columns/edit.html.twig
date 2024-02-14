@@ -4,7 +4,7 @@
     <div class="container">
         <div {{ module.link_class(form.image_position_text, 'row') }}>
             <div class="col-12 col-md-6">
-                {% for locale,localeField in form.module_image|filter((f, locale) => not (locale starts with '_')) %}
+                {% for locale,localeField in form.module_image.vars.localeFields %}
                     <div {{ module.link_media_preview(localeField) }} data-lang="{{ locale }}">
                         {% if localeField.vars.data.media|default(false) %}
                             {{ localeField.vars.data.media|sfs_media_render(localeField.vars.data.version, localeField.media.vars.image_attr) }}
@@ -13,15 +13,15 @@
                 {% endfor %}
             </div>
             <div class="col-12 col-md-6">
-                {% set titleType = form.title_type.vars.data|default('h2') %}
-                {% for locale,localeField in form.title|filter((f, locale) => not (locale starts with '_')) %}
-                    <{{ titleType }} data-cms-module-title-type="" {{ module.link_class(form.title_class, 'sfs-two-columns__title') }}
-                        {{ module.link_content(localeField) }}
-                    >{{ localeField.vars.data|default|raw }}</{{ titleType }}>
-                    {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
+                {% for locale,localeField in form.title.vars.localeFields %}
+                    {{ module.start_link_tag_type(form.title_type,[
+                        module.link_class(form.title_class, 'sfs-two-columns__title'),
+                        module.link_content(localeField, locale, true, 'two_columns.form.title.placeholder'),
+                    ]) }}{{ localeField.vars.data|default|raw }}{{ module.end_link_tag_type(form.title_type) }}
                 {% endfor %}
+
                 <div class="sfs-two-columns__desc">
-                    {% for locale,localeField in form.description|filter((f, locale) => not (locale starts with '_')) %}
+                    {% for locale,localeField in form.description.vars.localeFields %}
                         <div class="wysiwyg-preview"
                             {{ module.link_content(localeField, locale, false) }}
                             {{ module.wysiwyg('tinymce') }}
@@ -29,7 +29,7 @@
                     {% endfor %}
                 </div>
 
-                {% for locale,localeField in form.primary_button_text|filter((f, locale) => not (locale starts with '_')) %}
+                {% for locale,localeField in form.primary_button_text.vars.localeFields %}
                 <div class="sfs-two-columns__cta">
                     <a href="#" class="btn btn-primary"
                             {{ module.link_content(localeField, locale, true, 'two_columns.form.primary_button_text.placeholder') }}

@@ -1,32 +1,37 @@
+{% set containerDivClass = containerDivClass|default('sfs-card h-100') %}
+{% set backgroundDivClass = backgroundDivClass|default('sfs-card__bg-media') %}
+{% set contentDivClass = contentDivClass|default('sfs-card__content') %}
+{% set mediaDivClass = mediaDivClass|default('sfs-card__media') %}
+{% set textsContainerClass = textsContainerClass|default('sfs-card__texts') %}
+{% set titleClass = titleClass|default('sfs-card__title') %}
+{% set descriptionClass = descriptionClass|default('sfs-card__desc mb-4') %}
+{% set ctaContainerClass = ctaContainerClass|default('sfs-card__cta') %}
+{% set primaryButtonClass = primaryButtonClass|default('btn btn-primary') %}
+
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
-{% set id = id|default %}
-{% set content_position = content_position|default %}
-{% set bg_color = bg_color|default %}
-{% set locale = app.request.locale %}
-{% set title_type = title_type|default('h2') %}
-{% set title_class = title_class|default %}
-{% set title = title|default %}
-{% set description = description|default %}
-{% set primary_button_text = primary_button_text|default %}
-{% set primary_button_class = primary_button_class|default('btn btn-primary') %}
-<div {{ module.class(class, 'sfs-card h-100 ' ~ content_position)}} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
-    {% if background[locale]|default(false) %}
-        <div class="sfs-card__bg-media">
+
+<div {{ module.class([class, content_position], containerDivClass) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
+    {% if background[locale].media|default(false) %}
+        <div class="{{ backgroundDivClass }}">
             {{ background[locale].media|sfs_media_render(background[locale].version) }}
         </div>
     {% endif %}
-    <div class="sfs-card__content {{ content_position }}">
-        {% if media[locale]|default(false) %}
-        <div class="sfs-card__media">
-            {{ media[locale].media|sfs_media_render(media[locale].version, {'class':'img-fluid'}) }}
-        </div>
+
+    <div {{ module.class([content_position], contentDivClass) }}>
+        {% if media[locale].media|default(false) %}
+            <div class="{{ mediaDivClass }}">{{ media[locale].media|sfs_media_render(media[locale].version, {'class':'img-fluid'}) }}</div>
         {% endif %}
-        <div class="sfs-card__texts">
-            <{{ title_type }} {{ module.class(title_class, 'sfs-card__title')}}>{{ title|sfs_cms_trans|raw }}</{{ title_type }}>
-            {% if description|default(false) %}<div class="sfs-card__desc mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
-            <div class="sfs-card__cta">
-                {% if primary_button_text and primary_button_text|sfs_cms_trans is not empty %}
-                    <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, 'btn btn-primary')}}">{{ primary_button_text|sfs_cms_trans|raw }}</a>
+
+        <div class="{{ textsContainerClass }}">
+            {{ module.start_tag_type(title_type, [module.class(title_class, titleClass)]) }}{{ title|sfs_cms_trans|raw }}{{ module.end_tag_type(title_type) }}
+
+            {% if description|default(false) %}
+                <div class="{{ descriptionClass }}">{{ description|sfs_cms_trans|raw }}</div>
+            {% endif %}
+
+            <div class="{{ ctaContainerClass }}">
+                {% if primary_button_text|sfs_cms_trans %}
+                    <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, primaryButtonClass) }}>{{ primary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
             </div>
         </div>
