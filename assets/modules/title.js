@@ -1,3 +1,6 @@
+/**
+ * @deprecated
+ */
 document.addEventListener('change', function (event) {
     if (!event.target || !event.target.hasAttribute('data-cms-module-title-type-field')) return;
     event.preventDefault();
