@@ -18,7 +18,9 @@ text_section:
         id.label: "Id"
         class.label: "Classes"
         title_class.label: "Title classes"
-        title.label: "Title"
+        title:
+            label: "Title"
+            placeholder: "Insert title here"
         title_type.label: "Title type"
         title_type.values:
             h1: "Heading 1"
