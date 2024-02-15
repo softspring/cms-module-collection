@@ -1,52 +1,63 @@
-{% set containerDivClass = containerDivClass|default('sfs-card h-100') %}
-{% set backgroundDivClass = backgroundDivClass|default('sfs-card__bg-media') %}
-{% set contentDivClass = contentDivClass|default('sfs-card__content') %}
-{% set mediaDivClass = mediaDivClass|default('sfs-card__media') %}
-{% set textsContainerClass = textsContainerClass|default('sfs-card__texts') %}
-{% set titleClass = titleClass|default('sfs-card__title') %}
-{% set descriptionClass = descriptionClass|default('sfs-card__desc mb-4') %}
-{% set ctaContainerClass = ctaContainerClass|default('sfs-card__cta') %}
-{% set primaryButtonClass = primaryButtonClass|default('btn btn-primary') %}
+{# ############################################################################# #
+   HOW TO OVERRIDE CLASSES IN YOUR PROJECT
+
+   Create a cms/card/edit.html.twig file in your project, extend this template
+    and add the classes you want to override.
+
+    {% set containerDivClass = 'your-custom-classes' %}
+    {% set backgroundDivClass = 'your-custom-classes' %}
+    {% set contentDivClass = 'your-custom-classes' %}
+    {% set mediaDivClass = 'your-custom-classes' %}
+    {% set textsContainerClass = 'your-custom-classes' %}
+    {% set titleClass = 'your-custom-classes' %}
+    {% set descriptionClass = 'your-custom-classes' %}
+    {% set ctaContainerClass = 'your-custom-classes' %}
+    {% set primaryButtonClass = 'your-custom-classes' %}
+
+    {% extends '@!module/card/edit.html.twig' %}
+
+ # ############################################################################# #}
 
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-<div {{ module.link_id(form.id) }} {{ module.link_class([form.class, form.content_position], containerDivClass) }} {{ module.link_bg_color(form.bg_color) }}>
+<div {{ module.link_id(form.id) }} {{ module.link_class([form.class, form.content_position], containerDivClass|default('sfs-card h-100')) }} {{ module.link_bg_color(form.bg_color) }}>
     {% for locale,localeField in form.background.vars.localeFields %}
-        <div class="{{ backgroundDivClass }}" {{ module.link_media_preview(localeField, locale) }}>
+        <div class="{{ backgroundDivClass|default('sfs-card__bg-media') }}" {{ module.link_media_preview(localeField, locale) }}>
             {% if localeField.vars.data %}
                 {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
             {% endif %}
         </div>
     {% endfor %}
 
-    <div {{ module.link_class(form.content_position, contentDivClass) }}>
+    <div {{ module.link_class(form.content_position, contentDivClass|default('sfs-card__content')) }}>
         {% for locale,localeField in form.media.vars.localeFields %}
-            <div class="{{ mediaDivClass }}" {{ module.link_media_preview(localeField, locale) }}>
+            <div class="{{ mediaDivClass|default('sfs-card__media') }}" {{ module.link_media_preview(localeField, locale) }}>
                 {% if localeField.media.vars.data %}
                     {{ localeField.media.vars.data|sfs_media_render(localeField.version.vars.data, localeField.media.vars.image_attr) }}
                 {% endif %}
             </div>
         {% endfor %}
 
-        <div class="{{ textsContainerClass }}">
+        <div class="{{ textsContainerClass|default('sfs-card__texts') }}">
             {% for locale,localeField in form.title.vars.localeFields %}
                 {{ module.start_link_tag_type(form.title_type,[
                     module.link_id(form.id),
-                    module.link_class(form.class, titleClass),
+                    module.link_class(form.class, titleClass|default('sfs-card__title')),
                     module.link_content(localeField, locale, true, 'card.form.title.placeholder'),
                 ]) }}{{ localeField.vars.data|default|raw }}{{ module.end_link_tag_type(form.title_type) }}
+                {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}
 
             {% for locale,localeField in form.description.vars.localeFields %}
-                <div class="{{ descriptionClass }}"
+                <div class="{{ descriptionClass|default('sfs-card__desc mb-4') }}"
                     {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder', false, false, true) }}
                 >{{ localeField.vars.data|default|raw }}</div>
                 {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}
 
-            <div class="{{ ctaContainerClass }}">
+            <div class="{{ ctaContainerClass|default('sfs-card__cta') }}">
                 {% for locale,localeField in form.primary_button_text.vars.localeFields %}
-                    <a href="#" {{ module.link_class(form.primary_button_class, primaryButtonClass) }}
+                    <a href="#" {{ module.link_class(form.primary_button_class, primaryButtonClass|default('btn btn-primary')) }}
                         {{ module.link_content(localeField, locale, true, '', true) }}
                     >{{ localeField.vars.data|default }}</a>
                 {% endfor %}

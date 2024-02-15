@@ -1,2 +1,14 @@
+{# ############################################################################# #
+   HOW TO OVERRIDE CLASSES IN YOUR PROJECT
+
+   Create a cms/code/render.html.twig file in your project, extend this template
+    and add the classes you want to override.
+
+    {% set preClass = 'your-custom-classes' %}
+
+    {% extends '@!module/code/render.html.twig' %}
+
+ # ############################################################################# #}
+
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
-<pre {{ module.id(id) }} {{ module.class(class, 'sfs-code hljs p-2') }} data-highlight-code data-language="{{ language|default('') }}"><code>{{ code }}</code></pre>
+<pre {{ module.id(id) }} {{ module.class(class, preClass|default('sfs-code hljs p-2')) }} data-highlight-code data-language="{{ language|default('') }}"><code>{{ code }}</code></pre>

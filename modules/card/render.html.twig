@@ -1,37 +1,47 @@
-{% set containerDivClass = containerDivClass|default('sfs-card h-100') %}
-{% set backgroundDivClass = backgroundDivClass|default('sfs-card__bg-media') %}
-{% set contentDivClass = contentDivClass|default('sfs-card__content') %}
-{% set mediaDivClass = mediaDivClass|default('sfs-card__media') %}
-{% set textsContainerClass = textsContainerClass|default('sfs-card__texts') %}
-{% set titleClass = titleClass|default('sfs-card__title') %}
-{% set descriptionClass = descriptionClass|default('sfs-card__desc mb-4') %}
-{% set ctaContainerClass = ctaContainerClass|default('sfs-card__cta') %}
-{% set primaryButtonClass = primaryButtonClass|default('btn btn-primary') %}
+{# ############################################################################# #
+   HOW TO OVERRIDE CLASSES IN YOUR PROJECT
+
+   Create a cms/card/render.html.twig file in your project, extend this template
+    and add the classes you want to override.
+
+    {% set containerDivClass = 'your-custom-classes' %}
+    {% set backgroundDivClass = 'your-custom-classes' %}
+    {% set contentDivClass = 'your-custom-classes' %}
+    {% set mediaDivClass = 'your-custom-classes' %}
+    {% set textsContainerClass = 'your-custom-classes' %}
+    {% set titleClass = 'your-custom-classes' %}
+    {% set descriptionClass = 'your-custom-classes' %}
+    {% set ctaContainerClass = 'your-custom-classes' %}
+    {% set primaryButtonClass = 'your-custom-classes' %}
+
+    {% extends '@!module/card/render.html.twig' %}
+
+ # ############################################################################# #}
 
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
-<div {{ module.class([class, content_position], containerDivClass) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
+<div {{ module.class([class, content_position], containerDivClass|default('sfs-card h-100')) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
     {% if background[locale].media|default(false) %}
-        <div class="{{ backgroundDivClass }}">
+        <div class="{{ backgroundDivClass|default('sfs-card__bg-media') }}">
             {{ background[locale].media|sfs_media_render(background[locale].version) }}
         </div>
     {% endif %}
 
-    <div {{ module.class([content_position], contentDivClass) }}>
+    <div {{ module.class([content_position], contentDivClass|default('sfs-card__content')) }}>
         {% if media[locale].media|default(false) %}
-            <div class="{{ mediaDivClass }}">{{ media[locale].media|sfs_media_render(media[locale].version, {'class':'img-fluid'}) }}</div>
+            <div class="{{ mediaDivClass|default('sfs-card__media') }}">{{ media[locale].media|sfs_media_render(media[locale].version, {'class':'img-fluid'}) }}</div>
         {% endif %}
 
-        <div class="{{ textsContainerClass }}">
-            {{ module.start_tag_type(title_type, [module.class(title_class, titleClass)]) }}{{ title|sfs_cms_trans|raw }}{{ module.end_tag_type(title_type) }}
+        <div class="{{ textsContainerClass|default('sfs-card__texts') }}">
+            {{ module.start_tag_type(title_type, [module.class(title_class, titleClass|default('sfs-card__title'))]) }}{{ title|sfs_cms_trans|raw }}{{ module.end_tag_type(title_type) }}
 
             {% if description|default(false) %}
-                <div class="{{ descriptionClass }}">{{ description|sfs_cms_trans|raw }}</div>
+                <div class="{{ descriptionClass|default('sfs-card__desc mb-4') }}">{{ description|sfs_cms_trans|raw }}</div>
             {% endif %}
 
-            <div class="{{ ctaContainerClass }}">
+            <div class="{{ ctaContainerClass|default('sfs-card__cta') }}">
                 {% if primary_button_text|sfs_cms_trans %}
-                    <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, primaryButtonClass) }}>{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, primaryButtonClass|default('btn btn-primary')) }}>{{ primary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
             </div>
         </div>

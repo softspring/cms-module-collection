@@ -1,8 +1,20 @@
+{# ############################################################################# #
+   HOW TO OVERRIDE CLASSES IN YOUR PROJECT
+
+   Create a cms/code/edit.html.twig file in your project, extend this template
+    and add the classes you want to override.
+
+    {% set preClass = 'your-custom-classes' %}
+
+    {% extends '@!module/code/edit.html.twig' %}
+
+ # ############################################################################# #}
+
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
 <pre
     {{ module.link_id(form.id) }}
-    {{ module.link_class(form.class, 'sfs-code hljs p-2') }}
+    {{ module.link_class(form.class, preClass|default('sfs-code hljs p-2')) }}
     data-language="{{ form.language.vars.data|default }}"
 ><code data-edit-content-escape="true"
     {{ module.link_content(form.code, null, true, 'code.form.code.placeholder') }}
