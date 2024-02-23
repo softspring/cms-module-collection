@@ -22,7 +22,7 @@
 
 {% import '@SfsCms/macros/modules_edit.html.twig' as module %}
 
-{{ '<'~ (wrapperTag|default('section')) }} {{ module.link_id(form.id) }} {{ module.link_class(form.class, wrapperClass|default('sfs-two-columns py-5')) }} {{ module.link_bg_color(form.bg_color) }}{{ '>' }}
+{{ ('<'~ (wrapperTag|default('section')) ~ ' ' ~ module.link_id(form.id) ~ ' ' ~ module.link_class(form.class, wrapperClass|default('sfs-two-columns py-5')) ~ ' ' ~ module.link_bg_color(form.bg_color) ~ '>') | raw }}
     <div class="{{ containerClass|default('container') }}">
         <div {{ module.link_class(form.image_position_text, rowClass|default('row')) }}>
             <div class="{{ firstColumnClasses|default('col-12 col-md-6') }}">
@@ -62,4 +62,4 @@
             </div>
         </div>
     </div>
-{{ '</' ~ (wrapperTag|default('section')) ~ '>' }}
+{{ ('</' ~ (wrapperTag|default('section')) ~ '>') | raw }}

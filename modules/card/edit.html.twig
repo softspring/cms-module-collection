@@ -50,7 +50,7 @@
 
             {% for locale,localeField in form.description.vars.localeFields %}
                 <div class="{{ descriptionClass|default('sfs-card__desc mb-4') }}"
-                    {{ module.link_content(localeField, locale, false, 'card.form.description.placeholder', false, false, true) }}
+                    {{ module.link_content(localeField, locale, true, 'card.form.description.placeholder', false, false, true) }}
                 >{{ localeField.vars.data|default|raw }}</div>
                 {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}
             {% endfor %}

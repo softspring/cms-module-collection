@@ -4,9 +4,8 @@
     <article
             {{ module.link_id(form.id) }}
             {{ module.link_class(form.class, 'sfs-wysiwyg text-break content-escape') }}
-            {{ module.link_content(localeField, locale) }}
+            {{ module.link_content(localeField, locale, true, null, false, false, true) }}
             data-edit-content-escape="false"
-            {{ module.wysiwyg('tinymce') }}
     >
         {{ localeField.vars.data|default|raw }}
     </article>
