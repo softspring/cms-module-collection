@@ -21,15 +21,15 @@
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
 <div {{ module.class([class, content_position], containerDivClass|default('sfs-card h-100')) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
-    {% if background[locale].media|default(false) %}
+    {% if background[app.request.locale].media|default(false) %}
         <div class="{{ backgroundDivClass|default('sfs-card__bg-media') }}">
-            {{ background[locale].media|sfs_media_render(background[locale].version) }}
+            {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
         </div>
     {% endif %}
 
     <div {{ module.class([content_position], contentDivClass|default('sfs-card__content')) }}>
-        {% if media[locale].media|default(false) %}
-            <div class="{{ mediaDivClass|default('sfs-card__media') }}">{{ media[locale].media|sfs_media_render(media[locale].version, {'class':'img-fluid'}) }}</div>
+        {% if media[app.request.locale].media|default(false) %}
+            <div class="{{ mediaDivClass|default('sfs-card__media') }}">{{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}</div>
         {% endif %}
 
         <div class="{{ textsContainerClass|default('sfs-card__texts') }}">
