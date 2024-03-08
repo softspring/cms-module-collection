@@ -21,7 +21,7 @@
 
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
-{{ '<'~ (wrapperTag|default('section')) }}  {{ module.id(id) }} {{ module.class(class, 'sfs-two-columns py-5') }} {{ module.bg_color(bg_color) }}{{ '>' }}
+{{ ('<'~ (wrapperTag|default('section')) ~' '~ module.id(id) ~' '~ module.class(class, 'sfs-two-columns py-5') ~' '~ module.bg_color(bg_color) ~ '>')|raw }}
     {% if background[app.request.locale]|default(false) %}
         <div class="sfs-two-columns__bg-media">
             {{ background[app.request.locale]|sfs_media_render_picture }}
@@ -49,5 +49,5 @@
             </div>
         </div>
     </div>
-{{ '</' ~ (wrapperTag|default('section')) ~ '>' }}
+{{ ('</' ~ (wrapperTag|default('section')) ~ '>')|raw }}
 
