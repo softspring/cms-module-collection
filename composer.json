@@ -13,7 +13,7 @@
         "friendsofphp/php-cs-fixer": "3.51.*",
         "phpstan/phpstan": "^1.9",
         "phpunit/phpunit": "^10.2.1",
-        "symfony/form": "^6.3"
+        "symfony/form": "^5.4|^6.0|^7.0"
     },
     "config": {
         "sort-packages": true
