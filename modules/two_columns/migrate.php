@@ -18,13 +18,13 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         }
     }
 
-    if ($originVersion < 3 && $targetVersion >= 3) {
+    if ($originVersion < 3 && $targetVersion >= 3 && is_string($data['primary_button_link']??null)) {
         /*
          * Migrate route field to symfonyRoute
          *  v1.primary_button_link route___<route_name>
          *  v3.primary_button_link { route_name = <route_name>, route_ }
          */
-        $data['primary_button_link'] = DataMigrator::routeToSymfonyRoute($data['primary_button_link'] ?? null);
+        $data['primary_button_link'] = DataMigrator::routeToSymfonyRoute($data['primary_button_link']);
     }
 
     if ($originVersion < 4 && $targetVersion >= 4) {
