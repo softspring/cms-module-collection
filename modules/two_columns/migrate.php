@@ -18,7 +18,7 @@ return static function (array $data, int $originVersion, int $targetVersion): ar
         }
     }
 
-    if ($originVersion < 3 && $targetVersion >= 3 && is_string($data['primary_button_link']??null)) {
+    if ($originVersion < 3 && $targetVersion >= 3 && is_string($data['primary_button_link'] ?? null)) {
         /*
          * Migrate route field to symfonyRoute
          *  v1.primary_button_link route___<route_name>
