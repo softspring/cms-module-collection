@@ -7,11 +7,11 @@
         {% set versionKey = versionSplit[1]|default('_thumbnail') %}
 
         {% if versionType == 'image' %}
-            {{ form.media.media.vars.data|sfs_media_render_image(versionKey, form.media.media.vars.attr) }}
+            {{ form.media.media.vars.data|sfs_media_render_image(versionKey, form.media.media.vars.attr|merge({class:'img-fluid'})) }}
         {% elseif versionType == 'video' %}
-            {{ form.media.media.vars.data|sfs_media_render_video(versionKey, form.media.media.vars.attr) }}
+            {{ form.media.media.vars.data|sfs_media_render_video(versionKey, form.media.media.vars.attr|merge({class:'img-fluid'})) }}
         {% elseif versionType == 'picture' %}
-            {{ form.media.media.vars.data|sfs_media_render_picture(versionKey, form.media.media.vars.attr) }}
+            {{ form.media.media.vars.data|sfs_media_render_picture(versionKey, form.media.media.vars.attr|merge({class:'img-fluid'})) }}
         {% endif %}
     {% endif %}
 </div>
