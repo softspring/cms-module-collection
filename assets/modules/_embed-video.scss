@@ -1,0 +1,16 @@
+.sfs-embed-video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  // Future: iframe[src*="youtube.com"] { max-width:100%; height:auto; aspect-ratio:16/9; }
+}
