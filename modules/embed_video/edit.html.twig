@@ -1,0 +1,11 @@
+{% trans_default_domain 'sfs_cms_modules' %}
+{% import '@SfsCms/macros/modules_edit.html.twig' as module %}
+
+<div {{ module.link_id(form.id) }}
+     {{ module.link_class(form.class, 'sfs-embed-video') }}
+    data-edit-content-target="code"
+    data-edit-content-validate="html"
+    data-edit-content-placeholder="{{ 'embed.form.code.placeholder'|trans }}"
+>
+    {{ form.code.vars.data|default()|replace({'href': 'href-invalidate'})|raw }}
+</div>

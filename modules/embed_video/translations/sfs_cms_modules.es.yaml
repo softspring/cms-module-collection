@@ -1,0 +1,17 @@
+embed_video:
+    label: "Vídeo embed HTML"
+    prototype_button: "Vídeo embed HTML"
+    prototype_button_icon: '<i class="bi bi-play-btn"></i>'
+    form:
+        _group:
+            filters: "Filtros"
+            others: "Otros"
+            attributes: "Atributos"
+            code: "Código HTML del vídeo"
+        locale_filter.label: "Idiomas"
+        site_filter.label: "Sites"
+        id.label: "Id"
+        class.label: "Clases"
+        code:
+            label: "Código"
+            placeholder: "inserta el código HTML del vídeo"
