@@ -1,15 +1,13 @@
+# CMS Module Collection
 
-*This bundle is under development, more features will be added soon, and existing ones may change.*
+![Latest Stable](https://img.shields.io/packagist/v/softspring/cms-module-collection?label=stable&style=flat-square)
+![Latest Unstable](https://img.shields.io/packagist/v/softspring/cms-module-collection?label=unstable&style=flat-square&include_prereleases)
+![License](https://img.shields.io/packagist/l/softspring/cms-module-collection?style=flat-square)
+![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-module-collection/php?style=flat-square)
+![Downloads](https://img.shields.io/packagist/dt/softspring/cms-module-collection?style=flat-square)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-module-collection/php.yml?branch=5.3&style=flat-square&label=CI)](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml)
 
-[![Latest Stable Version](https://poser.pugx.org/softspring/cms-module-collection/v/stable.svg)](https://packagist.org/packages/softspring/cms-module-collection)
-[![Latest Unstable Version](https://poser.pugx.org/softspring/cms-module-collection/v/unstable.svg)](https://packagist.org/packages/softspring/cms-module-collection)
-[![License](https://poser.pugx.org/softspring/cms-module-collection/license.svg)](https://packagist.org/packages/softspring/cms-module-collection)
-[![PHP Version Require](http://poser.pugx.org/softspring/cms-module-collection/require/php)](https://packagist.org/packages/softspring/cms-module-collection)
-[![Total Downloads](https://poser.pugx.org/softspring/cms-module-collection/downloads)](https://packagist.org/packages/softspring/cms-module-collection)
-[![Build status](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml/badge.svg?branch=5.3)](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml)
-![Coverage](https://raw.githubusercontent.com/softspring/cms-module-collection/5.3/.github/badges/coverage.svg)
-
-# Installation
+## Installation
 
 Open a command console, enter your project directory and execute:
 
