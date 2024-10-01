@@ -26,5 +26,4 @@ module:
             title:
                 type: 'translatable'
                 type_options:
-                    type_options:
-                        constraints: [ 'notBlank' ]
+                    constraints: [ 'translationDefaultNotBlank' ]
