@@ -1,7 +1,5 @@
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
 <div {{ module.id(id) }} {{ module.class(class, 'sfs-wysiwyg-trans') }}>
-    {% if content[app.request.locale]|default(false) %}
-        {{ content[app.request.locale]|default('')|raw }}
-    {% endif %}
+    {{ content|sfs_cms_trans|raw }}
 </div>
