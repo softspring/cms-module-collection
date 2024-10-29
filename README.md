@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/packagist/l/softspring/cms-module-collection?style=flat-square)
 ![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-module-collection/php?style=flat-square)
 ![Downloads](https://img.shields.io/packagist/dt/softspring/cms-module-collection?style=flat-square)
-[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-module-collection/php.yml?branch=5.4&style=flat-square&label=CI)](https://github.com/softspring/cms-module-collection/actions/workflows/php.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-module-collection/ci.yml?branch=5.4&style=flat-square&label=CI)](https://github.com/softspring/cms-module-collection/actions/workflows/ci.yml)
 
 ## Installation
 
