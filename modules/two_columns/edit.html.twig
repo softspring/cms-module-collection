@@ -53,7 +53,7 @@
 
                 {% for locale,localeField in form.primary_button_text.vars.localeFields %}
                 <div class="{{ buttonsClass|default('sfs-two-columns__cta') }}">
-                    <a href="#" class="{{ buttonClasses|default('btn btn-primary') }}
+                    <a href="#" class="{{ buttonClasses|default('btn btn-primary') }}"
                             {{ module.link_content(localeField, locale, true, 'two_columns.form.primary_button_text.placeholder') }}
                     >{{ localeField.vars.data|default }}</a>
                     {# IMPORTANT: DO NOT LEAVE SPACES INSIDE THE DATA TO PLACEHOLDER WORK #}

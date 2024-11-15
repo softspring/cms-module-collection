@@ -27,7 +27,7 @@ module:
                 type: 'class'
 
             title:
-                type: 'translatable'
+                type: 'translation'
 
             title_type:
                 type: 'choice'
@@ -42,12 +42,12 @@ module:
                         "title.form.type.values.h6": h6
 
             description:
-                type: 'translatable'
+                type: 'translation'
                 type_options:
                     type: 'html'
 
             primary_button_text:
-                type: 'translatable'
+                type: 'translation'
 
             primary_button_link:
                 type: 'link'

@@ -12,7 +12,7 @@ module:
                 type: 'class'
 
             quote:
-                type: 'translatable'
+                type: 'translation'
                 type_options:
                     type: 'textarea'
                     type_options:
