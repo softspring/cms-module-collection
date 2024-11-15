@@ -29,7 +29,7 @@ module:
                         "button.form.button_style.values.none": ''
 
             button_text:
-                type: 'translatable'
+                type: 'translation'
                 type_options:
                     type_options:
                         constraints: [ 'notBlank' ]

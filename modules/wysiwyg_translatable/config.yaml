@@ -12,7 +12,7 @@ module:
                 type: 'class'
 
             content:
-                type: 'translatable'
+                type: 'translation'
                 type_options:
                     type: 'html'
 
