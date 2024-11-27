@@ -24,7 +24,7 @@ module:
                         "title.form.type.values.h6": h6
 
             title:
-                type: 'translatable'
+                type: 'translation'
                 type_options:
                     type_options:
                         constraints: [ 'notBlank' ]
