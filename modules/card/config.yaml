@@ -67,6 +67,13 @@ module:
             primary_button_class:
                 type: 'class'
 
+            card_is_link:
+                type: 'choice'
+                type_options:
+                    choices:
+                        "card.form.card_is_link.values.no": 'no'
+                        "card.form.card_is_link.values.yes": 'yes'
+
             content_position:
                 type: 'choice'
                 type_options:
