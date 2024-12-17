@@ -3,7 +3,7 @@
   position: relative;
 
   .container {
-    img {
+    img, video {
       margin-bottom: 1.5rem;
 
       @include media-breakpoint-up(md) {
