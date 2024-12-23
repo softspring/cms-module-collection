@@ -4,6 +4,7 @@ namespace Softspring\CmsModuleCollection\Test\Modules;
 
 use PHPUnit\Framework\MockObject\Exception;
 use Softspring\CmsBundle\Tests\ModuleTestCase;
+use Softspring\TranslatableBundle\Model\Translation;
 
 class ButtonTest extends ModuleTestCase
 {
@@ -144,7 +145,9 @@ class ButtonTest extends ModuleTestCase
 
         $this->assertTrue($form->isSynchronized());
 
-        unset($procesedData['button_text']['_trans_id']);
+        /** @var Translation $buttonTextTranslations */
+        $buttonTextTranslations = $procesedData['button_text'];
+        unset($procesedData['button_text']);
 
         $this->assertEquals([
             '_node_discr' => null,
@@ -152,11 +155,7 @@ class ButtonTest extends ModuleTestCase
             'id' => null,
             'button_style' => 'btn btn-primary',
             'button_classes' => null,
-            'button_text' => [
-                'es' => 'Prueba',
-                'en' => 'Test',
-                '_default' => 'en',
-            ],
+            // button_text is a translatable field
             'button_link' => [
                 'type' => 'url',
                 'route_name' => '',
@@ -167,5 +166,11 @@ class ButtonTest extends ModuleTestCase
                 'custom_target' => '',
             ],
         ], $procesedData);
+
+        $this->assertEquals([
+            'es' => 'Prueba',
+            'en' => 'Test',
+            '_trans_id' => null,
+        ], $buttonTextTranslations->getTranslations());
     }
 }
