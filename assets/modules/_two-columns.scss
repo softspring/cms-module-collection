@@ -2,6 +2,16 @@
 .two-columns {
   position: relative;
 
+  .container {
+    img, video {
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+      }
+    }
+  }
+
   &__bg-media {
     position: absolute;
     top: 50%;
