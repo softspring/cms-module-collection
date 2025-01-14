@@ -36,10 +36,12 @@
             </div>
             <div class="col-12 col-md-6">
                 <{{ title_type|default('h2') }} class="sfs-two-columns__title {{ title_class|default('') }}">{{ title|sfs_cms_trans|raw }}</{{ title_type|default('h2') }}>
-                <div class="sfs-two-columns__desc">
-                    {{ description|sfs_cms_trans|raw }}
-                </div>
-                {% if primary_button_text|sfs_cms_trans|default(false) %}
+                {% if description|default(false) and description|sfs_cms_trans is not empty %}
+                    <div class="sfs-two-columns__desc">
+                        {{ description|sfs_cms_trans|raw }}
+                    </div>
+                {% endif %}
+                {% if primary_button_text|sfs_cms_trans|default(false) and primary_button_text|sfs_cms_trans is not empty %}
                     <div class="sfs-two-columns__cta">
                         <a {{ sfs_cms_link_attr(primary_button_link) }} class="btn btn-primary">{{ primary_button_text|sfs_cms_trans|raw }}</a>
                     </div>
