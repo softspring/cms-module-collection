@@ -18,7 +18,9 @@
         {% endif %}
         <{{ title_type|default('h1') }} {{ module.class(title_class, 'sfs-hero__title') }}>{{ title|sfs_cms_trans|raw }}</{{ title_type|default('h1') }}>
         <div class="col-md-10 col-lg-8 mx-auto">
-            {% if description|default(false) %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
+            {% if description|default(false) and description|sfs_cms_trans is not empty %}<div class="lead mb-4">{{ description|sfs_cms_trans|raw }}</div>{% endif %}
+            {% if (primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty) or
+                (secondary_button_text|default(false) and secondary_button_text|sfs_cms_trans is not empty) %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
                     <a {{ sfs_cms_link_attr(primary_button_link) }} class="btn btn-primary btn-lg px-4 gap-3">{{ primary_button_text|sfs_cms_trans|raw }}</a>
@@ -28,6 +30,7 @@
                     <a {{ sfs_cms_link_attr(secondary_button_link) }} class="btn btn-outline-secondary btn-lg px-4">{{ secondary_button_text|sfs_cms_trans|raw }}</a>
                 {% endif %}
             </div>
+            {% endif %}
         </div>
     </div>
 </section>

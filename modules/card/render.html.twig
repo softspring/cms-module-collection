@@ -20,13 +20,16 @@
 
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
+{% if card_is_link == 'yes' and sfs_cms_link_attr(primary_button_link) != 'href="#"' %}
+<a {{ sfs_cms_link_attr(primary_button_link) }}  {{ module.class([class, content_position], containerDivClass|default('sfs-card sfs-card--link h-100')) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
+{% else %}
 <div {{ module.class([class, content_position], containerDivClass|default('sfs-card h-100')) }} {{ module.id(id) }} {{ module.bg_color(bg_color) }}>
+{% endif %}
     {% if background[app.request.locale].media|default(false) %}
         <div class="{{ backgroundDivClass|default('sfs-card__bg-media') }}">
             {{ background[app.request.locale].media|sfs_media_render(background[app.request.locale].version) }}
         </div>
     {% endif %}
-
     <div {{ module.class([content_position], contentDivClass|default('sfs-card__content')) }}>
         {% if media[app.request.locale].media|default(false) %}
             <div class="{{ mediaDivClass|default('sfs-card__media') }}">{{ media[app.request.locale].media|sfs_media_render(media[app.request.locale].version, {'class':'img-fluid'}) }}</div>
@@ -35,15 +38,22 @@
         <div class="{{ textsContainerClass|default('sfs-card__texts') }}">
             {{ module.start_tag_type(title_type, [module.class(title_class, titleClass|default('sfs-card__title'))]) }}{{ title|sfs_cms_trans|raw }}{{ module.end_tag_type(title_type) }}
 
-            {% if description|default(false) %}
+            {% if description|default(false) and description|sfs_cms_trans is not empty %}
                 <div class="{{ descriptionClass|default('sfs-card__desc mb-4') }}">{{ description|sfs_cms_trans|raw }}</div>
             {% endif %}
-
-            <div class="{{ ctaContainerClass|default('sfs-card__cta') }}">
-                {% if primary_button_text|sfs_cms_trans %}
-                    <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, primaryButtonClass|default('btn btn-primary')) }}>{{ primary_button_text|sfs_cms_trans|raw }}</a>
-                {% endif %}
-            </div>
+            {% if primary_button_text|default(false) and primary_button_text|sfs_cms_trans is not empty %}
+                <div class="{{ ctaContainerClass|default('sfs-card__cta') }}">
+                    {% if card_is_link == 'yes' and sfs_cms_link_attr(primary_button_link) != 'href="#"' %}
+                        <button type="button" {{ module.class(primary_button_class, primaryButtonClass|default('btn btn-primary')) }}>{{ primary_button_text|sfs_cms_trans|raw }}</button>
+                    {% else %}
+                        <a {{ sfs_cms_link_attr(primary_button_link) }} {{ module.class(primary_button_class, primaryButtonClass|default('btn btn-primary')) }}>{{ primary_button_text|sfs_cms_trans|raw }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
+{% if card_is_link == 'yes' and sfs_cms_link_attr(primary_button_link) != 'href="#"' %}
+</a>
+{% else %}
 </div>
+{% endif %}

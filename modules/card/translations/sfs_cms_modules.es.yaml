@@ -42,6 +42,10 @@ card:
             target.label: "Target"
             custom_target.label: "Identificador de target"
             url.label: "URL directa"
+        card_is_link.label: "Toda la tarjeta es un enlace"
+        card_is_link.values:
+            yes: "Sí"
+            no: "No"
         bg_color.label: "Color de fondo"
         primary_button_class.label: "Classes"
         content_position.label: "Posición del contenido"
