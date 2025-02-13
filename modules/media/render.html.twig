@@ -9,6 +9,8 @@
         {{ media.media|sfs_media_render_image(versionKey, {'class':'img-fluid'}) }}
     {% elseif versionType == 'video' %}
         {{ media.media|sfs_media_render_video(versionKey, {'class':'img-fluid'}) }}
+    {% elseif versionType == 'videoSet' %}
+        {{ media.media|sfs_media_render_video_set(versionKey, {'class':'img-fluid'}) }}
     {% elseif versionType == 'picture' %}
         {{ media.media|sfs_media_render_picture(versionKey, {'class':'img-fluid'}) }}
     {% endif %}
