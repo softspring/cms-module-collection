@@ -6,7 +6,6 @@ module:
     render_template: '@module/embed_video/render.html.twig'
     module_options:
         label_format: 'modules.embed_video.%%name%%.label'
-        translation_domain: 'custom_domain'
         form_fields:
             id:
                 type: 'id'

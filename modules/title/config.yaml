@@ -26,5 +26,5 @@ module:
             title:
                 type: 'translation'
                 type_options:
-                    type_options:
+                    default_locale_type_options:
                         constraints: [ 'notBlank' ]
