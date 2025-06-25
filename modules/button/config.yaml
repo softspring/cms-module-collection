@@ -31,7 +31,7 @@ module:
             button_text:
                 type: 'translation'
                 type_options:
-                    type_options:
+                    default_locale_type_options:
                         constraints: [ 'notBlank' ]
 
             button_link:

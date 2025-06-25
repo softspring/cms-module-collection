@@ -15,5 +15,5 @@ module:
                 type: 'translation'
                 type_options:
                     type: 'textarea'
-                    type_options:
+                    default_locale_type_options:
                         constraints: [ 'notBlank' ]
