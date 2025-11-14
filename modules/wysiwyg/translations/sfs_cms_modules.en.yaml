@@ -12,6 +12,6 @@ wysiwyg:
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Class"
-        content:
+        code:
             label: "Code"
             placeholder: "Insert content here"

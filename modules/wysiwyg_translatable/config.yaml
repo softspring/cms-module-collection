@@ -1,5 +1,5 @@
 module:
-    revision: 1
+    revision: 2
     group: 'basic'
     edit_template: '@module/wysiwyg_translatable/edit.html.twig'
     form_template: '@module/wysiwyg_translatable/form.html.twig'
@@ -11,7 +11,7 @@ module:
             class:
                 type: 'class'
 
-            content:
+            code:
                 type: 'translation'
                 type_options:
                     type: 'html'
