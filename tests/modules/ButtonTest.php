@@ -112,7 +112,7 @@ class ButtonTest extends ModuleTestCase
         $config = $this->readModuleConfiguration();
         $form = $this->getModuleForm($config);
         $form->submit([]);
-        $procesedData = $form->getData();
+        $form->getData();
 
         $this->assertTrue($form->isSynchronized());
         // $this->assertFalse($form->isValid());

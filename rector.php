@@ -10,7 +10,7 @@ use Rector\ValueObject\PhpVersion;
 
 return RectorConfig::configure()
     ->withPaths(array_values(array_filter([
-        is_dir(__DIR__.'/src') ? __DIR__.'/src' : null,
+        is_dir(__DIR__.'/modules') ? __DIR__.'/modules' : null,
         is_dir(__DIR__.'/tests') ? __DIR__.'/tests' : null,
     ])))
     ->withSets([
@@ -19,6 +19,7 @@ return RectorConfig::configure()
         SetList::DEAD_CODE,
         SetList::TYPE_DECLARATION,
     ])
+    ->withImportNames()
     ->withPhpVersion(PhpVersion::PHP_84)
     ->withComposerBased(symfony: true)
     ->withSkip([
