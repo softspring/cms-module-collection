@@ -25,7 +25,7 @@ class Carousel {
 
                 // init Swiper:
                 if(autoplayCarousel) {
-                    const swiper = new Swiper('.'+ classSwiper, {
+                    new Swiper('.'+ classSwiper, {
                         loop: infiniteLoopCarousel,
                         slidesPerView: slidesPerViewCarousel,
                         autoplay: {
@@ -44,7 +44,7 @@ class Carousel {
                         },
                     });
                 } else {
-                    const swiper = new Swiper('.'+ classSwiper, {
+                    new Swiper('.'+ classSwiper, {
                         // configure Swiper to use modules
                         // modules: [Navigation, Pagination],
                         loop: infiniteLoopCarousel,
