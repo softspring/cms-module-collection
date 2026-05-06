@@ -8,12 +8,12 @@
         "softspring/cms-bundle": "^6.0@dev"
     },
     "require-dev": {
-        "softspring/cms-translation-plugin": "^6.0@dev",
         "ergebnis/composer-normalize": "^2.50",
         "friendsofphp/php-cs-fixer": "^3.94",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^12.5",
         "rector/rector": "^2.3",
+        "softspring/cms-translation-plugin": "^6.0@dev",
         "symfony/form": "^6.4 || ^7.4 || ^8.0",
         "symfony/yaml": "^6.4 || ^7.4 || ^8.0"
     },
