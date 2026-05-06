@@ -1,6 +1,6 @@
 // core version + navigation, pagination modules:
 // import Swiper, { Navigation, Pagination, Autoplay } from './swiper';
-import Swiper from './swiper/swiper-bundle.esm.browser.min'
+import Swiper from './swiper/swiper-bundle.esm.browser.min.js'
 import './swiper/swiper-bundle.min.css'
 
 import './_carousel.scss';

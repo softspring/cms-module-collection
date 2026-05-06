@@ -1,3 +1,3 @@
-import './modules/carousel';
-import './modules/hero';
-import './modules/title';
+import './modules/carousel.js';
+import './modules/hero.js';
+import './modules/title.js';
