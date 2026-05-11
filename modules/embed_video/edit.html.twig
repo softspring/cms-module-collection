@@ -5,7 +5,7 @@
      {{ module.link_class(form.class, 'sfs-embed-video') }}
     data-edit-content-target="code"
     data-edit-content-validate="html"
-    data-edit-content-placeholder="{{ 'embed.form.code.placeholder'|trans }}"
+    data-edit-content-placeholder="{{ 'embed_video.form.code.placeholder'|trans }}"
 >
     {{ form.code.vars.data|default()|replace({'href': 'href-invalidate'})|raw }}
 </div>
