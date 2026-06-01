@@ -1,5 +1,5 @@
 {% import '@SfsCms/macros/modules_render.html.twig' as module %}
 
 <div {{ module.id(id) }} {{ module.class(class, 'sfs-wysiwyg-trans') }}>
-    {{ content|sfs_cms_trans|raw }}
+    {{ html_content|sfs_cms_trans|raw }}
 </div>

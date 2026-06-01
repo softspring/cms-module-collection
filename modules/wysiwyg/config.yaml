@@ -1,5 +1,5 @@
 module:
-    revision: 1
+    revision: 2
     group: 'basic'
     edit_template: '@module/wysiwyg/edit.html.twig'
     form_template: '@module/wysiwyg/form.html.twig'
@@ -11,6 +11,6 @@ module:
             class:
                 type: 'class'
 
-            content:
+            html_content:
                 type: 'html'
 

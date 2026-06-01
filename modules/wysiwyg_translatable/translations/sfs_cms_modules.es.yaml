@@ -12,6 +12,6 @@ wysiwyg_translatable:
         site_filter.label: "Sites"
         id.label: "Id"
         class.label: "Clases"
-        content:
+        html_content:
             label: "Código"
             placeholder: "Inserta aquí el contenido"

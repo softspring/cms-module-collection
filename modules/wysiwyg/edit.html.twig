@@ -3,7 +3,7 @@
 <article
         {{ module.link_id(form.id) }}
         {{ module.link_class(form.class, 'sfs-wysiwyg text-break content-escape') }}
-        {{ module.link_content(form.content, null, true, null, false, false, true) }}
+        {{ module.link_content(form.html_content, null, true, null, false, false, true) }}
 >
     {{ form.content.vars.data|default|raw }}
 </article>
