@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\CmsModuleCollection\Test\Modules;
 
 use PHPUnit\Framework\MockObject\Exception;
