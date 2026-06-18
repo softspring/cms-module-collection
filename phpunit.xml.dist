@@ -14,6 +14,9 @@
 
     <!-- Coverage filter -->
     <source>
+        <include>
+            <directory suffix=".php">modules</directory>
+        </include>
         <exclude>
             <directory>vendor</directory>
             <directory>tests</directory>
