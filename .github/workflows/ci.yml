@@ -48,7 +48,8 @@ jobs:
                         ${{ runner.os }}-php-
 
             -   name: Install dependencies
-                run: composer update --prefer-dist --no-interaction --no-progress ${{ matrix.composer-prefer }}
+                # Exercise the current CMS branch, including its shared module test helpers.
+                run: composer update --with softspring/cms-bundle:5.6.x-dev --prefer-dist --no-interaction --no-progress ${{ matrix.composer-prefer }}
 
             -   name: Run phpstan
                 run: ./vendor/bin/phpstan analyse
