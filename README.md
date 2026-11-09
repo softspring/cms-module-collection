@@ -5,12 +5,12 @@
 ![License](https://img.shields.io/packagist/l/softspring/cms-module-collection?style=flat-square)
 ![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-module-collection/php?style=flat-square)
 ![Downloads](https://img.shields.io/packagist/dt/softspring/cms-module-collection?style=flat-square)
-[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-module-collection/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/cms-module-collection/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-module-collection?branch=6.0&style=flat-square)](https://app.codecov.io/gh/softspring/cms-module-collection/tree/6.0)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-module-collection/ci.yml?branch=6.1&style=flat-square&label=CI)](https://github.com/softspring/cms-module-collection/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-module-collection?branch=6.1&style=flat-square)](https://app.codecov.io/gh/softspring/cms-module-collection/tree/6.1)
 
 ## Documentation
 
-[Armonic documentation](https://armonic.softspring.es/6.0/bundles/cms-module-collection)
+[Armonic documentation](https://armonic.softspring.es/6.1@dev/bundles/cms-module-collection)
 
 ## Installation
 

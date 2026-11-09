@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "php": ">=8.4",
-        "softspring/cms-bundle": "^6.0@dev"
+        "softspring/cms-bundle": "6.1.*@dev"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.50",
@@ -14,7 +14,7 @@
         "phpunit/phpunit": "^12.5",
         "rector/rector": "^2.6.7",
         "symfony/polyfill-php85": "^1.33",
-        "softspring/cms-translation-plugin": "^6.0@dev",
+        "softspring/cms-translation-plugin": "6.1.*@dev",
         "symfony/form": "^6.4 || ^7.4 || ^8.0",
         "symfony/yaml": "^6.4 || ^7.4 || ^8.0"
     },
@@ -33,7 +33,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-6.0": "6.0.x-dev"
+            "dev-6.0": "6.0.x-dev",
+            "dev-6.1": "6.1.x-dev"
         }
     },
     "scripts": {
