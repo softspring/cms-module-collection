@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a clear navigation action or call to action. Provide a concise descriptive label and a matching link, preferably to an existing CMS route when relevant. Use the configured style and link choices rather than inventing fields or route identifiers.
     revision: 4
     group: 'basic'
     edit_template: '@module/button/edit.html.twig'

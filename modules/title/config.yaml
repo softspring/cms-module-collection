@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a standalone heading. Choose its level from the available options according to the page hierarchy; reserve the main heading for the page title and keep subsequent levels coherent. Do not use heading text as a substitute for body paragraphs.
     revision: 1
     group: 'basic'
     edit_template: '@module/title/edit.html.twig'

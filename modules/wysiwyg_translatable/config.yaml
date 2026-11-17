@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for rich HTML that differs by locale and cannot be expressed clearly with the available semantic modules. Prefer paragraph modules for ordinary body copy. Supply each requested locale and avoid putting a whole page into one HTML field.
     revision: 3
     group: 'basic'
     edit_template: '@module/wysiwyg_translatable/edit.html.twig'

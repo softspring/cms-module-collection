@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use one instance for each ordinary paragraph. Prefer paragraph modules over wysiwyg for normal body copy so that paragraphs remain independently editable. Use the configured translation fields for each locale.
     revision: 1
     group: 'basic'
     edit_template: '@module/paragraph/edit.html.twig'
