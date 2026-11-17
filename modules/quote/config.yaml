@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a genuine quotation or a short highlighted excerpt. Keep the wording faithful to its source and do not invent an attribution. Use paragraph modules for ordinary body copy and supply the requested language values.
     revision: 1
     group: 'basic'
     edit_template: '@module/quote/edit.html.twig'

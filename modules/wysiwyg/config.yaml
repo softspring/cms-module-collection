@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use this module for rich HTML that cannot be expressed clearly with the available semantic modules. Prefer paragraph modules for ordinary paragraphs and dedicated heading, list or media modules when available. Avoid putting an entire page into one wysiwyg instance.
     revision: 3
     group: 'basic'
     edit_template: '@module/wysiwyg/edit.html.twig'

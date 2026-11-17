@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a structured explanatory section with a heading, description, optional image or background and optional action. Prefer it over a large wysiwyg block when these fields match the content. Use a hero for the main introductory message and paragraphs for individual text blocks.
     revision: 4
     group: 'block'
     edit_template: '@module/text_section/edit.html.twig'

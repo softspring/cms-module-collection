@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a code example or technical snippet, not ordinary prose or a page layout. Choose the matching language from the available options and provide the code in the code field. Use paragraph modules to explain the example around it.
     revision: 1
     group: 'basic'
     edit_template: '@module/code/edit.html.twig'

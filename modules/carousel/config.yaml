@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a coherent group of slide modules when sequential browsing is appropriate. Follow the allowed child modules and configured slide, navigation, pagination and autoplay choices. Keep essential information available without relying on a later slide.
     revision: 1
     group: 'container'
     edit_template: '@module/carousel/edit.html.twig'

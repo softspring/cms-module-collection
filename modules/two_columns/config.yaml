@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for related text and media presented side by side, with an optional action. Choose the image position and heading level from the configured options and preserve a meaningful reading order on smaller screens. Use a simple paragraph or media module when a paired composition is unnecessary.
     revision: 5
     group: 'block'
     edit_template: '@module/two_columns/edit.html.twig'

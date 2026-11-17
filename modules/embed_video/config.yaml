@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for the embed markup of a video, not for general body text or an arbitrary page layout. Provide the intended video embed in the code field and review the rendered result. Use the media module when selecting an existing CMS media item instead.
     revision: 1
     group: 'basic'
     edit_template: '@module/embed_video/edit.html.twig'

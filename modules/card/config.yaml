@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use for a compact, structured summary of one subject, with a heading, description, optional media and optional action. Keep related cards consistent in purpose and content length. Use a hero for the main page introduction or a text section for longer explanatory content.
     revision: 5
     group: 'block'
     edit_template: '@module/card/edit.html.twig'

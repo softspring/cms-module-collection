@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use this module for a prominent hero introducing a page or major section. Prefer a visually strong background photo, a concise heading and a clear message. Keep text readable against the image and respect the media type upload requirements.
     revision: 4
     group: 'block'
     edit_template: '@module/hero/edit.html.twig'

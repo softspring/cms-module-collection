@@ -1,4 +1,7 @@
 module:
+    meta:
+        ai_instructions: |
+            Use to display an existing CMS image or video using an available version, picture or video set. Inspect the media context, type requirements and available versions before choosing a value. Do not invent identifiers or version keys; use the configured alignment choices.
     revision: 1
     group: 'media'
     edit_template: '@module/media/edit.html.twig'
